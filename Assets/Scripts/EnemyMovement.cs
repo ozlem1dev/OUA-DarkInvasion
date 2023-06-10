@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
@@ -53,7 +54,12 @@ public class EnemyMovement : MonoBehaviour
 
             transform.position += direction * moveSpeed * Time.deltaTime;
 
-            
+            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+            targetRotation.eulerAngles = new Vector3(0f, targetRotation.eulerAngles.y, 0f);
+            transform.rotation = targetRotation;
+
+
+
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
             {
                 Debug.Log("a");
@@ -73,15 +79,19 @@ public class EnemyMovement : MonoBehaviour
     void Attack()
     {
         agent.SetDestination(transform.position);
-        Debug.Log("x");
         transform.LookAt(player);
         if (!isAttacked)
         {
-
-
-            isAttacked = true; 
+            Debug.Log("ATTACK");
+            isAttacked = true;
+            Invoke("AttackCooldown", attackCooldown);
         }
 
+    }
+
+    void AttackCooldown()
+    {
+        isAttacked = false;
     }
 
 }
