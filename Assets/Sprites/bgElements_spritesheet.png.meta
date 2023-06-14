@@ -1,0 +1,953 @@
+fileFormatVersion: 2
+guid: 4a909f5cb6de2ba49947e7f5ee27bf21
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cloudy
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1850
+        width: 994
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cff9010004e3c347aa3a3819427d3b0
+      internalID: -1302556891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1795
+        width: 143
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bba587c0567411469e6cda0400e7d77
+      internalID: 558316002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-4
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1817
+        width: 129
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d593ef26cd7f949b63b6a3b5d5cfef
+      internalID: -378894516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-9
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 1787
+        width: 99
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e683cf1ce8013a4592e0120f51563a6
+      internalID: 689735248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-8
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1799
+        width: 70
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c8acf60573ff3449836124e00c2731
+      internalID: 1210366640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1708
+        width: 86
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7cdc95d52694141aad576a22428f0e
+      internalID: 1351360672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-5
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1568
+        width: 123
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e432e1f19e35da4cbd5902b227147f5
+      internalID: 2140903576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-10
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 1641
+        width: 72
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d344ac7b375e3469c375fa9626cc69
+      internalID: 297071410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 1547
+        width: 74
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a652f9e07e38b849b9a55d13f4d80e0
+      internalID: -1036067866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-1
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1442
+        width: 144
+        height: 255
+      alignment: 9
+      pivot: {x: 0.56297976, y: 0.4924945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694796e10092d8b4cba59c580f63ad29
+      internalID: -1597388158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloudy-2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1166
+        width: 1021
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb16ea20bcb56a64b87f4eac075d1249
+      internalID: 1047655456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-2
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 420
+        width: 165
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcbf05f360727f41a8fa7f1b03ccfcc
+      internalID: 657955449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-6
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1130
+        width: 131
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3d38a00b967694aa2da98dae61b12e
+      internalID: -739857952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Castle-3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 884
+        width: 295
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224f2a81a2c876c48a132852287cff72
+      internalID: 1542778138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-11
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 857
+        width: 106
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39334fda3ca23445ab4205b2a76c12b
+      internalID: -67641065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-14
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 724
+        width: 69
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6937117b689cd2b40bdd24b04c5c3187
+      internalID: -988021460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 577
+        width: 282
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af032618c27cbd64eaf5e371110c45db
+      internalID: -1369582951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudy-3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 747
+        width: 238
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf974841c6322d14a82db43aec2f3f81
+      internalID: -2114278569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudy-4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 754
+        width: 215
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4259fb1b3bf4fe2459cf0a1106c041e4
+      internalID: 1533548854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Castle-2
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 691
+        width: 206
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c48121fc0f6451419b8713f5ebffda6
+      internalID: -892019444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Castle-1
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 977
+        width: 210
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d3efea019357341b809328fd3e3e4b
+      internalID: 931481512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-12
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 613
+        width: 108
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d113fbae49cb3a847b31ffdfbce4079c
+      internalID: 292779373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 658
+        width: 66
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a399ca389a77741903935973fb49db
+      internalID: -2003158606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudy-7
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 562
+        width: 192
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91521e9d6d3b414482bbd173a708bee
+      internalID: 566026005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyramid-2
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 493
+        width: 225
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5068e64ea8aa45f4799ab8edbf132679
+      internalID: -1156057853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-7
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 327
+        width: 128
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2d468c54d2da4438a069b273f2ae52
+      internalID: 776297676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 352
+        width: 100
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c710f0e948a987458dafcee2c56a07c
+      internalID: 1154150410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon-2
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 333
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d7542d78f6eed46a733fed8b84fb25
+      internalID: -193117720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 125
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d027cf5fdd07a6c4eb9eff211400a4a8
+      internalID: 494942035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyramid-1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 192
+        width: 217
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad645461204927488fda797e8e2823f
+      internalID: -1093875661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree-3
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 0
+        width: 145
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d45331756c2894885ef13cf4b5d051
+      internalID: -1050382648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudy-5
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 51
+        width: 228
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f36d8c9e63332499b65f1e18c57a92
+      internalID: -2015766633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudy-6
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 71
+        width: 212
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb4ef28662c5fd40a81ab239df83d66
+      internalID: -529854960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5a5ca3abb53954a8f73e44a65f27dd
+      internalID: -1427360944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bgElements_spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 10
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00ce3b3b78118c499a5763f490614c1
+      internalID: -1918753362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 65152233dfab58a42b8153e1b9653323
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Castle-1: 931481512
+      Castle-2: -892019444
+      Castle-3: 1542778138
+      Cloudy: -1302556891
+      Cloudy-2: 1047655456
+      bgElements_spritesheet_11: 1341120918
+      bgElements_spritesheet_12: 608837120
+      bgElements_spritesheet_14: 194558922
+      bgElements_spritesheet_17: 1465522466
+      bgElements_spritesheet_18: -1547775581
+      bgElements_spritesheet_19: 1005053726
+      bgElements_spritesheet_21: -181109361
+      bgElements_spritesheet_22: 870802041
+      bgElements_spritesheet_24: 1228083763
+      bgElements_spritesheet_26: -1369582951
+      bgElements_spritesheet_32: 77625396
+      bgElements_spritesheet_33: -2003158606
+      bgElements_spritesheet_34: 779620992
+      bgElements_spritesheet_35: -842610765
+      bgElements_spritesheet_36: -1624660321
+      bgElements_spritesheet_38: -149437434
+      bgElements_spritesheet_40: 667942177
+      bgElements_spritesheet_41: 1941997092
+      bgElements_spritesheet_42: 1742301701
+      bgElements_spritesheet_43: 1863815706
+      bgElements_spritesheet_44: 265816310
+      bgElements_spritesheet_47: 1456125833
+      bgElements_spritesheet_48: -1681527530
+      bgElements_spritesheet_49: 802063792
+      bgElements_spritesheet_51: 494942035
+      bgElements_spritesheet_52: -94291962
+      bgElements_spritesheet_53: 273022890
+      bgElements_spritesheet_55: -1012196095
+      bgElements_spritesheet_57: -2050372258
+      bgElements_spritesheet_60: -1084219846
+      bgElements_spritesheet_61: 56965968
+      bgElements_spritesheet_62: -2111433744
+      bgElements_spritesheet_63: -1427360944
+      bgElements_spritesheet_64: -1918753362
+      bgElements_spritesheet_8: -1036067866
+      bgElements_spritesheet_9: 1786508634
+      cloudy-3: -2114278569
+      cloudy-4: 1533548854
+      cloudy-5: -2015766633
+      cloudy-6: -529854960
+      cloudy-7: 566026005
+      moon: 1351360672
+      moon-2: -193117720
+      pyramid-1: -1093875661
+      pyramid-2: -1156057853
+      tree-: 558316002
+      tree-1: -1597388158
+      tree-10: 297071410
+      tree-11: -67641065
+      tree-12: 292779373
+      tree-13: 1154150410
+      tree-14: -988021460
+      tree-2: 657955449
+      tree-3: -1050382648
+      tree-4: -378894516
+      tree-5: 2140903576
+      tree-6: -739857952
+      tree-7: 776297676
+      tree-8: 1210366640
+      tree-9: 689735248
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
