@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Login
+  - Quit
+  - Start
+  - Options
   layers:
   - Default
   - TransparentFX
