@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     public float sightRange, attackRange;
     public bool inSight, inRange;
     public float moveSpeed = 3f;
+    public int attackDamage=10;
 
 
     private int currentWaypointIndex = 0;
@@ -48,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
-            Debug.Log("b");
+           
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
 
@@ -62,7 +64,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
             {
-                Debug.Log("a");
+                
                 currentWaypointIndex++;
                 currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
 
@@ -78,14 +80,19 @@ public class EnemyMovement : MonoBehaviour
 
     void Attack()
     {
+        var playerHealth = player.GetComponent<CharacterHealth>();
         agent.SetDestination(transform.position);
         transform.LookAt(player);
-        if (!isAttacked)
+        
+        if (!isAttacked && playerHealth != null)
         {
             Debug.Log("ATTACK");
+            playerHealth.takeDamage(attackDamage);
+            
             isAttacked = true;
             Invoke("AttackCooldown", attackCooldown);
         }
+        
 
     }
 

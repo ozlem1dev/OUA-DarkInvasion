@@ -1,29 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
+    private Camera cam;
 
     void Start()
     {
+        cam = Camera.main;
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            takeDamage(10);
-        }
-    }
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
@@ -33,7 +27,7 @@ public class CharacterHealth : MonoBehaviour
         }
 
         UpdateHealthBar();
-        Debug.Log("Güncel can : " + currentHealth);
+        Debug.Log("Düþman güncel can : " + currentHealth);
 
     }
 
@@ -44,3 +38,4 @@ public class CharacterHealth : MonoBehaviour
     }
 
 }
+
