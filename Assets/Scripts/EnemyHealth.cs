@@ -8,11 +8,11 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
-    private Camera cam;
+    
 
     void Start()
     {
-        cam = Camera.main;
+        
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
