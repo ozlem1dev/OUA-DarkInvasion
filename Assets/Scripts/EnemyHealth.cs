@@ -24,6 +24,8 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Die();
+            Debug.Log("Düþman öldü");
         }
 
         UpdateHealthBar();
@@ -37,5 +39,9 @@ public class EnemyHealth : MonoBehaviour
         HealthBar.fillAmount = fill;
     }
 
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
 }
 
