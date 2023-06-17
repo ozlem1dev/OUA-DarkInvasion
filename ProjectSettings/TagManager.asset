@@ -9,6 +9,8 @@ TagManager:
   - Quit
   - Start
   - Options
+  - Tower
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Tower
+  - Enemy
   - 
   - 
   - 
