@@ -1,9 +1,12 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Tilemaps;
 
-public class RangerEnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
@@ -14,32 +17,30 @@ public class RangerEnemyMovement : MonoBehaviour
     public float sightRange, attackRange;
     public bool inSight, inRange;
     public float moveSpeed = 3f;
-    public int attackDamage = 10;
-    public Transform firePoint;
-    public GameObject projectilePrefab;
+    public int attackDamage=10;
 
-    
+
     private int currentWaypointIndex = 0;
     private bool isAttacked;
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();  
     }
 
     private void Update()
     {
         inSight = Physics.CheckSphere(transform.position, sightRange, player0);
-        inRange = Physics.CheckSphere(transform.position, attackRange, player0);
+        inRange=Physics.CheckSphere(transform.position,attackRange, player0);
 
-        if (!inSight && !inRange)
+        if(!inSight && !inRange)
         {
             Forward();
         }
-        if (inSight && !inRange)
+        if(inSight && !inRange)
         {
             ChasePlayer();
         }
-        if (inSight && inRange)
+        if(inSight && inRange)
         {
             Attack();
         }
@@ -49,7 +50,7 @@ public class RangerEnemyMovement : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
-
+           
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
 
@@ -63,7 +64,7 @@ public class RangerEnemyMovement : MonoBehaviour
 
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
             {
-
+                
                 currentWaypointIndex++;
                 currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
 
@@ -79,25 +80,19 @@ public class RangerEnemyMovement : MonoBehaviour
 
     void Attack()
     {
-        
+        var playerHealth = player.GetComponent<CharacterHealth>();
         agent.SetDestination(transform.position);
         transform.LookAt(player);
-
-        if (!isAttacked )
+        
+        if (!isAttacked && playerHealth != null)
         {
-            GameObject sphere = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
+            Debug.Log("ATTACK");
+            playerHealth.takeDamage(attackDamage);
             
-            Vector3 direction = player.transform.position - transform.position;
-            direction.Normalize();
-
-            
-            Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
-            sphereRigidbody.velocity = direction * 10f;
             isAttacked = true;
             Invoke("AttackCooldown", attackCooldown);
         }
-
+        
 
     }
 
@@ -107,3 +102,4 @@ public class RangerEnemyMovement : MonoBehaviour
     }
 
 }
+

@@ -5,13 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
-  - Enemy
   - Login
   - Quit
   - Start
   - Options
-  - Tower
-  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Tower
-  - Enemy
+  - 
+  - 
   - 
   - 
   - 
