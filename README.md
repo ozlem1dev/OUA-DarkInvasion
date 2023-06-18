@@ -58,12 +58,58 @@ Eren, göz kamaştıran bir ışıkla sarıldı ve aniden Orta Çağ köyünde b
 Tek başına savaşa girişen Eren, cesaretinin meşalesini yaktı ve köyü canavarların pençelerinden korumak için mücadeleye başladı. Kulelerini stratejik noktalara yerleştirdi, tuzakları ustaca kurdurdu ve büyülü yeteneklerini düşmanlarına karşı kullandı. Her saldırı dalgası daha güçlü ve zorlu hale gelirken, kahramanımızın cesareti ve kararlılığı Şahyar köyünün kaderini belirleyecekti. Eren, büyülü kitaptan aldığı güçle canavarlara karşı üstün gelmek için savaşmalı ve köyü kurtarmalıydı. Stratejik zeka ve büyülü yeteneklerin kesiştiği bu dünyada çıktığı heyecan dolu yolculukta canavarlara karşı kazandığı her bir zafer hem kendisinin hem de köy halkının kurtuluşu anlamına geliyordu.
 
 ## Ürün Backlog
-[Product Backlog](https://docs.google.com/spreadsheets/d/1mQYhIIN6K9ccOPa7_H79jHYil30p4VPqV7wKHQqozEc/edit?usp=sharing) 
+[Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4) 
+
+## Ürün Repo Detayları
+Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkimizden dosyaları görüntüleyebilir, kodu inceleyebilir ve değişiklik geçmişini (branch, commit ve pull requestler) takip edebilirsiniz. 
+[Azure DevOps repo linki](https://dev.azure.com/Unity26/_git/3DTowerDefense)
 
 
 # Sprint 1
-* Sprint içinde tamamlanması tahmin edilen puan: 90 puan
-* Puan tamamlama mantığı: Backlog’da yer alan tüm taskler, user storyler temelinde oluşturulmuştur. Her bir task, işin büyüklüğünü ifade etmek için story point’ler ile değerlendirilmiştir. Bu değerlendirmelerde story point’ler Fibonacci dizisindeki sayılar kullanılarak atanmıştır. Fibonacci dizisi kullanılarak ölçeklendirme yapılması, artan sayılar arasındaki oransal değişikliğin bir süre sonra aynı kalması nedeniyle yaygın kullanılan bir yöntemdir. Her bir taske volume (büyüklük), risk & uncertainty (risk ve belirsizlik) ve complexity (karmaşıklık) faktörleri göz önünde bulundurularak belirlenen story pointler atanmıştır. Bu yaklaşım, projedeki tasklerin önemini ve zorluk seviyelerini göstermeyi amaçlar. Bu sayede, projenin zamanlaması ve kaynak tahsisi daha gerçekçi bir şekilde planlanmıştır.
-* Backlog düzeni: Backlog’da bulunan issuelar, ilk sprint için planlanan user storyleri kapsayan tasklerin ana başlıklarını temsil eder. Her issue altında ilgili taskler ayrılmış ve düzenlenmiştir. Bu yapılandırma ile proje yönetiminde ve sprint planlamasında bir düzen sağlanmaktadır. Bu düzen, proje ekibine iş akışını daha organize bir şekilde takip etme ve projenin ilerleyişini izleme fırsatı sunmaktadır. Ayrıca, gelecek sprintlerin planlaması için de bir temel oluşturmaktadır.
-* Daily Scrum: İletişimi kolaylaştırmak için, günlük Scrum notlarımızı Discord üzerinden takip ettik. Her gün düzenlenen sesli toplantılara katılım zorunlu olmasa da, birbirimize destek olmak için bir araya geldik. Ayrıca, her üç günde bir tüm takımın katılması gereken toplantılarda, sprint görevlerinin ilerlemesini ve harcamamız gereken eforu değerlendirerek kararlar aldık.
-    * [Sprint 1 Daily Scrum Konuşmaları](https://docs.google.com/document/d/1BfrxzubV9GbWmTagoqoc9qtUe4r4qvIJG6tIQDB4wKA/edit?usp=sharing)
+* **Sprint içinde tamamlanması tahmin edilen puan:** 69 puan
+
+* **Puan tamamlama mantığı:** Backlog’da yer alan tüm taskler, user storyler temelinde oluşturulmuştur. Her bir task, işin büyüklüğünü ifade etmek için story point’ler ile değerlendirilmiştir. Bu değerlendirmelerde story point’ler Fibonacci dizisindeki sayılar kullanılarak atanmıştır. Fibonacci dizisi kullanılarak ölçeklendirme yapılması, artan sayılar arasındaki oransal değişikliğin bir süre sonra aynı kalması nedeniyle yaygın kullanılan bir yöntemdir. Her bir taske volume (büyüklük), risk & uncertainty (risk ve belirsizlik) ve complexity (karmaşıklık) faktörleri göz önünde bulundurularak belirlenen story pointler atanmıştır. Bu yaklaşım, projedeki tasklerin önemini ve zorluk seviyelerini göstermeyi amaçlar. Bu sayede, projenin zamanlaması ve kaynak tahsisi daha gerçekçi bir şekilde planlanmıştır.
+
+* **Backlog düzeni:** Backlog’da bulunan issuelar, ilk sprint için planlanan user storyleri kapsayan tasklerin ana başlıklarını temsil eder. Her issue altında ilgili taskler ayrılmış ve düzenlenmiştir. Bu yapılandırma ile proje yönetiminde ve sprint planlamasında bir düzen sağlanmaktadır. Bu düzen, proje ekibine iş akışını daha organize bir şekilde takip etme ve projenin ilerleyişini izleme fırsatı sunmaktadır. Ayrıca, gelecek sprintlerin planlaması için de bir temel oluşturmaktadır.
+
+* **Daily Scrum:** İletişimi kolaylaştırmak için, günlük Scrum notlarımızı Discord üzerinden takip ettik. Her gün düzenlenen sesli toplantılara katılım zorunlu olmasa da, birbirimize destek olmak için bir araya geldik. Ayrıca, her üç günde bir tüm takımın katılması gereken toplantılarda, sprint görevlerinin ilerlemesini ve harcamamız gereken eforu değerlendirerek kararlar aldık.
+[Sprint 1 Daily Scrum Konuşmaları](https://docs.google.com/document/d/1BfrxzubV9GbWmTagoqoc9qtUe4r4qvIJG6tIQDB4wKA/edit?usp=sharing)
+
+
+* **Sprint board update:**
+
+![Sprint 1 board update](/Screenshots/Board-Update-Sprint-1.png)
+![Sprint 1 burndown trend](/Screenshots/Burndown-Trend-Sprint-1.png)
+
+* **Ürün ekran görüntüleri:**
+
+![Script test sahnesi](/Screenshots/Script-Test-Sahnesi.jpg)
+![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Test-Sahnesi-In-Game.jpg)
+![Ana sahne genel bakış](/Screenshots/Main-Scene.jpg)
+![Kule tür ve detaylarına odaklanmış ana sahne görüntüsü](/Screenshots/Main-Scene-Turrets.jpg)
+
+## Sprint Review
+* **Katılımcılar:** Özlem Güngör, Tuna Yavuz, Efe Talha Oran, Ozan Yılmaz
+* **Sprint boyunca tamamlanan işler:**
+    * Bir Tower Defense oyunu içerisinde bulunması gereken temel unsurları oluşturduk. Ana karakter, düşman türleri, kuleler ve oyun sahneleri için prototipler hazırladık.
+    * Temel oyun mekaniği için bir prototip oluşturduk. Kule, ana karakter ve düşman savaş mekanikleri gibi temel özellikleri başarıyla uyguladık.
+    * Oyunumuza basit bir kart mekaniği ekledik. Oyuncular, kulelerin yerleştirilmesi, güçlendiricilerin kullanılması veya özel yeteneklerin etkinleştirilmesi gibi eylemleri gerçekleştirmek için kartları kullanabilecekler.
+    * Kart çeşitleri için küçük bir havuz oluşturduk. Bu havuzda farklı özelliklere ve etkilere sahip kartlar bulunuyor.
+    * Oyunun kullanıcı arayüzünü tasarladık ve temel menülerin prototiplerini oluşturduk. Oyuncular artık oyunu başlatabilir ve sonlandırabilirler.
+* **Sonraki adımlar:**
+    * Sonraki sprintte, oyunun zorluk seviyesini dengeli hale getirmek için daha fazla test ve ayarlama yapmayı planlıyoruz. Kulelerin ve düşmanların güçlerini yeniden değerlendirecek ve oyunun ilerleyen seviyelerinde daha heyecan verici olmasını sağlayacağız.
+    * Oyunun grafiksel unsurlarını ve görsel kalitesini geliştirmek için çalışmalar yapacağız. Oyunculara daha etkileyici bir görsel deneyim sunmayı hedefliyoruz.
+    * Yeni fikirler ışığında eksiklikleri gidermek için prototiplerde ve tasarımlarda değişiklikler yapacağız. Ana karakterin yeteneklerini, düşman tiplerini ve kartları daha çeşitlendirecek, oyunun daha heyecan verici ve stratejik bir deneyim sunmasını sağlayacağız.
+
+## Sprint Retrospective
+* **Ne iyi gitti:**
+    * Takım olarak, sprint boyunca iyi bir işbirliği ve iletişim sergiledik.
+    * Her üye, belirlenen görevleri zamanında tamamlamak için çaba gösterdi.
+    * İşlerin belirlenen süre içinde tamamlandığı ve sprint hedeflerine uyulduğu gözlemlendi.
+    * Takım üyeleri arasında fikir paylaşımı ve yenilikçi çözümler üzerinde çalışma görüldü.
+* **Geliştirilmesi gereken alanlar:**
+    * Sprint planlama toplantısında takım olarak herkesin aktif rol aldığından emin olmalı ve sprint kapsamını ve story puanlarını developer ve tasarımcıların geri bildirimleri doğrultusunda belirlemeliyiz.
+    * Takım olarak zaman yönetimi konusunda daha dikkatli olmalıyız. Görevlerin belirlenen süre içinde tamamlanması için ekip içindeki görev dağılımını daha iyi planlamalıyız.
+    * Bazı durumlarda, iletişim eksikliği nedeniyle engellerle karşılaştık. İletişimi etkin hale getirmek için daha fazla çaba göstermeliyiz.
+
+
