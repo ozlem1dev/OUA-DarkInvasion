@@ -1,21 +1,21 @@
-#Takım İsmi
+# Takım İsmi
 Unity 26
 
-##Takım Rolleri 
+## Takım Rolleri 
 * Özlem Güngör: Scrum Master
 * Tuna Yavuz: Product Owner
 * Efe Talha Oran: Developer
 * Ozan Yılmaz: Developer
 * Melisa Boz: Developer
 
-#Ürün ile İlgili Bilgiler
+# Ürün ile İlgili Bilgiler
 ## Ürün İsmi
 Dark Invasion: The Last Hope of Shahyar Village
 
-##Ürün Açıklaması
+## Ürün Açıklaması
 Dark Invasion: The Last Hope of Shahyar Village, oyuncunun kontrol edeceği bir ana karakterin düşmanlarla savaştığı bir maceraya odaklanmaktadır. Oyuncunun amacı, köyün ana merkezini korumaktır. Bunun için düşman saldırılarını durdurmak için kuleler inşa etmeli ve düşman dalgalarını yavaşlatmak için tuzaklar kurmalıdır. Her seviyenin sonunda oyuncu, içeriği rastgele belirlenen kartlardan birini seçerek oyun stratejisini belirler. Kart mekaniği şans faktörünü oyuna dahil ederek her seferinde farklı bir deneyim sunar. Bu kartlar oyuncuya kule ve tuzak inşa etmek veya güçlendirmek, ana karakterine ek özellikler sağlamak gibi çeşitli avantajlar sunabilir. Oyuncu, düşman dalgalarını savuştururken yeteneklerini kullanmalı ve stratejik kararlar almalıdır. Ayrıca, düşmanların merkezi ele geçirme girişimlerine karşı da dikkatli olmalıdır. Oyuncunun başarısı, köyün ana merkezini düşmanlardan koruyarak ilerlemesiyle ölçülür. Bu 3 boyutlu tower defense oyunu, strateji becerilerini test etmek, kule inşa etmek, tuzaklar kurmak ve rastgele kart mekaniğini kullanmak isteyen oyuncular için heyecan dolu bir deneyim sunmaktadır. Oyuncular, her seviyede yeni zorluklarla karşılaşacak ve farklı kart kombinasyonlarıyla oynamanın taktiksel avantajlarını keşfedeceklerdir.
 
-##Ürün Özellikleri
+## Ürün Özellikleri
 Ürün özellikleri user storyler göz önünde bulundurularak kararlaştırılmıştır.
 * Oyun Türü: Tower Defense
 * Platformlar: Bilgisayar (Windows)
@@ -43,14 +43,14 @@ Dark Invasion: The Last Hope of Shahyar Village, oyuncunun kontrol edeceği bir 
 * İlerleme Kaydetme: Her seviye sonunda otomatik kaydetme sistemiyle ilerlemenin otomatik olarak kaydedilmesi.
 * Ses Efektleri ve Müzik: Oyun atmosferini güçlendiren ses efektleri ve müzikler.
 
-##Hedef Kitle
+## Hedef Kitle
 * Strateji Severler: Strateji oyunlarını sevenler, kulelerin ve tuzakların yerleştirilmesiyle düşman dalgalarını etkili bir şekilde durdurma becerisini kullanmaktan keyif alacaklardır.
 * Tower Defense Hayranları: Tower defense oyunlarına özel bir ilgi duyan oyuncular, bu tarz oyunların karakteristiğini yansıtan mekanikleri ve zorlukları arayan bir kitle oluştururlar.
 * Fantastik Dünya Meraklıları: Büyülü ve fantastik bir evrende geçen oyunlar ilgisini çeken oyuncular, oyunun hikaye ve atmosferine bağlanacaktır.
 * Gelişim ve Strateji Tutkunları: Oyunun ilerleyen seviyelerinde karakter, kule ve tuzak geliştirme seçenekleri sunması, ilerleme ve strateji odaklı oyuncuları cezbedecektir.
 * Casual Oyuncular: Tower defense oyunlarını daha rahat ve hafif bir deneyim olarak gören casual oyuncular da hedef kitlenin bir parçası olabilir.
 
-##Ürün Hikayesi
+## Ürün Hikayesi
 Engin büyücülük yetenekleriyle bilinen Şahyar köyü, benzeri görülmemiş bir canavar saldırısına maruz kalmıştı. Köy halkı, gökyüzünün karanlıkla kaplandığı bir zamanda umutsuzluğa kapıldı. Büyücüler bile bu dehşet verici saldırıyı durdurmak için çaresiz kalmıştı. Fakat karanlığın kalbinden bir kahraman doğacaktı. Bir gün, kâhinlerin bilgeliğine sahip Orakçı Parviz'in gözleri, geleceği görmeye başladı. Şahyar köyünün kurtuluşunun Türk ordusunun şanlı komandosu Eren Aslantürk'ün ellerinde olduğunu fark etti. Bu kehanet, büyülü bir ışıkla parıldadı ve büyücüler, Eren'i bu zamandan alıp canavarlarla savaşması için çağırdılar. 
 
 Eren, göz kamaştıran bir ışıkla sarıldı ve aniden Orta Çağ köyünde buldu kendini. Şaşkınlık içinde gözlerini etrafına dikti ve kendisini bekleyen zorlu görevi anlamaya çalıştı. Köyün ileri gelen büyücüleri yanına gelerek Eren'e seslendi. "Şahyar köyünün son umudu, kahraman Eren! Yalnızca senin cesaretin ve stratejik dehan ile bu savaşı kazanabiliriz. Büyülü kitabı al ve canavarlara karşı savaş!" dediler. Eren, büyülü kitabı eline aldığında, içindeki güç hemen hissedildi. Sayfalar, büyülü formlarla dolup taşıyordu ve Eren'e köyün korunması için gerekli olan tüm bilgileri veriyordu. Kulelerin yükseldiği, tuzakların örüldüğü ve büyülü yeteneklerin ortaya çıktığı bir dünya, Eren'in önünde açıldı. Ancak Eren, bu çağa hapsolmuştu ve kendi çağına dönüşü, Şahyar köyündeki zafere bağlıydı. Büyücülerle yaptığı anlaşmaya göre, Eren'in köyü canavarlardan koruması ve galip gelmesi durumunda, büyülü bir geçit açılacak ve Eren kendi çağına geri dönebilecekti.
@@ -83,10 +83,10 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 
 * **Ürün ekran görüntüleri:**
 
-![Script test sahnesi](/Screenshots/Script-Test-Sahnesi.jpg)
-![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Test-Sahnesi-In-Game.jpg)
-![Ana sahne genel bakış](/Screenshots/Main-Scene.jpg)
-![Kule tür ve detaylarına odaklanmış ana sahne görüntüsü](/Screenshots/Main-Scene-Turrets.jpg)
+![Script test sahnesi](/Screenshots/Script-Test-Sahnesi.JPG)
+![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Test-Sahnesi-In-Game.JPG)
+![Ana sahne genel bakış](/Screenshots/Main-Scene.JPG)
+![Kule tür ve detaylarına odaklanmış ana sahne görüntüsü](/Screenshots/Main-Scene-Turrets.JPG)
 
 ## Sprint Review
 * **Katılımcılar:** Özlem Güngör, Tuna Yavuz, Efe Talha Oran, Ozan Yılmaz
