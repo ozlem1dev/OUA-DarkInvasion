@@ -10,16 +10,16 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
-    [SerializeField] public Transform player;
+    [SerializeField] public Transform player,base0;
     public LayerMask ground, player0;
-    public Vector3 point;
     public float attackCooldown;
     public float sightRange, attackRange;
     public bool inSight, inRange;
     public float moveSpeed = 3f;
     public int attackDamage=10;
+    
 
-
+    
     private int currentWaypointIndex = 0;
     private bool isAttacked;
     private void Awake()
@@ -32,7 +32,8 @@ public class EnemyMovement : MonoBehaviour
         inSight = Physics.CheckSphere(transform.position, sightRange, player0);
         inRange=Physics.CheckSphere(transform.position,attackRange, player0);
 
-        if(!inSight && !inRange)
+        
+        if (!inSight && !inRange)
         {
             Forward();
         }
@@ -50,6 +51,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
+            
            
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
@@ -60,17 +62,32 @@ public class EnemyMovement : MonoBehaviour
             targetRotation.eulerAngles = new Vector3(0f, targetRotation.eulerAngles.y, 0f);
             transform.rotation = targetRotation;
 
-
+            if (Vector3.Distance(transform.position, waypoints[waypoints.Length - 1].position)<=5f)
+            {
+                Destroy(gameObject);
+                
+                var baseHealth = base0.GetComponent<BaseHealth>();
+                baseHealth.takeDamage(attackDamage);
+                
+            }
 
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
             {
-                
+
                 currentWaypointIndex++;
                 currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
-
+                
             }
+            
         }
+       
     }
+    /*IEnumerator DestroyAfterDelay(float delay)
+    {
+        
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }*/
 
 
     void ChasePlayer()
