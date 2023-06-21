@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class CharacterMana : MonoBehaviour
 {
-    public int maxMana = 100;
-    public int currentMana;
+    public float maxMana = 100f;
+    public float currentMana;
     public Image ManaBar;
+    public float manaRegenRate = 2f;
 
     void Start()
     {
@@ -18,26 +19,41 @@ public class CharacterMana : MonoBehaviour
 
     void Update()
     {
+        if(currentMana < maxMana)
+        {
+            currentMana += manaRegenRate * Time.deltaTime;
+        }
+
+        if(currentMana > maxMana)
+        {
+            currentMana = maxMana;
+        }
+        
         if (Input.GetKeyDown(KeyCode.M))
         {
             Skill(10);
         }
+        UpdateManaBar();
     }
-    private void Skill(int amaount)
+    public void Skill(float amaount)
     {
-        currentMana -= 10;
+        currentMana -= amaount;
         if (currentMana <= 0)
         {
             currentMana = 0;
         }
 
         UpdateManaBar();
-        Debug.Log("Güncel mana : " + currentMana);
+        //Debug.Log("Güncel mana : " + currentMana);
     }
-    private void UpdateManaBar()
+    public void UpdateManaBar()
     {
         float fill = (float)currentMana / maxMana;
         ManaBar.fillAmount = fill;
     }
 
+    public float getCurrentMana()
+    {
+        return currentMana;
+    }
 }
