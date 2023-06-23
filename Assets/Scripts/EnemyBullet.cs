@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public Transform player;
-    private void Update()
+    public float time = 3f;
+    private bool collided = false;
+    public int ammoDamage = 20;
+
+    private void Start()
     {
+        Destroy(gameObject, time);
+    }
 
-
-        Vector3 dir = player.position - transform.position;
-        float distanceThisFrame = 10f * Time.deltaTime;
-
-        if (dir.magnitude <= distanceThisFrame)
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("a");
+        if (!collided)
         {
-            HitTarget();
-            return;
+            collided = true;
+            // Sadece mermiyi yok etmek için:
+            Destroy(gameObject);
         }
 
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<CharacterHealth>().takeDamage(ammoDamage);
+            Destroy(gameObject);
+        }
     }
-
-    void HitTarget()
-    {
-        var playerHealth = player.GetComponent<CharacterHealth>();
-        playerHealth.takeDamage(10);
-        Destroy(gameObject);
-    }
+    
 }

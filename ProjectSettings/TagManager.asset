@@ -11,6 +11,7 @@ TagManager:
   - Options
   - Enemy
   - Base
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -21,11 +22,11 @@ TagManager:
   - Ground
   - Enemy
   - Base
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Tower
+  - RangerEnemy
+  - MeleeEnemy
+  - TankEnemy
+  - RunnerEnemy
   - 
   - 
   - 

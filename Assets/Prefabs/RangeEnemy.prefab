@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5386751151028721085}
   - component: {fileID: 5398733138322885402}
   - component: {fileID: 5336100661300531258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 235546461578089375}
   - component: {fileID: 6119130141337389935}
   - component: {fileID: 3981665960661937392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 349835129261151896}
   - component: {fileID: 2387258256996378027}
   - component: {fileID: 4219154111283076885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,10 +270,10 @@ GameObject:
   - component: {fileID: 3501397406872442013}
   - component: {fileID: 6029298689664209495}
   - component: {fileID: 6817592664233445090}
-  - component: {fileID: 2969724971720240411}
-  m_Layer: 0
+  - component: {fileID: 2443452641559820268}
+  m_Layer: 10
   m_Name: RangeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ Transform:
   - {fileID: 2499008417186953167}
   - {fileID: 7894850175209331077}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7416392988782953397
 MeshFilter:
@@ -405,7 +405,7 @@ MonoBehaviour:
   maxHealth: 80
   currentHealth: 80
   HealthBar: {fileID: 3981665960661937392}
---- !u!114 &2969724971720240411
+--- !u!114 &2443452641559820268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,11 +414,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6018435979771219695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966cdafb241c0754b9b30889ff07aa4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ad11c2fb80902d4292d4fd664d0d591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6029298689664209495}
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -426,16 +430,17 @@ MonoBehaviour:
   player0:
     serializedVersion: 2
     m_Bits: 8
-  point: {x: 0, y: 0, z: 0}
-  attackCooldown: 2
-  sightRange: 5
-  attackRange: 5
+  attackCooldown: 5
+  sightRange: 10
+  attackRange: 6
   inSight: 0
   inRange: 0
-  moveSpeed: 3
+  moveSpeed: 5
   attackDamage: 10
+  baseObject: {fileID: 0}
+  projectilePrefab: {fileID: 1920572924757187237, guid: 6ef7f292142b86646bca3653ced3ee4a, type: 3}
   firePoint: {fileID: 7894850175209331077}
-  projectilePrefab: {fileID: 0}
+  isRanged: 1
 --- !u!1 &8832566964450235958
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +452,7 @@ GameObject:
   - component: {fileID: 7894850175209331077}
   - component: {fileID: 8112155840892794445}
   - component: {fileID: 2993926095747422314}
-  - component: {fileID: 7546637147373608405}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,24 +524,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7546637147373608405
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8832566964450235958}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

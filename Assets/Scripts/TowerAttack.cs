@@ -18,7 +18,6 @@ public class TowerAttack : MonoBehaviour
     public float turnSpeed=5f;*/
 
     private Transform target;
-    private string enemyTag = "Enemy";
     private float fireCountdown = 0f;
 
 
