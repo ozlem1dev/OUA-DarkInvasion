@@ -10,38 +10,46 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
-    [SerializeField] public Transform player,base0;
+    [SerializeField] public Transform player;
     public LayerMask ground, player0;
     public float attackCooldown;
     public float sightRange, attackRange;
     public bool inSight, inRange;
     public float moveSpeed = 3f;
-    public int attackDamage=10;
-    
+    public int attackDamage = 10;
+    public GameObject baseObject;
+    public GameObject projectilePrefab;
+    public Transform firePoint;
 
-    
+    public bool isRanged;
     private int currentWaypointIndex = 0;
     private bool isAttacked;
+
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();  
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        baseObject = GameObject.FindWithTag("Base");
     }
 
     private void Update()
     {
         inSight = Physics.CheckSphere(transform.position, sightRange, player0);
-        inRange=Physics.CheckSphere(transform.position,attackRange, player0);
+        inRange = Physics.CheckSphere(transform.position, attackRange, player0);
 
-        
         if (!inSight && !inRange)
         {
+
             Forward();
         }
-        if(inSight && !inRange)
+        else if (inSight && !inRange)
         {
             ChasePlayer();
         }
-        if(inSight && inRange)
+        else if (inSight && inRange)
         {
             Attack();
         }
@@ -51,72 +59,79 @@ public class EnemyMovement : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
-            
-           
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
 
-            transform.position += direction * moveSpeed * Time.deltaTime;
+
+            agent.speed = moveSpeed;
+
+
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
 
             Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
             targetRotation.eulerAngles = new Vector3(0f, targetRotation.eulerAngles.y, 0f);
             transform.rotation = targetRotation;
-
-            if (Vector3.Distance(transform.position, waypoints[waypoints.Length - 1].position)<=5f)
+            if (Vector3.Distance(transform.position, waypoints[waypoints.Length - 1].position) <= 2f)
             {
                 Destroy(gameObject);
-                
-                var baseHealth = base0.GetComponent<BaseHealth>();
+
+                var baseHealth = baseObject.GetComponent<BaseHealth>();
                 baseHealth.takeDamage(attackDamage);
-                
+
             }
-
-            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 5f)
             {
-
                 currentWaypointIndex++;
                 currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
-                
             }
-            
         }
-       
     }
-    /*IEnumerator DestroyAfterDelay(float delay)
-    {
-        
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }*/
-
 
     void ChasePlayer()
     {
+
+        agent.speed = moveSpeed;
+
+        // Hedefi ayarla
         agent.SetDestination(player.position);
     }
 
     void Attack()
     {
+        transform.LookAt(player);
         var playerHealth = player.GetComponent<CharacterHealth>();
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
-        
+
+
         if (!isAttacked && playerHealth != null)
         {
-            Debug.Log("ATTACK");
-            playerHealth.takeDamage(attackDamage);
-            
+            if (isRanged)
+            {
+                GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+               
+
+                Vector3 direction = player.transform.position - transform.position;
+                direction.Normalize();
+                
+
+
+                Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
+                sphereRigidbody.velocity = direction * 10f;
+                Debug.Log(sphereRigidbody.velocity);
+            }
+            else if (!isRanged)
+            {
+                Debug.Log("atak");
+                playerHealth.takeDamage(attackDamage);
+            }
+
             isAttacked = true;
             Invoke("AttackCooldown", attackCooldown);
         }
-        
-
     }
 
     void AttackCooldown()
     {
         isAttacked = false;
     }
-
 }
-

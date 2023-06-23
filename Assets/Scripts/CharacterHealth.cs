@@ -9,21 +9,20 @@ public class CharacterHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
-
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
+        Debug.Log("Güncel can : " + currentHealth);
+    }
+    void Start()
+    {
+        
+        
         UpdateHealthBar();
     }
 
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            takeDamage(10);
-        }
-    }
+    
     public void takeDamage(int amount)
     {
         currentHealth -= amount;

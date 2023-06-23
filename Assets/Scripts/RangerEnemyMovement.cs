@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class RangerEnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
-    [SerializeField] public Transform player;
+    [SerializeField] public Transform player, base0;
     public LayerMask ground, player0;
     public Vector3 point;
     public float attackCooldown;
@@ -49,6 +50,7 @@ public class RangerEnemyMovement : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
+            
 
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
@@ -60,8 +62,16 @@ public class RangerEnemyMovement : MonoBehaviour
             transform.rotation = targetRotation;
 
 
+            if (Vector3.Distance(transform.position, waypoints[waypoints.Length - 1].position) <= 0.2f)
+            {
+                Destroy(gameObject);
 
-            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 0.1f)
+                var baseHealth = base0.GetComponent<BaseHealth>();
+                baseHealth.takeDamage(attackDamage);
+
+            }
+
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 5f)
             {
 
                 currentWaypointIndex++;
@@ -70,7 +80,7 @@ public class RangerEnemyMovement : MonoBehaviour
             }
         }
     }
-
+   
 
     void ChasePlayer()
     {
@@ -105,5 +115,7 @@ public class RangerEnemyMovement : MonoBehaviour
     {
         isAttacked = false;
     }
+
+   
 
 }

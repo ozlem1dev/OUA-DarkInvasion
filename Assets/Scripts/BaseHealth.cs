@@ -41,6 +41,7 @@ public class BaseHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(this.gameObject);
+        Debug.Log("base patladý");
+        //DestroyImmediate(transform.root.gameObject);
     }
 }
