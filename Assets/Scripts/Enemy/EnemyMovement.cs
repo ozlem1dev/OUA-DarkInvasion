@@ -20,14 +20,15 @@ public class EnemyMovement : MonoBehaviour
     public GameObject baseObject;
     public GameObject projectilePrefab;
     public Transform firePoint;
-
     public bool isRanged;
+    public int minLvl, maxLvl;
     private int currentWaypointIndex = 0;
     private bool isAttacked;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+
     }
 
     private void Start()
@@ -37,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+
         inSight = Physics.CheckSphere(transform.position, sightRange, player0);
         inRange = Physics.CheckSphere(transform.position, attackRange, player0);
 
@@ -53,6 +55,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Attack();
         }
+
     }
 
     void Forward()
@@ -62,9 +65,7 @@ public class EnemyMovement : MonoBehaviour
             Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
             direction.Normalize();
 
-
             agent.speed = moveSpeed;
-
 
             agent.SetDestination(waypoints[currentWaypointIndex].position);
 
@@ -73,11 +74,10 @@ public class EnemyMovement : MonoBehaviour
             transform.rotation = targetRotation;
             if (Vector3.Distance(transform.position, waypoints[waypoints.Length - 1].position) <= 2f)
             {
+                //gameObject.GetComponent<EnemyHealth>().currentHealth =0;
                 Destroy(gameObject);
-
                 var baseHealth = baseObject.GetComponent<BaseHealth>();
                 baseHealth.takeDamage(attackDamage);
-
             }
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) <= 5f)
             {
@@ -89,9 +89,7 @@ public class EnemyMovement : MonoBehaviour
 
     void ChasePlayer()
     {
-
         agent.speed = moveSpeed;
-
         // Hedefi ayarla
         agent.SetDestination(player.position);
     }
@@ -108,11 +106,11 @@ public class EnemyMovement : MonoBehaviour
             if (isRanged)
             {
                 GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-               
+
 
                 Vector3 direction = player.transform.position - transform.position;
                 direction.Normalize();
-                
+
 
 
                 Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
@@ -121,7 +119,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (!isRanged)
             {
-                Debug.Log("atak");
+                
                 playerHealth.takeDamage(attackDamage);
             }
 

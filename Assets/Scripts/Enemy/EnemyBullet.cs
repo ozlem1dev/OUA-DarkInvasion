@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("a");
+        
         if (!collided)
         {
             collided = true;

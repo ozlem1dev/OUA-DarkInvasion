@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5733394594794897916}
   - component: {fileID: 1335562222205352557}
   - component: {fileID: 752710596384984408}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2180287398718512036}
   - component: {fileID: 7146148644914108849}
   - component: {fileID: 1252153588325978061}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ Transform:
   - {fileID: 1335479217244073981}
   - {fileID: 7912655795747011751}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6268503614384263154
 MeshFilter:
@@ -255,6 +255,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -272,6 +274,9 @@ MonoBehaviour:
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  isRanged: 0
+  minLvl: 1
+  maxLvl: 3
 --- !u!114 &1252153588325978061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +303,7 @@ GameObject:
   - component: {fileID: 2679564250270762259}
   - component: {fileID: 7682062871079216076}
   - component: {fileID: 3171907338821465105}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +484,7 @@ GameObject:
   - component: {fileID: 8289963066553928795}
   - component: {fileID: 592402787501362463}
   - component: {fileID: 7855676372594211426}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

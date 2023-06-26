@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5097916817539852993}
   - component: {fileID: 890706057551549623}
   - component: {fileID: 3055411160753586444}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3475013629332153104}
   - component: {fileID: 8686324156907673066}
   - component: {fileID: 2539966064574857843}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 2227364209546926747}
   - component: {fileID: 861974385952252216}
   - component: {fileID: 7963211151480180660}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1965517307645842260}
   - component: {fileID: 6623840801662698366}
   - component: {fileID: 6117344236705867388}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ Transform:
   m_Children:
   - {fileID: 2846117178425399535}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5077544712186916709
 MeshFilter:
@@ -407,6 +407,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -424,6 +426,9 @@ MonoBehaviour:
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  isRanged: 0
+  minLvl: 3
+  maxLvl: 3
 --- !u!114 &6117344236705867388
 MonoBehaviour:
   m_ObjectHideFlags: 0
