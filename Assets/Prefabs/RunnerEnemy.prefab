@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3740664465069926126}
   - component: {fileID: 454796085895398672}
   - component: {fileID: 5982265687835383355}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5015250655895475276}
   - component: {fileID: 1603343954652418812}
   - component: {fileID: 84670757325125061}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: RunnerEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_Children:
   - {fileID: 7816371404008866804}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6448484327376745856
 MeshFilter:
@@ -228,6 +228,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -245,6 +247,9 @@ MonoBehaviour:
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  isRanged: 0
+  minLvl: 3
+  maxLvl: 3
 --- !u!114 &84670757325125061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +277,7 @@ GameObject:
   - component: {fileID: 2110335742283583626}
   - component: {fileID: 4855976096290888038}
   - component: {fileID: 7697714600875944954}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +379,7 @@ GameObject:
   - component: {fileID: 8426620895177490721}
   - component: {fileID: 2097129841483971480}
   - component: {fileID: 1283026107880042075}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

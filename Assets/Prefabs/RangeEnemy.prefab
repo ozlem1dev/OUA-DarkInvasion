@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5386751151028721085}
   - component: {fileID: 5398733138322885402}
   - component: {fileID: 5336100661300531258}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 235546461578089375}
   - component: {fileID: 6119130141337389935}
   - component: {fileID: 3981665960661937392}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 349835129261151896}
   - component: {fileID: 2387258256996378027}
   - component: {fileID: 4219154111283076885}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 6029298689664209495}
   - component: {fileID: 6817592664233445090}
   - component: {fileID: 2443452641559820268}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RangeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -423,6 +423,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -441,6 +443,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1920572924757187237, guid: 6ef7f292142b86646bca3653ced3ee4a, type: 3}
   firePoint: {fileID: 7894850175209331077}
   isRanged: 1
+  minLvl: 2
+  maxLvl: 3
 --- !u!1 &8832566964450235958
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +456,7 @@ GameObject:
   - component: {fileID: 7894850175209331077}
   - component: {fileID: 8112155840892794445}
   - component: {fileID: 2993926095747422314}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -200,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9083506624616874508
 Transform:
   m_ObjectHideFlags: 0
@@ -338,7 +338,6 @@ MonoBehaviour:
   player0:
     serializedVersion: 2
     m_Bits: 8
-  point: {x: 0, y: 0, z: 0}
   attackCooldown: 4
   sightRange: 10
   attackRange: 3
@@ -346,6 +345,13 @@ MonoBehaviour:
   inRange: 0
   moveSpeed: 5
   attackDamage: 10
+  baseObject: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  isRanged: 0
+  inLevel: 0
+  minLvl: 0
+  maxLvl: 0
 --- !u!114 &7487352807306431371
 MonoBehaviour:
   m_ObjectHideFlags: 0
