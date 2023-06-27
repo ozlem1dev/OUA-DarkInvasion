@@ -15,6 +15,10 @@ public class CharacterFire : MonoBehaviour
     private int currentClip;
     private bool isReloading = false;
     public Text ammoText;
+    public float fireCooldown = 0.2f;
+    private float nextFireTime = 0f; 
+
+
 
     private void Start()
     {
@@ -27,10 +31,11 @@ public class CharacterFire : MonoBehaviour
         if (isReloading)
             return;
 
-        if (Input.GetMouseButtonDown(0) && currentClip > 0)
+        if (Input.GetMouseButton(0) && currentClip > 0 && Time.time >= nextFireTime)
         {
             Fire();
             UpdateAmmoText();
+            nextFireTime = Time.time + fireCooldown; // Bir sonraki ateş etme zamanını ayarla
         }
 
         if ((Input.GetKeyDown(KeyCode.R) || (currentClip == 0)) && currentAmmo > 0 && currentClip < clipSize)
