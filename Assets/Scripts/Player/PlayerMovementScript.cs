@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -30,15 +31,19 @@ public class PlayerMovementScript : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+    Animator _animator;
 
     public Camera mainCamera;
     public float rotationSpeed = 500f;
+
+    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
+        _animator = GetComponent<Animator>();
         //readyToJump = true;
     }
 
@@ -110,12 +115,16 @@ public class PlayerMovementScript : MonoBehaviour
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        
 
         if(flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+
+        _animator.SetFloat("Speed", rb.velocity.magnitude);
+        Debug.Log("Animator hýzý:" + _animator.GetFloat("Speed"));
     }
 
     private void Jump()
