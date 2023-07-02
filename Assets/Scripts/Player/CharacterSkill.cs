@@ -20,7 +20,7 @@ public class CharacterSkill : MonoBehaviour
             skillTimer += Time.deltaTime;
             if (skillTimer >= skillCooldown)
             {
-                // Cooldown süresi tamamlandý, skill kullanýma açýk hale gelir
+                // Cooldown süresi tamamlandý, skill kullanima açýk hale gelir
                 canUseSkill = true;
                 skillTimer = 0f;
             }
@@ -28,7 +28,7 @@ public class CharacterSkill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && canUseSkill)
         {
-            Debug.Log("Q tuþuna basýldý");
+            Debug.Log("Q tusuna basildi");
 
             if (GetComponentInParent<CharacterMana>().currentMana > 30f)
             {
@@ -46,4 +46,3 @@ public class CharacterSkill : MonoBehaviour
         }
     }
 }
-
