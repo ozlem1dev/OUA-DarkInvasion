@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class CharacterFire : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class CharacterFire : MonoBehaviour
     private bool isReloading = false;
     public Text ammoText;
     public float fireCooldown = 0.2f;
-    private float nextFireTime = 0f; 
+    private float nextFireTime = 0f;
+    public AudioClip fireAudio;
+    public AudioClip reloadAudio;
 
+    public GameObject muzzleFlashPrefab;
+    public Transform muzzleFlashSpawnPoint;
 
 
     private void Start()
@@ -51,12 +56,22 @@ public class CharacterFire : MonoBehaviour
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
         currentClip--;
+
+        // Muzzle flash efektini oluþtur
+        var muzzleFlash = Instantiate(muzzleFlashPrefab, muzzleFlashSpawnPoint.position, muzzleFlashSpawnPoint.rotation);
+
+        // Muzzle flash efektini bir süre sonra yok et
+        Destroy(muzzleFlash, 0.1f);
+
+        AudioSource.PlayClipAtPoint(fireAudio, transform.position);
     }
+
 
     private IEnumerator Reload()
     {
         isReloading = true;
         // Þarjör deðiþme animasyonu oynatýlabilir.
+        AudioSource.PlayClipAtPoint(reloadAudio, transform.position);
 
         yield return new WaitForSeconds(1f); // Örnek olarak 1 saniye bekleme süresi.
 

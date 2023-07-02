@@ -7,18 +7,19 @@ using System;
 public class PlayerMovementScript : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    public float moveSpeed = 3f;
+    public float runSpeedMultiplier = 2f;
+    private float currentMoveSpeed;
 
     public float groundDrag;
 
     public float jumpForce;
- 
+
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
 
     [Header("Ground Check")]
     public float playerHeight;
-  
 
     bool isGrounded = false;
     bool canJump = true;
@@ -36,7 +37,9 @@ public class PlayerMovementScript : MonoBehaviour
     public Camera mainCamera;
     public float rotationSpeed = 500f;
 
-    
+    public AudioClip walkingAudio;
+    public AudioClip runningAudio;
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -44,7 +47,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb.freezeRotation = true;
 
         _animator = GetComponent<Animator>();
-        //readyToJump = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -59,11 +62,30 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) && canJump)
         {
-            // Zýplama kodunu buraya yazýn
             Jump();
             canJump = false;
         }
 
+        if (Mathf.Abs(rb.velocity.magnitude) > 0.1f)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                audioSource.clip = runningAudio;
+            }
+            else
+            {
+                audioSource.clip = walkingAudio;
+            }
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
     }
 
     private void FixedUpdate()
@@ -75,7 +97,6 @@ public class PlayerMovementScript : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
     }
 
     void OnCollisionEnter(Collision collision)
@@ -102,24 +123,32 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void MovePlayer()
     {
-        // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        //on ground
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            currentMoveSpeed = moveSpeed * runSpeedMultiplier;
+        }
+        else
+        {
+            currentMoveSpeed = moveSpeed;
+        }
+
+        rb.AddForce(moveDirection.normalized * currentMoveSpeed * 10f, ForceMode.Force);
+
         if (isGrounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
+        {
+            rb.AddForce(moveDirection.normalized * currentMoveSpeed * 10f, ForceMode.Force);
+        }
     }
 
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        
 
-        if(flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > currentMoveSpeed)
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            Vector3 limitedVel = flatVel.normalized * currentMoveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
 
@@ -133,13 +162,11 @@ public class PlayerMovementScript : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
-   
+
     private void Rotation()
     {
-        // Kameranýn yatay (horizontal) eksendeki pozisyonunu al
         float cameraRotation = mainCamera.transform.eulerAngles.y;
 
-        // Karakteri o yöne döndür
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, cameraRotation, 0f), 1);
     }
 }
