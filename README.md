@@ -64,6 +64,7 @@ Tek başına savaşa girişen Eren, cesaretinin meşalesini yaktı ve köyü can
 Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkimizden dosyaları görüntüleyebilir, kodu inceleyebilir ve değişiklik geçmişini (branch, commit ve pull requestler) takip edebilirsiniz. 
 [Azure DevOps repo linki](https://dev.azure.com/Unity26/_git/3DTowerDefense)
 
+---
 
 # Sprint 1
 * **Sprint içinde tamamlanması tahmin edilen puan:** 69 puan
@@ -115,6 +116,8 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 ## Product Backlog linki
 [Sprint 1 - Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4) 
 
+---
+
 # Sprint 2
 * **Sprint içinde tamamlanması tahmin edilen puan:** 118 puan
 
@@ -165,3 +168,5 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 
 ## Product Backlog linki
 [Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
+
+---
