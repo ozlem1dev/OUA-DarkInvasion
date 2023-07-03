@@ -116,7 +116,7 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 [Sprint 1 - Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4) 
 
 # Sprint 2
-* **Sprint içinde tamamlanması tahmin edilen puan:** 116 puan
+* **Sprint içinde tamamlanması tahmin edilen puan:** 118 puan
 
 * **Backlog düzeni:**  Ürün backlogu içine açıklama olarak eklenmiştir. Lütfen, Sprint 2 product backlog linkinden kontrol ediniz.
 
@@ -127,8 +127,8 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 * **Sprint board update:**
 
 ![Sprint 2 board update 1](/Screenshots/Sprint2-Board-1.png)
-![Sprint 2 board update 2](/Screenshots/Sprint2-Board-2.png)
-![Sprint 2 burndown trend](/Screenshots/Burndown-Sprint2.png)
+![Sprint 2 board update 2](/Screenshots/Sprint2-Board-3.png)
+![Sprint 2 burndown trend](/Screenshots/Sprint2-Burndown-Trend.png)
 
 * **Ürün ekran görüntüleri:**
 
