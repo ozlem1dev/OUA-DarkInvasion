@@ -21,9 +21,7 @@ Dark Invasion: The Last Hope of Shahyar Village, oyuncunun kontrol edeceği bir 
 * Platformlar: Bilgisayar (Windows)
 * Grafik Stili: 3D
 * Kontrol: Fare ve klavye tuşları
-* Oyun Modları: 
-    * Hikaye Modu: Ana karakterin Şahyar köyünü canavarlardan koruma görevini yerine getirdiği temel oyun modu.
-    * Çok Oyunculu Mod: İki oyuncudan birinin Şahyar köyünün kuzeyini diğerinin güney bölgesini canavarlardan koruduğu oyun modu.
+* Hikaye Modu: Ana karakterin Şahyar köyünü canavarlardan koruma görevini yerine getirdiği temel oyun modu.
 * Kule ve Tuzak Çeşitliliği:
     * Farklı türde kuleler ve tuzaklar: Her biri benzersiz yeteneklere, saldırı menzillerine ve hasar türlerine sahiptir.
     * Kule yükseltmeleri: Her seviye sonunda kazanılan deneyim puanlarıyla kuleleri güçlendirmek ve yeni özellikler eklemek için kullanılabilen yükseltme seçenekleri.
@@ -58,7 +56,9 @@ Eren, göz kamaştıran bir ışıkla sarıldı ve aniden Orta Çağ köyünde b
 Tek başına savaşa girişen Eren, cesaretinin meşalesini yaktı ve köyü canavarların pençelerinden korumak için mücadeleye başladı. Kulelerini stratejik noktalara yerleştirdi, tuzakları ustaca kurdurdu ve büyülü yeteneklerini düşmanlarına karşı kullandı. Her saldırı dalgası daha güçlü ve zorlu hale gelirken, kahramanımızın cesareti ve kararlılığı Şahyar köyünün kaderini belirleyecekti. Eren, büyülü kitaptan aldığı güçle canavarlara karşı üstün gelmek için savaşmalı ve köyü kurtarmalıydı. Stratejik zeka ve büyülü yeteneklerin kesiştiği bu dünyada çıktığı heyecan dolu yolculukta canavarlara karşı kazandığı her bir zafer hem kendisinin hem de köy halkının kurtuluşu anlamına geliyordu.
 
 ## Ürün Backlog
-[Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4) 
+[Sprint 1 - Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4)
+
+[Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
 
 ## Ürün Repo Detayları
 Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkimizden dosyaları görüntüleyebilir, kodu inceleyebilir ve değişiklik geçmişini (branch, commit ve pull requestler) takip edebilirsiniz. 
@@ -112,4 +112,56 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
     * Takım olarak zaman yönetimi konusunda daha dikkatli olmalıyız. Görevlerin belirlenen süre içinde tamamlanması için ekip içindeki görev dağılımını daha iyi planlamalıyız.
     * Bazı durumlarda, iletişim eksikliği nedeniyle engellerle karşılaştık. İletişimi etkin hale getirmek için daha fazla çaba göstermeliyiz.
 
+## Product Backlog linki
+[Sprint 1 - Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4) 
 
+# Sprint 2
+* **Sprint içinde tamamlanması tahmin edilen puan:** 116 puan
+
+* **Backlog düzeni:**  Ürün backlogu içine açıklama olarak eklenmiştir. Lütfen, Sprint 2 product backlog linkinden kontrol ediniz.
+
+* **Daily Scrum:** Sesli toplantılara ek, günlük Scrum güncellemelerimizi Discord üzerinden yazılı olarak takip ettik.
+[Sprint 2 Daily Scrum Konuşmaları](https://docs.google.com/document/d/1BfrxzubV9GbWmTagoqoc9qtUe4r4qvIJG6tIQDB4wKA/edit?usp=sharing)
+
+
+* **Sprint board update:**
+
+![Sprint 2 board update 1](/Screenshots/Sprint2-Board-1.png)
+![Sprint 2 board update 2](/Screenshots/Sprint2-Board-2.png)
+![Sprint 2 burndown trend](/Screenshots/Burndown-Sprint2.png)
+
+* **Ürün ekran görüntüleri:**
+
+![Script test sahnesi](/Screenshots/Sprint2-TestScene.png)
+![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Sprint2-InGame.png)
+![Script test sahnesi oyun için bomba patlaması](/Screenshots/Sprint2-Game-Bomb.png)
+![Ana sahne genel bakış](/Screenshots/Sprint2-MainScene.png)
+![Kart mekaniklerine genel bakış](/Screenshots/Sprint2-Card-Mechanics.png)
+![Açılış sahnesi](/Screenshots/Sprint2-OpeningScene.png)
+![Açılış sinematiği görselleri](/Screenshots/Sprint2-Cinematic.png)
+
+## Sprint Review
+* **Katılımcılar:** Özlem Güngör, Tuna Yavuz, Efe Talha Oran, Ozan Yılmaz, Melisa Boz
+* **Sprint boyunca tamamlanan işler:** 
+    * İlk seviye tasarımı tamamlandı, düşmanların spawn olması ve karakterin basic attack ve yetenek kullanması koda entegre edildi. 
+    * Sahne tasarımı ve giriş ekranı oyunun hikayesiyle uyumlu ve görsel olarak etkileyici bir şekilde yeniden tasarlandı.
+    * Kart tasarımı ve mekaniklerinin kodlanması tamamlandı, oyunculara stratejik avantajlar sağlayacak şekilde içerik havuzu genişletildi.
+    * Giriş sinematik tasarımı tamamlandı, oyunun hikayesini ve atmosferini başarılı bir şekilde oyuncuya anlatmak üzere tasarlanan görseller üzerine yazılar eklendi.
+    * Karakter asseti entegre edildi ve yürüme, koşma ve idle animasyonları için denemeler yapıldı. Düşman karakterlerin assetleri belirlendi ve projeye aktarıldı, animasyon çalışmalarına başlanacak.
+* **Sonraki adımlar:**
+    * Oyundaki karakter, düşman ve kulelerin animasyonlarını oluşturacağız ve oyuna entegre edeceğiz. 
+    * İlk seviyedeki sahneyi detaylandıracak, daha zengin bir atmosferin oluşturulmasını sağlayacağız.
+    * Oyuncuların seçtikleri kartların ilgili metodlarla oyun mekaniklerine etki etmesini sağlayacağız.
+    * Tasarlanan öğelerin, oyunun genel yapısı içinde entegrasyonunu ve uyumlu bir şekilde çalışmasını sağlayacağız. 
+    * Oyuncuların oyunu başlatabilmek için giriş yapabilmesi ve veri yönetimi işlemlerinin gerçekleştirilmesi üzerinde çalışacağız.
+
+## Sprint Retrospective
+* **Ne iyi gitti:**
+    * Ekip olarak karşılaştığımız zorluklara dayanışma içinde yaklaşarak, birlikte çalışarak ve destekleyerek başarıyla üstesinden geldik.
+    * Sprint başlangıcında gerçekçi bir planlama yaparak, hedeflerimizi netleştirdik ve takvime uyumlu bir şekilde ilerledik.
+* **Geliştirilmesi gereken alanlar:**
+    * Bazı görevlerin zamanında istenilen hale gelmemesi nedeniyle takvimde kaymalar yaşandı. Bu durum, takımın genel performansını ve sprint hedeflerine ulaşma sürecini etkiledi.
+    * Bir sonraki sprintte herkesin aynı ve yüksek tempoda çalışması bekleniyor. Görevlerin eşit şekilde dağıtılması ve takım üyelerinin sorumluluklarını zamanında yerine getirmesi konusuna vurgu yaptık.
+
+## Product Backlog linki
+[Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
