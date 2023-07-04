@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Base
   - Tower
+  - TowerSpawn
   layers:
   - Default
   - TransparentFX
