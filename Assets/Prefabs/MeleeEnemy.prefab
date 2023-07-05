@@ -257,6 +257,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   ground:
     serializedVersion: 2
@@ -277,6 +279,9 @@ MonoBehaviour:
   isRanged: 0
   minLvl: 1
   maxLvl: 3
+  spawned1: 0
+  spawned2: 0
+  spawned3: 0
 --- !u!114 &1252153588325978061
 MonoBehaviour:
   m_ObjectHideFlags: 0

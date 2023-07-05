@@ -20,7 +20,9 @@ public class LevelControl : MonoBehaviour
         if (spawner.enemyCount == spawner.stopNumber)
         {
 
-            spawner.cantSpawn = true;
+            spawner.cantSpawn1 = true;
+            spawner.cantSpawn2 = true;
+            spawner.cantSpawn3 = true;
 
             spawner.enemyCount = 0;
         }
@@ -30,7 +32,7 @@ public class LevelControl : MonoBehaviour
         if (spawner.Enemies.Count == 0)
         {
             currentLevel++;
-            spawner.cantSpawn = false;
+            spawner.cantSpawn1 = false;
             Debug.Log(currentLevel + ". level baþladý");
         }
     }
