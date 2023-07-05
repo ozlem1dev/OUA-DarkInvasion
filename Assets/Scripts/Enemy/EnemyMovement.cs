@@ -22,6 +22,10 @@ public class EnemyMovement : MonoBehaviour
     public Transform firePoint;
     public bool isRanged;
     public int minLvl, maxLvl;
+    public bool spawned1;
+    public bool spawned2;
+    public bool spawned3;
+
     private int currentWaypointIndex = 0;
     private bool isAttacked;
 

@@ -7,67 +7,109 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public Transform[] spawnPoint;
+    public Transform[] spawnPoint1;
+    public Transform[] spawnPoint2;
+    public Transform[] spawnPoint3;
     public float spawnCooldown = 2f;
-    public Transform[] waypoints;
+    public Transform[] waypoints1;
+    public Transform[] waypoints2;
+    public Transform[] waypoints3;
     public Transform player;
     public List<GameObject> Enemies = new List<GameObject>();
     public List<GameObject> ActiveEnemies = new List<GameObject>();
     public int stopNumber;
-    public bool cantSpawn;
+    public bool cantSpawn1;
+    public bool cantSpawn2=true;
+    public bool cantSpawn3=true;
     public int enemyCount;
+    
 
     private bool isButtonPressed = false;
 
 
-    private float nextSpawnTime;
+    private float nextSpawnTime1;
+    private float nextSpawnTime2;
+    private float nextSpawnTime3;
     private LevelControl level;
 
     private void Start()
     {
+        cantSpawn1 = false;
+        cantSpawn2 = true;
+        cantSpawn3 = true;
         level = gameObject.GetComponent<LevelControl>();
         InLevelCheck();
         level.currentLevel = level.levelNumber;
     }
     private void Update()
     {
-        foreach (var enemy in Enemies)//Enemies listesindeki objelere waypoint atar
+        if(level.currentLevel>=2) 
         {
-            if (enemy != null)
-            {
-                EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
-                enemyMovement.player = player;
-
-
-                for (int i = 0; i < waypoints.Length; i++)
-                {
-                    if (enemyMovement.waypoints != null && waypoints != null)
-                    {
-                        enemyMovement.waypoints[i] = waypoints[i];
-                    }
-                }
-            }
+            cantSpawn2 = false;
         }
-
-        if (Time.time >= nextSpawnTime && !cantSpawn)//spawn
+        if (level.currentLevel >= 3)
+        {
+            cantSpawn3 = false;
+        }
+        WaypointGiver1();
+        if (Time.time >= nextSpawnTime1 && !cantSpawn1)//spawn
         {
 
-            SpawnEnemy();
-            nextSpawnTime = Time.time + spawnCooldown;
+            SpawnEnemy1();
+            nextSpawnTime1 = Time.time + spawnCooldown;
+            level.LevelCheck();
+
+        }
+        if (Time.time >= nextSpawnTime2 && !cantSpawn2)//spawn
+        {
+           
+            SpawnEnemy2();
+            nextSpawnTime2 = Time.time + spawnCooldown;
+            level.LevelCheck();
+
+        }
+        if (Time.time >= nextSpawnTime3 && !cantSpawn3)//spawn
+        {
+
+            SpawnEnemy3();
+            nextSpawnTime3 = Time.time + spawnCooldown;
             level.LevelCheck();
 
         }
         LevelStartApprove();
 
-        //level.levelStartApprove();//level bittikten sonra diðer leveli baþlatmaya yarar
+        
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy1()
     {
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
-        int randomSpawn = Random.Range(0, enemyPrefabs.Length);
+        int randomSpawn = Random.Range(0, spawnPoint1.Length);
 
-        GameObject enemy = Instantiate(ActiveEnemies[randomIndex], spawnPoint[randomSpawn].position, Quaternion.identity);
+        GameObject enemy = Instantiate(ActiveEnemies[randomIndex], spawnPoint1[randomSpawn].position, Quaternion.identity);
+        enemy.GetComponent<EnemyMovement>().spawned1 = true;
+        Enemies.Add(enemy);
+        enemyCount++;
+    }
+    private void SpawnEnemy2()
+    {
+        Debug.Log("2.spawn");
+        int randomIndex = Random.Range(0, ActiveEnemies.Count);
+        int randomSpawn = Random.Range(0, spawnPoint2.Length);
+
+        GameObject enemy = Instantiate(ActiveEnemies[randomIndex], spawnPoint2[randomSpawn].position, Quaternion.identity);
+        enemy.GetComponent<EnemyMovement>().spawned2 = true;
+        Enemies.Add(enemy);
+        enemyCount++;
+    }
+    private void SpawnEnemy3()
+    {
+        Debug.Log("2.spawn");
+        int randomIndex = Random.Range(0, ActiveEnemies.Count);
+        int randomSpawn = Random.Range(0, spawnPoint3.Length);
+
+        GameObject enemy = Instantiate(ActiveEnemies[randomIndex], spawnPoint3[randomSpawn].position, Quaternion.identity);
+        enemy.GetComponent<EnemyMovement>().spawned3 = true;
         Enemies.Add(enemy);
         enemyCount++;
     }
@@ -109,4 +151,48 @@ public class Spawner : MonoBehaviour
         isButtonPressed = false; // Butonun tekrar basýlabileceðini iþaretlemek için false yapýlýyor
     }
 
+    private void WaypointGiver1()
+    {
+        foreach (var enemy in Enemies)//Enemies listesindeki objelere waypoint atar
+        {
+            if (enemy != null)
+            {
+                EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+                enemyMovement.player = player;
+
+                if (enemyMovement.spawned1 == true)
+                {
+                    for (int i = 0; i < waypoints1.Length; i++)
+                    {
+                        if (enemyMovement.waypoints != null && waypoints1 != null)
+                        {
+                            enemyMovement.waypoints[i] = waypoints1[i];
+                        }
+                    }
+                }
+                if (enemyMovement.spawned2 == true)
+                {
+                    for (int i = 0; i < waypoints2.Length; i++)
+                    {
+                        if (enemyMovement.waypoints != null && waypoints2 != null)
+                        {
+                            enemyMovement.waypoints[i] = waypoints2[i];
+                        }
+                    }
+                }
+                if (enemyMovement.spawned3 == true)
+                {
+                    for (int i = 0; i < waypoints3.Length; i++)
+                    {
+                        if (enemyMovement.waypoints != null && waypoints2 != null)
+                        {
+                            enemyMovement.waypoints[i] = waypoints3[i];
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    
 }
