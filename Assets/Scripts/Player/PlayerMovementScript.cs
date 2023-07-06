@@ -43,6 +43,7 @@ public class PlayerMovementScript : MonoBehaviour
     public AudioClip walkingAudio;
     public AudioClip runningAudio;
     private AudioSource audioSource;
+    private int groundCounter = 0;
 
     private void Start()
     {
@@ -117,6 +118,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
+            groundCounter++;
             isGrounded = true;
             canJump = true;
         }
@@ -126,10 +128,18 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            isGrounded = false;
+            groundCounter--;
+            if (groundCounter == 0)
+            {
+                isGrounded = false;
+            }
         }
     }
+    //private void OnCollisionStay(Collision collision)
+    //{
+        
 
+    //}
     private void LateUpdate()
     {
         Rotation();
@@ -191,8 +201,20 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Rotation()
     {
-        float cameraRotation = mainCamera.transform.eulerAngles.y;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, cameraRotation, 0f), 1);
+        // Kameranýn hareket yönünü ve hýzýný hesaplama
+        Vector3 cameraMovement = new Vector3(horizontalInput, 0f, verticalInput) * 0f * Time.deltaTime;
+
+        // Kameranýn yeni pozisyonunu güncelleme
+        mainCamera.transform.position += cameraMovement;
+
+
+        float cameraRotation = mainCamera.transform.eulerAngles.y;
+        
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, cameraRotation, 0f), 5000f);
+
+        
     }
 }
