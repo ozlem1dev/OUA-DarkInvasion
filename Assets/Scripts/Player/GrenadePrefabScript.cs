@@ -31,7 +31,7 @@ public class GrenadePrefabScript : MonoBehaviour
 
         // Patlama efekti prefabýný etkinleþtir
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(explosion, 2f); // Belirli bir süre sonra patlama efektini yok et
+        Destroy(explosion, 3f); // Belirli bir süre sonra patlama efektini yok et
 
         Destroy(gameObject);
     }
