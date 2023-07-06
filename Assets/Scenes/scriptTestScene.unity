@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 5167213919417260503}
-  player: {fileID: 5735827973830418223}
-  character: {fileID: 69469526296319776}
+  player: {fileID: 1803022483}
+  character: {fileID: 1803022483}
   rb: {fileID: 7923189974734870225}
   rotationSpeed: 1
 --- !u!1 &172564730
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillSpawnPoint: {fileID: 483231653}
-  skillPrefab: {fileID: 1950375074535350993, guid: 6efea9dad8f22f04c8c6a98d995c3a3d, type: 3}
+  skillPrefab: {fileID: 7421037314281459095, guid: 87e9231213ec44719864caab8127dd3b, type: 3}
   skillSpeed: 10
   skillCooldown: 3
   _animator: {fileID: 1803022494}
@@ -1545,11 +1545,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691568215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 2.02, z: 12.74}
+  m_LocalPosition: {x: 0, y: 0.18999994, z: 10.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1803022483}
+  m_Father: {fileID: 1457821252}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741781248
@@ -1620,7 +1620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &741781253
 MonoBehaviour:
@@ -1945,7 +1945,6 @@ GameObject:
   - component: {fileID: 1095636808}
   - component: {fileID: 1095636810}
   - component: {fileID: 1095636809}
-  - component: {fileID: 1095636811}
   m_Layer: 5
   m_Name: Crosshair
   m_TagString: Untagged
@@ -1970,7 +1969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.5, y: 102}
+  m_AnchoredPosition: {x: 8.6, y: 272.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095636809
@@ -2011,20 +2010,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095636807}
   m_CullTransparentMesh: 1
---- !u!114 &1095636811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095636807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2982b968ba574b24ba11f3f0cfd3b5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 691568216}
-  crosshair: {fileID: 1095636808}
 --- !u!1001 &1161698590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2114,7 +2099,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206526384}
-  m_LocalRotation: {x: 0.2340823, y: -1e-45, z: -0, w: 0.9722168}
+  m_LocalRotation: {x: 0.2340823, y: 1e-45, z: -0, w: 0.9722168}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2394,7 +2379,8 @@ Transform:
   m_LocalPosition: {x: 0.31, y: 1.83, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 691568216}
   m_Father: {fileID: 1803022483}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2695,7 +2681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457152104811144431, guid: e97a2da3ffe45a14196cb3bcf270145d, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5457152104811144431, guid: e97a2da3ffe45a14196cb3bcf270145d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3046,7 +3032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3103,9 +3089,6 @@ PrefabInstance:
       addedObject: {fileID: 1457821252}
     - targetCorrespondingSourceObject: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 691568216}
-    - targetCorrespondingSourceObject: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 640903274}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
@@ -3119,13 +3102,13 @@ PrefabInstance:
       addedObject: {fileID: 1803022486}
     - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1803022491}
+    - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1803022485}
     - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803022484}
-    - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1803022491}
     - targetCorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803022493}
@@ -3261,7 +3244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 1457821252}
   bulletPrefab: {fileID: 1920572924757187237, guid: e0e4bca10db0e6649aa0e8b0f6977d3b, type: 3}
-  bulletSpeed: 100
+  bulletSpeed: 120
   maxAmmo: 210
   clipSize: 30
   ammoText: {fileID: 185568627}
@@ -4442,7 +4425,7 @@ Transform:
   - {fileID: 5600706348176334768}
   - {fileID: 353079898}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5995673906630426908
 GameObject:

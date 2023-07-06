@@ -25,6 +25,8 @@ public class CharacterFire : MonoBehaviour
     public Transform muzzleFlashSpawnPoint;
 
 
+
+
     private void Start()
     {
         currentAmmo = maxAmmo;
@@ -54,7 +56,9 @@ public class CharacterFire : MonoBehaviour
     private void Fire()
     {
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+        Vector3 fireDirection = bulletSpawnPoint.forward + bulletSpawnPoint.up * Mathf.Tan(Mathf.Deg2Rad * (15f - Camera.main.transform.eulerAngles.x));
+        bullet.GetComponent<Rigidbody>().velocity = fireDirection.normalized * bulletSpeed;
+
         currentClip--;
 
         // Muzzle flash efektini oluþtur

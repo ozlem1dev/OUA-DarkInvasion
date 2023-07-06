@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrosshairController : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
-    public RectTransform crosshair;
+    public Transform crosshair;
 
-    private void Update()
+    void Update()
     {
-        // BulletSpawnPoint'ýn dünya koordinatlarýný ekran koordinatlarýna dönüþtür.
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(bulletSpawnPoint.position);
+        // Mermi ateþleme yönünü hesapla
+        Vector3 fireDirection = bulletSpawnPoint.forward + bulletSpawnPoint.up * Mathf.Tan(Mathf.Deg2Rad * (15f - Camera.main.transform.eulerAngles.x));
 
-        // Crosshair'in konumunu güncelle.
-        crosshair.position = screenPos;
+        // Mermi spawn noktasýnýn pozisyonunu güncelle
+        bulletSpawnPoint.position = crosshair.position;
+
+        // Mermi ateþleme yönünü güncelle
+        bulletSpawnPoint.rotation = Quaternion.LookRotation(fireDirection, Vector3.up);
     }
 }
