@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131921859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 4, z: -24.01}
+  m_LocalPosition: {x: 0.21, y: 4, z: -23.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -429,8 +429,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172564730}
-  m_LocalRotation: {x: 0.16659069, y: 0.000000008482972, z: -0.0000000014332117, w: 0.98602617}
-  m_LocalPosition: {x: -0.26, y: 4, z: -24.01}
+  m_LocalRotation: {x: 0.16659069, y: -0.000000008482972, z: 0.0000000014332117, w: 0.98602617}
+  m_LocalPosition: {x: 0.21, y: 4, z: -23.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -891,6 +891,7 @@ MonoBehaviour:
   skillPrefab: {fileID: 1950375074535350993, guid: 6efea9dad8f22f04c8c6a98d995c3a3d, type: 3}
   skillSpeed: 10
   skillCooldown: 3
+  _animator: {fileID: 0}
 --- !u!23 &353079900
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -941,16 +942,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353079897}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &421267489 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 129267146}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &454288241 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 339340004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &483231652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1386,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605695407}
-  m_LocalRotation: {x: 0.052995093, y: 0.0000000074401116, z: -3.9484424e-10, w: 0.9985948}
+  m_LocalRotation: {x: 0.052995086, y: -4.4034506e-16, z: 5.794058e-17, w: 0.9985948}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1456,6 +1447,7 @@ MonoBehaviour:
   skillPrefab: {fileID: 1950375074535350993, guid: 6efea9dad8f22f04c8c6a98d995c3a3d, type: 3}
   skillSpeed: 10
   skillCooldown: 3
+  _animator: {fileID: 1803022494}
 --- !u!136 &640903276
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1529,11 +1521,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640903273}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &664555105 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3047493061644674534, guid: 66cf288bf8ad28044b18a9d6aa344a89, type: 3}
-  m_PrefabInstance: {fileID: 2122065282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &691568215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,24 +1653,20 @@ MonoBehaviour:
   - {fileID: 6018435979771219695, guid: ed38986f3843ed74bafedf029694b20c, type: 3}
   - {fileID: 3514608507300238044, guid: da7ac99926374634fa66d993d024219d, type: 3}
   - {fileID: 6213051158410908022, guid: 55439f839c23d9a40ba6616d7be82d18, type: 3}
-  spawnPoint:
-  - {fileID: 1953089688}
-  - {fileID: 953368349}
-  - {fileID: 664555105}
-  - {fileID: 1962453999}
+  spawnPoint1: []
+  spawnPoint2: []
+  spawnPoint3: []
   spawnCooldown: 1
-  waypoints:
-  - {fileID: 1288111645}
-  - {fileID: 1843778876}
-  - {fileID: 421267489}
-  - {fileID: 454288241}
-  - {fileID: 1802063188}
-  - {fileID: 1339517769}
+  waypoints1: []
+  waypoints2: []
+  waypoints3: []
   player: {fileID: 5735827973830418223}
   Enemies: []
   ActiveEnemies: []
   stopNumber: 2
-  cantSpawn: 0
+  cantSpawn1: 0
+  cantSpawn2: 1
+  cantSpawn3: 1
   enemyCount: 0
 --- !u!1 &752130102
 GameObject:
@@ -1920,11 +1903,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &953368349 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3047493061644674534, guid: 66cf288bf8ad28044b18a9d6aa344a89, type: 3}
-  m_PrefabInstance: {fileID: 535600068}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &986283982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,16 +2245,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276703810}
   m_CullTransparentMesh: 1
---- !u!4 &1288111645 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 342019559}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1339517769 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 1426438428}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1410393317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2932,11 +2900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1802063188 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 2140312405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803022481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3087,7 +3050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3095,7 +3058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.01
+      value: -16.77
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3228,6 +3191,8 @@ MonoBehaviour:
   sprintSpeed: 0
   playerHeight: 0
   orientation: {fileID: 986283983}
+  SpeedZ: 0
+  SpeedX: 0
   mainCamera: {fileID: 172564732}
   rotationSpeed: 1
   walkingAudio: {fileID: 8300000, guid: 4dd2dc041dd32c4448dfcb6e101b1bd3, type: 3}
@@ -3401,10 +3366,10 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1843778876 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5931035610943077549, guid: da330938461a59b4d96e3f9a5ca62556, type: 3}
-  m_PrefabInstance: {fileID: 2139218297}
+--- !u!95 &1803022494 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+  m_PrefabInstance: {fileID: 1803022481}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879105650
 GameObject:
@@ -3567,7 +3532,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930503278}
-  m_LocalRotation: {x: 0.16659069, y: 0.000000008482971, z: -0.0000000014332115, w: 0.98602617}
+  m_LocalRotation: {x: 0.16659069, y: -0.000000008482971, z: 0.0000000014332115, w: 0.98602617}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3622,16 +3587,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1755192460}
---- !u!4 &1953089688 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3047493061644674534, guid: 66cf288bf8ad28044b18a9d6aa344a89, type: 3}
-  m_PrefabInstance: {fileID: 301904824}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1962453999 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3047493061644674534, guid: 66cf288bf8ad28044b18a9d6aa344a89, type: 3}
-  m_PrefabInstance: {fileID: 1410393317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2093900683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,6 +4073,8 @@ MonoBehaviour:
   sprintSpeed: 0
   playerHeight: 0.5
   orientation: {fileID: 0}
+  SpeedZ: 0
+  SpeedX: 0
   mainCamera: {fileID: 0}
   rotationSpeed: 5
   walkingAudio: {fileID: 0}
