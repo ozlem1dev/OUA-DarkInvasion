@@ -34,6 +34,9 @@ public class PlayerMovementScript : MonoBehaviour
     Rigidbody rb;
     Animator _animator;
 
+    public float SpeedZ; //Çapraz yürümeler için bunun Z + X toplam hýzýný almasýný saðlýyoruz. Ýsim kafa karýþtýrmasýn.
+    public float SpeedX;
+
     public Camera mainCamera;
     public float rotationSpeed = 500f;
 
@@ -52,6 +55,17 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Update()
     {
+        _animator.SetBool("RightLeft", false);
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            _animator.SetBool("RightLeft", true);
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+            {
+                _animator.SetBool("RightLeft", false);
+            }
+        }
+
+
         MyInput();
         SpeedControl();
 
@@ -152,8 +166,20 @@ public class PlayerMovementScript : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
 
-        _animator.SetFloat("Speed", rb.velocity.magnitude);
-        Debug.Log("Animator hýzý:" + _animator.GetFloat("Speed"));
+        // Buna dönebiliriz
+        SpeedZ = orientation.forward.z * rb.velocity.z;
+        //SpeedZ = orientation.forward.z * (Math.Abs(rb.velocity.z) + Math.Abs(rb.velocity.x));
+        SpeedX = orientation.right.x * rb.velocity.x;
+
+        _animator.SetFloat("SpeedZ", SpeedZ);
+        _animator.SetFloat("SpeedX", SpeedX);
+
+        /*
+        Debug.Log("SpeedZ:" + _animator.GetFloat("SpeedZ"));
+        Debug.Log("Z velocity:" + rb.velocity.z);
+        Debug.Log("SpeedX:" + _animator.GetFloat("SpeedX"));
+        Debug.Log("X velocity:" + rb.velocity.x);
+        */
     }
 
     private void Jump()
