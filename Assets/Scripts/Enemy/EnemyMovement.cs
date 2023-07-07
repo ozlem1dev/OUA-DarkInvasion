@@ -25,10 +25,12 @@ public class EnemyMovement : MonoBehaviour
     public bool spawned1;
     public bool spawned2;
     public bool spawned3;
+    
 
+    
     private int currentWaypointIndex = 0;
     private bool isAttacked;
-
+    
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -59,9 +61,10 @@ public class EnemyMovement : MonoBehaviour
         {
             Attack();
         }
+        
 
     }
-
+    
     void Forward()
     {
         if (currentWaypointIndex < waypoints.Length)
@@ -93,22 +96,29 @@ public class EnemyMovement : MonoBehaviour
 
     void ChasePlayer()
     {
-        agent.speed = moveSpeed;
-        // Hedefi ayarla
-        agent.SetDestination(player.position);
+        
+            agent.speed = moveSpeed;
+            // Hedefi ayarla
+            agent.SetDestination(player.position);
+        
+        
     }
 
     void Attack()
     {
+
         transform.LookAt(player);
         var playerHealth = player.GetComponent<CharacterHealth>();
         agent.SetDestination(transform.position);
 
-
         if (!isAttacked && playerHealth != null)
         {
+            
+            
+            
             if (isRanged)
             {
+
                 GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
 
@@ -136,4 +146,6 @@ public class EnemyMovement : MonoBehaviour
     {
         isAttacked = false;
     }
+
+    
 }

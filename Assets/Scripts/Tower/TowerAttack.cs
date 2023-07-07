@@ -13,7 +13,8 @@ public class TowerAttack : MonoBehaviour
     public float fireRate = 1f;
     public GameObject bulletPre;
     public Transform firePoint;
-
+    public bool isAttackStop = false;
+    private float stopAttack = 7f;
     /*public Transform partRotate;
     public float turnSpeed=5f;*/
 
@@ -23,6 +24,7 @@ public class TowerAttack : MonoBehaviour
 
     void Start()
     {
+        
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -38,7 +40,7 @@ public class TowerAttack : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partRotate.rotation,lookRotation,Time.deltaTime*turnSpeed).eulerAngles;
         partRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);*/
 
-        if (fireCountdown <= 0f)
+        if (fireCountdown <= 0f && isAttackStop == false)
         {
             Shoot();
             fireCountdown = 1f / fireRate;
@@ -48,8 +50,8 @@ public class TowerAttack : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
-        TowerBullet bullet = bulletGO.GetComponent<TowerBullet>();
+        GameObject bulletObejct = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
+        TowerBullet bullet = bulletObejct.GetComponent<TowerBullet>();
 
         if (bullet != null)
         {
@@ -87,5 +89,22 @@ public class TowerAttack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void StopAttack()
+    {
+       isAttackStop = true;
+        StartCoroutine(PreventAttack());
+
+
+    }
+    public IEnumerator PreventAttack()
+    {
+
+        yield return new WaitForSeconds(stopAttack);
+
+        isAttackStop = false;
+
+
     }
 }
