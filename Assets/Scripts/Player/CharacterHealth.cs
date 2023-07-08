@@ -9,20 +9,32 @@ public class CharacterHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
+
+    Animator _animator;
+
+
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
+
         currentHealth = maxHealth;
         Debug.Log("Güncel can : " + currentHealth);
     }
-    void Start()
+
+
+    //void Start()
+    //{
+    //    UpdateHealthBar();
+    //}
+
+
+    private void Update()
     {
-        
-        
         UpdateHealthBar();
+        _animator.SetInteger("Health", currentHealth);
     }
 
 
-    
     public void takeDamage(int amount)
     {
         currentHealth -= amount;

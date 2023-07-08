@@ -8,63 +8,74 @@ public class CharacterSkill : MonoBehaviour
 {
     public Transform skillSpawnPoint;
     public GameObject skillPrefab;
+
     public float skillSpeed = 10;
+
     private bool canUseSkill = true;
-    public float skillCooldown = 3f;
-    private float skillTimer = 0f;
+    private bool isManaRefilling = false; // Yeniden dolum iþlemi devam ediyor mu?
+
+
+    //public float skillCooldown = 3f;
+    //private float skillTimer = 0f;
 
     public Animator _animator;
-
-    /*private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }*/
 
 
     void Update()
     {
-        
-        if (!canUseSkill)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            // Cooldown süresi boyunca bekleyin
-            skillTimer += Time.deltaTime;
-            if (skillTimer >= skillCooldown)
+            Debug.Log(GetComponentInParent<CharacterMana>().currentMana);
+            if (canUseSkill)
             {
-                // Cooldown süresi tamamlandý, skill kullanima açýk hale gelir
-                canUseSkill = true;
-                skillTimer = 0f;
-            }
-        }
+                Debug.Log("Q tuþuna basýldý");
 
-        if (Input.GetKeyDown(KeyCode.Q) && canUseSkill)
-        {
-            Debug.Log("Q tusuna basildi");
-
-            if (GetComponentInParent<CharacterMana>().currentMana > 30f)
-            {
-                _animator.SetBool("Grenade", true);
-                
-                gameObject.GetComponentInParent<CharacterMana>().Skill(30f);
-
-                var skill = Instantiate(skillPrefab, skillSpawnPoint.position, skillSpawnPoint.rotation);
-                skill.GetComponent<Rigidbody>().velocity = skillSpawnPoint.forward * skillSpeed;
+                StartCoroutine(ThrowBombWithDelay(2f)); // 2 saniye gecikmeyle bomba atma iþlemini baþlatýr
                 canUseSkill = false;
 
-                StartCoroutine(ResetThrowingBombCoroutine());
+                // Mana sýfýrlanýr ve aþamalý olarak yenilenmeye baþlar
+                GetComponentInParent<CharacterMana>().currentMana = 0f;
+                StartCoroutine(RefillManaOverTime(0.5f, 5f)); // 5 saniyede 20 birim mana yenilenmesi
             }
             else
             {
-                Debug.Log("Mana yetersizke");
+                Debug.Log("Mana yetersiz.");
             }
-
         }
-        
     }
 
-    IEnumerator ResetThrowingBombCoroutine()
+    IEnumerator ThrowBombWithDelay(float delay)
     {
-        yield return new WaitForSeconds(2f); // 1 saniye bekle
+        Debug.Log("Bomba atýlýyor.");
+        _animator.SetBool("Grenade", true);
 
-        _animator.SetBool("Grenade", false); // Bomba atma durumunu false yap
+        yield return new WaitForSeconds(delay);
+
+        var skill = Instantiate(skillPrefab, skillSpawnPoint.position, skillSpawnPoint.rotation);
+        skill.GetComponent<Rigidbody>().velocity = skillSpawnPoint.forward * skillSpeed;
+
+        _animator.SetBool("Grenade", false);
+    }
+
+
+    IEnumerator RefillManaOverTime(float refillDuration, float refillAmount)
+    {
+        isManaRefilling = true;
+
+        while (isManaRefilling)
+        {
+            yield return new WaitForSeconds(refillDuration);
+
+            GetComponentInParent<CharacterMana>().currentMana += refillAmount;
+
+            if (GetComponentInParent<CharacterMana>().currentMana >= 100f)
+            {
+                GetComponentInParent<CharacterMana>().currentMana = 100f;
+                isManaRefilling = false;
+
+                // Mana tamamen dolduðunda kontrol edilir ve kullanýma açýk hale gelir
+                canUseSkill = true;
+            }
+        }
     }
 }

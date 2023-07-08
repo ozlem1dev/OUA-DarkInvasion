@@ -36,6 +36,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public float SpeedZ; //Çapraz yürümeler için bunun Z + X toplam hýzýný almasýný saðlýyoruz. Ýsim kafa karýþtýrmasýn.
     public float SpeedX;
+    public float SpeedY;
 
     public Camera mainCamera;
     public float rotationSpeed = 500f;
@@ -121,6 +122,7 @@ public class PlayerMovementScript : MonoBehaviour
             groundCounter++;
             isGrounded = true;
             canJump = true;
+            _animator.SetBool("Grounded", true);
         }
     }
 
@@ -158,6 +160,11 @@ public class PlayerMovementScript : MonoBehaviour
             currentMoveSpeed = moveSpeed;
         }
 
+        if(GetComponent<CharacterFire>().isReloading) 
+        { 
+            currentMoveSpeed = moveSpeed;
+        }
+
         rb.AddForce(moveDirection.normalized * currentMoveSpeed * 10f, ForceMode.Force);
 
         if (isGrounded)
@@ -176,24 +183,91 @@ public class PlayerMovementScript : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
 
+        //Debug.Log(orientation.forward.x);
         // Buna dönebiliriz
-        SpeedZ = orientation.forward.z * rb.velocity.z;
+        if(Math.Abs(orientation.forward.z) > Math.Abs(orientation.forward.x)) 
+        {
+            if (Math.Abs(orientation.forward.z) >= Math.Abs(orientation.right.x))
+            {
+                if (rb.velocity.z < 0)
+                {
+                    SpeedZ = orientation.forward.z * -1 * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+                else
+                {
+                    SpeedZ = orientation.forward.z * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+
+                SpeedX = orientation.right.x * rb.velocity.x;
+            }
+            else
+            {
+                if (rb.velocity.x < 0)
+                {
+                    SpeedX = orientation.right.x * -1 * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+                else
+                {
+                    SpeedX = orientation.right.x * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+
+                SpeedZ = orientation.forward.z * rb.velocity.z;
+            }
+        }
+        else
+        {
+            if (Math.Abs(orientation.forward.x) >= Math.Abs(orientation.right.z))
+            {
+                if (rb.velocity.x < 0)
+                {
+                    SpeedZ = orientation.forward.x * -1 * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+                else
+                {
+                    SpeedZ = orientation.forward.x * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+
+                SpeedX = orientation.right.z * rb.velocity.z;
+            }
+            else
+            {
+                if (rb.velocity.z < 0)
+                {
+                    SpeedX = orientation.right.z * -1 * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+                else
+                {
+                    SpeedX = orientation.right.z * (Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.z));
+                }
+
+                SpeedZ = orientation.forward.x * rb.velocity.x;
+            }
+           
+        }
+
+        SpeedY = orientation.forward.y * rb.velocity.y;
+
         //SpeedZ = orientation.forward.z * (Math.Abs(rb.velocity.z) + Math.Abs(rb.velocity.x));
-        SpeedX = orientation.right.x * rb.velocity.x;
 
         _animator.SetFloat("SpeedZ", SpeedZ);
         _animator.SetFloat("SpeedX", SpeedX);
 
-        /*
-        Debug.Log("SpeedZ:" + _animator.GetFloat("SpeedZ"));
-        Debug.Log("Z velocity:" + rb.velocity.z);
-        Debug.Log("SpeedX:" + _animator.GetFloat("SpeedX"));
-        Debug.Log("X velocity:" + rb.velocity.x);
-        */
+        if(SpeedX <= 0.01 && SpeedY <= 0.01 && SpeedZ <= 0.01)
+        {
+            _animator.SetBool("Moving", false);
+        }
+        else { _animator.SetBool("Moving", true); }
+
+        //Debug.Log("SpeedZ:" + _animator.GetFloat("SpeedZ"));
+        //Debug.Log("Z velocity:" + rb.velocity.z);
+        //Debug.Log("SpeedX:" + _animator.GetFloat("SpeedX"));
+        //Debug.Log("X velocity:" + rb.velocity.x);
+
     }
 
     private void Jump()
     {
+        _animator.SetBool("Grounded", false);
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);

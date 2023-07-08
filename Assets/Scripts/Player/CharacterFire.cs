@@ -14,7 +14,7 @@ public class CharacterFire : MonoBehaviour
     public int clipSize = 30;
     private int currentAmmo;
     private int currentClip;
-    private bool isReloading = false;
+    public bool isReloading = false;
     public Text ammoText;
     public float fireCooldown = 0.2f;
     private float nextFireTime = 0f;
@@ -24,7 +24,12 @@ public class CharacterFire : MonoBehaviour
     public GameObject muzzleFlashPrefab;
     public Transform muzzleFlashSpawnPoint;
 
+    Animator _animator;
 
+    private void Awake()
+    {
+        _animator= GetComponent<Animator>();
+    }
 
 
     private void Start()
@@ -74,10 +79,11 @@ public class CharacterFire : MonoBehaviour
     private IEnumerator Reload()
     {
         isReloading = true;
+        _animator.SetBool("Reloading", isReloading);
         // Þarjör deðiþme animasyonu oynatýlabilir.
         AudioSource.PlayClipAtPoint(reloadAudio, transform.position);
 
-        yield return new WaitForSeconds(1f); // Örnek olarak 1 saniye bekleme süresi.
+        yield return new WaitForSeconds(2f); // Örnek olarak 1 saniye bekleme süresi.
 
         int ammoNeeded = clipSize - currentClip;
         int ammoToReload = Mathf.Min(ammoNeeded, currentAmmo);
@@ -85,6 +91,7 @@ public class CharacterFire : MonoBehaviour
         currentClip += ammoToReload;
 
         isReloading = false;
+        _animator.SetBool("Reloading", isReloading);
         UpdateAmmoText();
     }
 
