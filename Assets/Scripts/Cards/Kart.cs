@@ -14,11 +14,12 @@ public class Kart
     public int maxLevel { get; set; }
     public int lvl { get; set; }
     public int cost { get; set; }
-
+    public GameObject prefabTower;
     public Sprite gorsel { get; set; }
 
     public delegate void KartSecildigindeHandler();
     public event KartSecildigindeHandler KartSecildiginde;
+
     private static int kartSayac = 0;
     public Kart()
     {
