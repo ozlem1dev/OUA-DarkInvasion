@@ -19,7 +19,7 @@ public class GrenadePrefabScript : MonoBehaviour
         yield return new WaitForSeconds(delay);
         AudioSource.PlayClipAtPoint(grenadeExplosionAudio, transform.position);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 100f);
 
         foreach (Collider collider in colliders)
         {

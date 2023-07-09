@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +10,8 @@ public class CharacterFire : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
 
-    public int maxAmmo = 210;
     public int clipSize = 30;
-    private int currentAmmo;
-    private int currentClip;
+    public int currentClip;
     public bool isReloading = false;
     public Text ammoText;
     public float fireCooldown = 0.2f;
@@ -34,10 +32,10 @@ public class CharacterFire : MonoBehaviour
 
     private void Start()
     {
-        currentAmmo = maxAmmo;
         currentClip = clipSize;
         UpdateAmmoText();
     }
+
     void Update()
     {
         if (isReloading)
@@ -47,10 +45,10 @@ public class CharacterFire : MonoBehaviour
         {
             Fire();
             UpdateAmmoText();
-            nextFireTime = Time.time + fireCooldown; // Bir sonraki ateş etme zamanını ayarla
+            nextFireTime = Time.time + fireCooldown; // Bir sonraki ateÅŸ etme zamanÄ±nÄ± ayarla
         }
 
-        if ((Input.GetKeyDown(KeyCode.R) || (currentClip == 0)) && currentAmmo > 0 && currentClip < clipSize)
+        if ((Input.GetKeyDown(KeyCode.R) || (currentClip == 0)) && currentClip < clipSize)
         {
             StartCoroutine(Reload());
             UpdateAmmoText();
@@ -66,10 +64,10 @@ public class CharacterFire : MonoBehaviour
 
         currentClip--;
 
-        // Muzzle flash efektini oluştur
+        // Muzzle flash efektini oluÅŸtur
         var muzzleFlash = Instantiate(muzzleFlashPrefab, muzzleFlashSpawnPoint.position, muzzleFlashSpawnPoint.rotation);
 
-        // Muzzle flash efektini bir süre sonra yok et
+        // Muzzle flash efektini bir sÃ¼re sonra yok et
         Destroy(muzzleFlash, 0.1f);
 
         AudioSource.PlayClipAtPoint(fireAudio, transform.position);
@@ -80,14 +78,13 @@ public class CharacterFire : MonoBehaviour
     {
         isReloading = true;
         _animator.SetBool("Reloading", isReloading);
-        // Şarjör değişme animasyonu oynatılabilir.
+        // ÅarjÃ¶r deÄŸiÅŸme animasyonu oynatÄ±labilir.
         AudioSource.PlayClipAtPoint(reloadAudio, transform.position);
 
-        yield return new WaitForSeconds(2f); // Örnek olarak 1 saniye bekleme süresi.
+        yield return new WaitForSeconds(2f); // Ã–rnek olarak 1 saniye bekleme sÃ¼resi.
 
         int ammoNeeded = clipSize - currentClip;
-        int ammoToReload = Mathf.Min(ammoNeeded, currentAmmo);
-        currentAmmo -= ammoToReload;
+        int ammoToReload = ammoNeeded;
         currentClip += ammoToReload;
 
         isReloading = false;
@@ -95,9 +92,9 @@ public class CharacterFire : MonoBehaviour
         UpdateAmmoText();
     }
 
-    private void UpdateAmmoText()
+    public void UpdateAmmoText()
     {
-        ammoText.text = string.Format("{0}/{1}", currentClip, currentAmmo);
+        ammoText.text = string.Format("{0}/{1}", currentClip, "âˆ");
     }
 
 }

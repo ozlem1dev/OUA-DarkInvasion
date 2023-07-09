@@ -107,6 +107,7 @@ public class PlayerMovementScript : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        Rotation();
     }
 
     private void MyInput()
@@ -142,10 +143,10 @@ public class PlayerMovementScript : MonoBehaviour
         
 
     //}
-    private void LateUpdate()
-    {
-        Rotation();
-    }
+    //private void LateUpdate()
+    //{
+    //    Rotation();
+    //}
 
     private void MovePlayer()
     {
