@@ -14,17 +14,17 @@ public class Spawner : MonoBehaviour
     public Transform[] waypoints1;
     public Transform[] waypoints2;
     public Transform[] waypoints3;
-    public Transform player;
+    public GameObject soldier;
     public List<GameObject> Enemies = new List<GameObject>();
     public List<GameObject> ActiveEnemies = new List<GameObject>();
     public int stopNumber;
     public bool cantSpawn1;
-    public bool cantSpawn2=true;
-    public bool cantSpawn3=true;
-    public int enemyCount=0;
+    public bool cantSpawn2 = true;
+    public bool cantSpawn3 = true;
+    public int enemyCount = 0;
+
     public GameObject characterPanel;
     public GameObject bookPanel;
-
 
     private bool isButtonPressed = false;
     private float nextSpawnTime1;
@@ -32,12 +32,21 @@ public class Spawner : MonoBehaviour
     private float nextSpawnTime3;
     private LevelControl level;
 
+    private bool isCardSelection = true;
+
+    CharacterFire _characterfire;
+    KartMek _kartmek;
+
     private void Start()
     {
         cantSpawn1 = false;
         cantSpawn2 = true;
         cantSpawn3 = true;
+
         level = gameObject.GetComponent<LevelControl>();
+        _kartmek = bookPanel.GetComponent<KartMek>();
+        _characterfire = soldier.GetComponent<CharacterFire>();
+
         InLevelCheck();
         level.currentLevel = level.levelNumber;
     }
@@ -125,36 +134,71 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
-        if(Input.GetKeyDown(KeyCode.B )&& !bookPanel.activeSelf) 
+        if (Enemies.All(x => x == null) && isCardSelection)
         {
-            if(Enemies.All(x => x == null))
-            {
-                characterPanel.SetActive(false);
-                bookPanel.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            Debug.Log(_characterfire.currentClip);
+            isCardSelection = false;
+
+            StartCoroutine(DelayedDisplayCards());
+        }
+
+        // B tuþu ile kitabý açýp kapatabilmek için.
+        //    if (Input.GetKeyDown(KeyCode.B )&& !bookPanel.activeSelf) 
+        //{
+        //    if(Enemies.All(x => x == null))
+        //    {
+        //        _characterfire.clipSize = 30;
+        //        _kartmek.DisplayCards();
+                
+        //        characterPanel.SetActive(false);
+        //        bookPanel.SetActive(true);
+        //        Cursor.lockState = CursorLockMode.None;
+        //        Cursor.visible = true;
+        //    }
             
-        }
-        else if (Input.GetKeyDown(KeyCode.B) && bookPanel.activeSelf)
-        {
-            characterPanel.SetActive(true);
-            bookPanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        //}
+        //else if (Input.GetKeyDown(KeyCode.B) && bookPanel.activeSelf)
+        //{
+        //    characterPanel.SetActive(true);
+        //    bookPanel.SetActive(false);
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //    Cursor.visible = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed)
         {
+            _characterfire.currentClip = 30;
+            _characterfire.UpdateAmmoText();
+
+            Debug.Log(_characterfire.currentClip);
             if (Enemies.All(obj => obj == null))
             {
                 isButtonPressed = true;
                 Enemies.RemoveAll(obj => obj == null || obj.Equals(null));
                 enemyCount = 0;
-                StartCoroutine(DelayedLevelStart());
+
+                StartCoroutine(DelayedLevelStart()); 
             }
         }
     }
+
+    void DisplayCardsOnScreen()
+    {
+        characterPanel.SetActive(false);
+        bookPanel.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        _kartmek.DisplayCards();
+    }
+
+    IEnumerator DelayedDisplayCards()
+    {
+        yield return new WaitForSeconds(3f);
+        DisplayCardsOnScreen();
+    }
+
 
     IEnumerator DelayedLevelStart()
     {
@@ -162,6 +206,8 @@ public class Spawner : MonoBehaviour
         level.LevelStart();
         InLevelCheck();
         isButtonPressed = false; // Butonun tekrar basýlabileceðini iþaretlemek için false yapýlýyor
+
+        isCardSelection = true;
     }
 
     private void WaypointGiver1()
@@ -171,7 +217,7 @@ public class Spawner : MonoBehaviour
             if (enemy != null)
             {
                 EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
-                enemyMovement.player = player;
+                enemyMovement.player = soldier.transform;
 
                 if (enemyMovement.spawned1 == true)
                 {

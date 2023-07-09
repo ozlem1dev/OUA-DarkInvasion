@@ -26,10 +26,13 @@ public class KartMek : MonoBehaviour
     [SerializeField] public List<Transform> Coordinates = new List<Transform>();
 
     [SerializeField] public List<GameObject> Prefabs = new List<GameObject>();
-    
-    private int oyuncuSeviyesi = 4; // Örnek olarak oyuncu seviyesi 4 olarak kabul edildi
 
-    void Start()
+    List<GameObject> cardObjectList = new List<GameObject>();
+
+
+    public GameObject soldier;
+
+    void Awake()
     {
         
         eventSystem=GameObject.Find("Event System");
@@ -293,11 +296,17 @@ public class KartMek : MonoBehaviour
 
         // ---------------------------------------------------------------------------
         // Kartları rastgele yerleştir
-        DisplayCards();
+        
     }
 
-    private void DisplayCards()
+    public void DisplayCards()
     {
+        soldier.SetActive(false);
+
+        foreach (var item in cardObjectList)
+        {
+            Destroy(item);
+        }
         aktifKartlar.Clear();
 
         List<int> kullanilanIndexler = new List<int>(); // Kullanılan kart indekslerini tutmak için liste
@@ -307,6 +316,8 @@ public class KartMek : MonoBehaviour
             // Kartı Instantiate et ve gerekli özellikleri ayarla
             Kart secilenKart = SecilenKartiGetir(kullanilanIndexler);
             GameObject cardObject = Instantiate(Prefabs[secilenKart.lvl - 1], Coordinates[i].position, Quaternion.identity, gameObject.transform);
+
+            cardObjectList.Add(cardObject);
 
             // Event sistemini kullanarak tıklama işlemini dinle
             Button kartButton = cardObject.GetComponent<Button>();

@@ -300,7 +300,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7219921213857288090
 GameObject:
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
-  grenadeDamage: 20
+  grenadeDamage: 50
   grenadeExplosionAudio: {fileID: 8300000, guid: 01277124fd5cb4a4e89b86b5566004ed, type: 3}
   explosionPrefab: {fileID: 100006, guid: 4575df893a6e3f64a8283dee38413a34, type: 3}
 --- !u!1 &8763531286957064706

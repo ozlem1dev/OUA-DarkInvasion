@@ -30,7 +30,6 @@ public class EnemyHealth : MonoBehaviour
 
         UpdateHealthBar();
         Debug.Log("Düþman güncel can : " + currentHealth);
-
     }
 
     private void UpdateHealthBar()

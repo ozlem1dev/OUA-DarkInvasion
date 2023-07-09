@@ -9,7 +9,7 @@ public class CharacterSkill : MonoBehaviour
     public Transform skillSpawnPoint;
     public GameObject skillPrefab;
 
-    public float skillSpeed = 10;
+    public float skillSpeed = 20;
 
     private bool canUseSkill = true;
     private bool isManaRefilling = false; // Yeniden dolum iþlemi devam ediyor mu?

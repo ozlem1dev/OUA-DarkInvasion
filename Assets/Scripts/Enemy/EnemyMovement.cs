@@ -26,8 +26,6 @@ public class EnemyMovement : MonoBehaviour
     public bool spawned2;
     public bool spawned3;
     
-
-    
     private int currentWaypointIndex = 0;
     private bool isAttacked;
     

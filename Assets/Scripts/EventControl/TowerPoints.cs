@@ -12,7 +12,7 @@ public class TowerPoints : MonoBehaviour
     public GameObject characterPanel;
     public GameObject towerPanel;
     public GameObject bookPanel;
-    public  bool isSelectCreatedTowerCard=false;
+    public bool isSelectCreatedTowerCard = false;
     public bool isDone = false;
     public static int currentIndex = 0;
 
@@ -40,6 +40,11 @@ public class TowerPoints : MonoBehaviour
 
         if (Points.Count != 0 && Points != null && Points[currentIndex] != null)
         {
+            // Kule koyarken kamera uzaklýðýný deðiþtirir.
+            CinemachineFreeLook.Orbit[] _orbits = cameraa.GetComponent<CinemachineFreeLook>().m_Orbits;
+            _orbits[1].m_Height = 50;
+            _orbits[1].m_Radius = 20;
+
             cameraa.GetComponent<CinemachineFreeLook>().Follow = Points[currentIndex].transform;
             cameraa.GetComponent<CinemachineFreeLook>().LookAt = Points[currentIndex].transform;
         }
@@ -47,6 +52,12 @@ public class TowerPoints : MonoBehaviour
 
     public void FollowCharacter()
     {
+        soldier.SetActive(true);
+
+        CinemachineFreeLook.Orbit[] _orbits = cameraa.GetComponent<CinemachineFreeLook>().m_Orbits;
+        _orbits[1].m_Height = 4;
+        _orbits[1].m_Radius = 7;
+
         cameraa.GetComponent<CinemachineFreeLook>().Follow = soldier.transform;
         cameraa.GetComponent<CinemachineFreeLook>().LookAt = soldier.transform;
 
@@ -73,5 +84,5 @@ public class TowerPoints : MonoBehaviour
             FollowSpawnPoint();
         }
     }
-    
+
 }

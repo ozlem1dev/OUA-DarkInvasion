@@ -30,9 +30,12 @@ public class BulletScript : MonoBehaviour
             AudioSource.PlayClipAtPoint(bulletHitAudio, transform.position);
 
             // Kan efekti oluþtur
-            GameObject bloodEffect = Instantiate(bloodEffectPrefab, collision.contacts[0].point, Quaternion.identity);
-            Destroy(bloodEffect, 1f); // Kan efektini bir süre sonra yok etmek için
+            Quaternion rotation = Quaternion.LookRotation(gameObject.transform.forward);
+            GameObject bloodEffect = Instantiate(bloodEffectPrefab, collision.contacts[0].point, Quaternion.Inverse(rotation), collision.gameObject.transform);
+            Destroy(bloodEffect, 5f); // Kan efektini bir süre sonra yok etmek için
         }
+        
+         //collision.gameObject.transform.position
         else
         {
             GameObject bulletTrail = Instantiate(bulletTrailPrefab, transform.position, Quaternion.identity);
