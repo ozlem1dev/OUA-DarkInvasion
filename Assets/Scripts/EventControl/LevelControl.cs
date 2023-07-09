@@ -17,14 +17,14 @@ public class LevelControl : MonoBehaviour
     }
     public void LevelCheck()
     {
-        if (spawner.enemyCount == spawner.stopNumber)
+        if (spawner.enemyCount >= spawner.stopNumber)
         {
 
             spawner.cantSpawn1 = true;
             spawner.cantSpawn2 = true;
             spawner.cantSpawn3 = true;
 
-            spawner.enemyCount = 0;
+            //spawner.enemyCount = 0;
         }
     }
     public void LevelStart()
@@ -33,6 +33,15 @@ public class LevelControl : MonoBehaviour
         {
             currentLevel++;
             spawner.cantSpawn1 = false;
+            
+            if (currentLevel >= 2)
+            {
+                spawner.cantSpawn2 = false;
+            }
+            if (currentLevel >= 3)
+            {
+                spawner.cantSpawn3 = false;
+            }
             Debug.Log(currentLevel + ". level baþladý");
         }
     }

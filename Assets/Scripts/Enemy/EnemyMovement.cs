@@ -129,7 +129,7 @@ public class EnemyMovement : MonoBehaviour
 
                 Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
                 sphereRigidbody.velocity = direction * 10f;
-                Debug.Log(sphereRigidbody.velocity);
+                //Debug.Log(sphereRigidbody.velocity);
             }
             else if (!isRanged)
             {

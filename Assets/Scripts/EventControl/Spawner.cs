@@ -21,12 +21,12 @@ public class Spawner : MonoBehaviour
     public bool cantSpawn1;
     public bool cantSpawn2=true;
     public bool cantSpawn3=true;
-    public int enemyCount;
-    
+    public int enemyCount=0;
+    public GameObject characterPanel;
+    public GameObject bookPanel;
+
 
     private bool isButtonPressed = false;
-
-
     private float nextSpawnTime1;
     private float nextSpawnTime2;
     private float nextSpawnTime3;
@@ -43,14 +43,7 @@ public class Spawner : MonoBehaviour
     }
     private void Update()
     {
-        if(level.currentLevel>=2) 
-        {
-            cantSpawn2 = false;
-        }
-        if (level.currentLevel >= 3)
-        {
-            cantSpawn3 = false;
-        }
+        
         WaypointGiver1();
         if (Time.time >= nextSpawnTime1 && !cantSpawn1)//spawn
         {
@@ -93,7 +86,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy2()
     {
-        Debug.Log("2.spawn");
+        
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint2.Length);
 
@@ -104,7 +97,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy3()
     {
-        Debug.Log("2.spawn");
+        
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint3.Length);
 
@@ -122,7 +115,7 @@ public class Spawner : MonoBehaviour
 
             if (x.minLvl <= level.currentLevel && x.maxLvl >= level.currentLevel)
             {
-                Debug.Log(x.name + " min " + x.minLvl + " max " + x.maxLvl + " current level: " + level.currentLevel);
+                
 
                 ActiveEnemies.Add(enemy);
             }
@@ -132,12 +125,32 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
+        if(Input.GetKeyDown(KeyCode.B )&& !bookPanel.activeSelf) 
+        {
+            if(Enemies.All(x => x == null))
+            {
+                characterPanel.SetActive(false);
+                bookPanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.B) && bookPanel.activeSelf)
+        {
+            characterPanel.SetActive(true);
+            bookPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed)
         {
             if (Enemies.All(obj => obj == null))
             {
                 isButtonPressed = true;
                 Enemies.RemoveAll(obj => obj == null || obj.Equals(null));
+                enemyCount = 0;
                 StartCoroutine(DelayedLevelStart());
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,11 @@ using Random = UnityEngine.Random;
 
 public class KartMek : MonoBehaviour
 {
+    public static GameObject towerPrefab;
+    GameObject eventSystem;
+    TowerPoints towerPoints;
+    LevelControl levelControl;
+    public List<GameObject> towerPrefabList=new List<GameObject>();
     private List<Kart> kartListesi = new List<Kart>();
 
     private List<Kart> aktifKartlar = new List<Kart>();
@@ -25,6 +31,10 @@ public class KartMek : MonoBehaviour
 
     void Start()
     {
+        
+        eventSystem=GameObject.Find("Event System");
+        levelControl=eventSystem.GetComponent<LevelControl>();
+        towerPoints=eventSystem.GetComponent<TowerPoints>();
         // Kartları oluştur ve listeye ekle
         // --------------------------------------------------
         // Kule inşa etme kartları
@@ -39,6 +49,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 5,
             cost = 5,
+            prefabTower=towerPrefabList.FirstOrDefault(x=>x.name==("archer tower"))
         };
         okcuKulesiOlusturmaKarti.KartSecildiginde += OkcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(okcuKulesiOlusturmaKarti);
@@ -54,7 +65,8 @@ public class KartMek : MonoBehaviour
             minLevel = 1,
             maxLevel = 10,
             lvl = 2,
-            cost = 4
+            cost = 4,
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("catapult tower"))
         };
         topcuKulesiOlusturmaKarti.KartSecildiginde += TopcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(topcuKulesiOlusturmaKarti);
@@ -70,7 +82,8 @@ public class KartMek : MonoBehaviour
             minLevel = 1,
             maxLevel = 10,
             lvl = 2,
-            cost = 4
+            cost = 4,
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("mage tower"))
         };
         buyucuKulesiOlusturmaKarti.KartSecildiginde += BuyucuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(buyucuKulesiOlusturmaKarti);
@@ -86,7 +99,8 @@ public class KartMek : MonoBehaviour
             minLevel = 1,
             maxLevel = 10,
             lvl = 2,
-            cost = 4
+            cost = 4,
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ballista tower"))
         };
         balistaKulesiOlusturmaKarti.KartSecildiginde += BalistaKulesiOlusturmaKartiSecildi;
         kartListesi.Add(balistaKulesiOlusturmaKarti);
@@ -102,7 +116,8 @@ public class KartMek : MonoBehaviour
             minLevel = 1,
             maxLevel = 10,
             lvl = 2,
-            cost = 4
+            cost = 4,
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("arbalet tower"))
         };
         arbaletKulesiOlusturmaKarti.KartSecildiginde += ArbaletKulesiOlusturmaKartiSecildi;
         kartListesi.Add(arbaletKulesiOlusturmaKarti);
@@ -118,7 +133,8 @@ public class KartMek : MonoBehaviour
             minLevel = 1,
             maxLevel = 10,
             lvl = 2,
-            cost = 4
+            cost = 4,
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("archer tower"))
         };
         mancinikKulesiOlusturmaKarti.KartSecildiginde += MancinikKulesiOlusturmaKartiSecildi;
         kartListesi.Add(mancinikKulesiOlusturmaKarti);
@@ -217,6 +233,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 2,
             cost = 4
+            
         };
         arbaletKulesiGelistirmeKarti.KartSecildiginde += ArbaletKulesiGelistirmeKartiSecildi;
         kartListesi.Add(arbaletKulesiGelistirmeKarti);
@@ -332,7 +349,7 @@ public class KartMek : MonoBehaviour
 
         foreach (Kart kart in kartListesi)
         {
-            if (kart.aktiflik && kart.kalanAdet > 0 && kart.minLevel <= oyuncuSeviyesi && kart.maxLevel >= oyuncuSeviyesi && !kullanilanIndexler.Contains(kart.indeks))
+            if (kart.aktiflik && kart.kalanAdet > 0 && kart.minLevel <= levelControl.currentLevel && kart.maxLevel >= levelControl.currentLevel && !kullanilanIndexler.Contains(kart.indeks))
             {
                 kullanilabilirKartlar.Add(kart);
             }
@@ -370,14 +387,22 @@ public class KartMek : MonoBehaviour
 
         return null;
     }
+    void SelectCreatedTowarCardSetTrue()
+    {
+        towerPoints.isSelectCreatedTowerCard = true;
+    }
     // Kart seçildiğinde çağrılacak olan olay işleyicileri
     private void OkcuKulesiOlusturmaKartiSecildi()
     {
+        SelectCreatedTowarCardSetTrue();
+        var x=kartListesi.FirstOrDefault(x => x.ad == "Okçu Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
         Debug.Log("Okçu Kulesi Oluşturma Kartı seçildi.");
         // Kartın seçildiğinde yapılması gereken işlemler burada gerçekleştirilir
     }
     private void OkcuKulesiGelistirmeKartiSecildi()
     {
+         
         Debug.Log("Okçu Kulesi Geliştirme Kartı seçildi.");
         // Kartın seçildiğinde yapılması gereken işlemler burada gerçekleştirilir
     }
@@ -390,57 +415,71 @@ public class KartMek : MonoBehaviour
 
     private void KarakterinSilahiniGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+        
     }
 
     private void MancinikKulesiGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+       
     }
 
     private void ArbaletKulesiGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+        
     }
 
     private void TopcuKulesiGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+        
     }
 
     private void BuyucuKulesiGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+       
     }
 
     private void MancinikKulesiOlusturmaKartiSecildi()
     {
-        throw new NotImplementedException();
+        var x = kartListesi.FirstOrDefault(x => x.ad == "Mancınık Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
+        SelectCreatedTowarCardSetTrue();
     }
 
     private void ArbaletKulesiOlusturmaKartiSecildi()
     {
-        throw new NotImplementedException();
+        var x = kartListesi.FirstOrDefault(x => x.ad == "Arbalet Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
+        SelectCreatedTowarCardSetTrue();
+        
     }
 
     private void BalistaKulesiOlusturmaKartiSecildi()
     {
-        throw new NotImplementedException();
+        var x = kartListesi.FirstOrDefault(x => x.ad == "Balista Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
+        SelectCreatedTowarCardSetTrue();
+        
     }
 
     private void TopcuKulesiOlusturmaKartiSecildi()
     {
-        throw new NotImplementedException();
+        var x = kartListesi.FirstOrDefault(x => x.ad == "Topçu Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
+        SelectCreatedTowarCardSetTrue();
+        
     }
 
     private void BuyucuKulesiOlusturmaKartiSecildi()
     {
-        throw new NotImplementedException();
+        var x = kartListesi.FirstOrDefault(x => x.ad == "Büyücü Kulesi Oluşturma Kartı");
+        towerPrefab = x.prefabTower;
+        SelectCreatedTowarCardSetTrue();
+        
     }
 
     private void TumKuleleriGelistirmeKartiSecildi()
     {
-        throw new NotImplementedException();
+        
     }
     //public void TextboxTiklandi(int textboxIndex)
     //{
