@@ -18,6 +18,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (!collided)
         {
             collided = true;
