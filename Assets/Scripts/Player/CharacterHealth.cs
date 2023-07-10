@@ -9,7 +9,8 @@ public class CharacterHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
-
+    public GameObject menu;
+    public GameObject characterPanel;
     Animator _animator;
 
 
@@ -41,6 +42,7 @@ public class CharacterHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Die();
         }
 
         UpdateHealthBar();
@@ -48,10 +50,17 @@ public class CharacterHealth : MonoBehaviour
 
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         float fill = (float)currentHealth / maxHealth;
         HealthBar.fillAmount = fill;
     }
-
+    public void Die()
+    {
+        characterPanel.SetActive(false);
+        menu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
+    }
 }

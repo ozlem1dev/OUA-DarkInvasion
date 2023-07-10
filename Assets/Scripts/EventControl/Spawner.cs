@@ -22,10 +22,11 @@ public class Spawner : MonoBehaviour
     public bool cantSpawn2 = true;
     public bool cantSpawn3 = true;
     public int enemyCount = 0;
-
+    public bool control=false;
     public GameObject characterPanel;
     public GameObject bookPanel;
 
+    public bool isDead = false;
     private bool isButtonPressed = false;
     private float nextSpawnTime1;
     private float nextSpawnTime2;
@@ -134,7 +135,7 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
-        if (Enemies.All(x => x == null) && isCardSelection)
+        if (Enemies.All(x => x == null) && isCardSelection && !control)
         {
             Debug.Log(_characterfire.currentClip);
             isCardSelection = false;

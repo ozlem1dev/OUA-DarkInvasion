@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class BaseHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
+    public GameObject menu;
+    public GameObject characterPanel;
 
 
     void Start()
@@ -33,7 +36,7 @@ public class BaseHealth : MonoBehaviour
 
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         float fill = (float)currentHealth / maxHealth;
         HealthBar.fillAmount = fill;
@@ -41,7 +44,10 @@ public class BaseHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("base patladý");
-        //DestroyImmediate(transform.root.gameObject);
+        characterPanel.SetActive(false);
+        menu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
 }
