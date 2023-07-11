@@ -52,7 +52,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 5,
             cost = 5,
-            prefabTower=towerPrefabList.FirstOrDefault(x=>x.name==("archer tower"))
+            prefabTower=towerPrefabList.FirstOrDefault(x=>x.name==("OkcuKulesi"))
         };
         okcuKulesiOlusturmaKarti.KartSecildiginde += OkcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(okcuKulesiOlusturmaKarti);
@@ -69,7 +69,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 2,
             cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("catapult tower"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("TopcuKulesi"))
         };
         topcuKulesiOlusturmaKarti.KartSecildiginde += TopcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(topcuKulesiOlusturmaKarti);
@@ -86,7 +86,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 2,
             cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("mage tower"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("BuyucuKulesi"))
         };
         buyucuKulesiOlusturmaKarti.KartSecildiginde += BuyucuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(buyucuKulesiOlusturmaKarti);
@@ -94,8 +94,8 @@ public class KartMek : MonoBehaviour
 
         Kart balistaKulesiOlusturmaKarti = new()
         {
-            ad = "Balista Kulesi Oluşturma Kartı",
-            aciklama = "Yeni bir balista kulesi inşa etmek için kullanılır.",
+            ad = "Zehir Kulesi Oluşturma Kartı",
+            aciklama = "Yeni bir zehir kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 4,
             olasilik = 0.1f,
@@ -103,7 +103,7 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 2,
             cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ballista tower"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ZehirKulesi"))
         };
         balistaKulesiOlusturmaKarti.KartSecildiginde += BalistaKulesiOlusturmaKartiSecildi;
         kartListesi.Add(balistaKulesiOlusturmaKarti);
@@ -120,27 +120,10 @@ public class KartMek : MonoBehaviour
             maxLevel = 10,
             lvl = 2,
             cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("arbalet tower"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ArbaletKulesi"))
         };
         arbaletKulesiOlusturmaKarti.KartSecildiginde += ArbaletKulesiOlusturmaKartiSecildi;
         kartListesi.Add(arbaletKulesiOlusturmaKarti);
-
-
-        Kart mancinikKulesiOlusturmaKarti = new()
-        {
-            ad = "Mancınık Kulesi Oluşturma Kartı",
-            aciklama = "Yeni bir mancınık kulesi inşa etmek için kullanılır.",
-            aktiflik = true,
-            kalanAdet = 4,
-            olasilik = 0.1f,
-            minLevel = 1,
-            maxLevel = 10,
-            lvl = 2,
-            cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("archer tower"))
-        };
-        mancinikKulesiOlusturmaKarti.KartSecildiginde += MancinikKulesiOlusturmaKartiSecildi;
-        kartListesi.Add(mancinikKulesiOlusturmaKarti);
 
         //----------------------------------------------------------
         // Kule geliştirme kartları

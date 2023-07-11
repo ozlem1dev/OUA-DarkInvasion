@@ -7,28 +7,32 @@ public class MenuButton : MonoBehaviour
 {
     Button button;
     public GameObject eventSystem;
-    LevelControl levelControl;
     Spawner spawner;
     public GameObject soldier;
     CharacterHealth characterHealth;
+    CharacterMana characterMana;
     public GameObject base0;
     BaseHealth baseHealth;
-    public  GameObject characterPanel;
+    public GameObject characterPanel;
     public GameObject menuPanel;
     void Start()
     {
-
-        button=gameObject.GetComponent<Button>();
-        spawner=eventSystem.GetComponent<Spawner>();
-        characterHealth=soldier.GetComponent<CharacterHealth>();
-        baseHealth=base0.GetComponent<BaseHealth>();
+        button = gameObject.GetComponent<Button>();
+        spawner = eventSystem.GetComponent<Spawner>();
+        characterHealth = soldier.GetComponent<CharacterHealth>();
+        characterMana = soldier.GetComponent<CharacterMana>();
+        baseHealth = base0.GetComponent<BaseHealth>();
         button.onClick.AddListener(() =>
         {
             foreach(GameObject enemy in spawner.Enemies) {
                 Destroy(enemy);
             }
+            
             characterHealth.currentHealth = 100;
             characterHealth.UpdateHealthBar();
+            characterMana.currentMana = 100;
+            characterMana.UpdateManaBar();
+
             baseHealth.currentHealth = 100;
             baseHealth.UpdateHealthBar();
             spawner.control = true;
@@ -37,10 +41,8 @@ public class MenuButton : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             spawner.isDead = true;
-            soldier.SetActive(false);
-            soldier.SetActive(true);
-            
-            
+            //soldier.SetActive(false);
+            //soldier.SetActive(true);
         });
     }
 
