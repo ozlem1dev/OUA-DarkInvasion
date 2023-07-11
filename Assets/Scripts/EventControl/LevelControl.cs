@@ -41,11 +41,11 @@ public class LevelControl : MonoBehaviour
 
             spawner.cantSpawn1 = false;
             
-            if (currentLevel >= 2)
+            if (currentLevel >= 6)
             {
                 spawner.cantSpawn2 = false;
             }
-            if (currentLevel >= 3)
+            if (currentLevel >= 12)
             {
                 spawner.cantSpawn3 = false;
             }

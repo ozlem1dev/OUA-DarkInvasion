@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 970322580}
-  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.57558453, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824785, g: 0.4982745, b: 0.5755849, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -41963,7 +41963,7 @@ MonoBehaviour:
   cantSpawn1: 0
   cantSpawn2: 0
   cantSpawn3: 0
-  enemyCount: 0
+  enemyCount: 5
   control: 0
   characterPanel: {fileID: 946462442}
   bookPanel: {fileID: 702476463}
@@ -48940,7 +48940,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140625495}
-  m_LocalRotation: {x: 0.05299509, y: 9.868153e-10, z: -5.2369983e-11, w: 0.9985948}
+  m_LocalRotation: {x: 0.052995097, y: -0.0000000065184533, z: 3.4593217e-10, w: 0.9985948}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
