@@ -1105,7 +1105,7 @@ Transform:
   - {fileID: 6140803658871188544}
   - {fileID: 5414928511566205742}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1735932072940491410
 Animator:
@@ -1227,13 +1227,13 @@ MonoBehaviour:
   inSight: 0
   inRange: 0
   moveSpeed: 3
-  attackDamage: 10
+  attackDamage: 15
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 1920572924757187237, guid: 6ef7f292142b86646bca3653ced3ee4a, type: 3}
   firePoint: {fileID: 6140803658871188544}
   isRanged: 1
-  minLvl: 2
-  maxLvl: 3
+  minLvl: 5
+  maxLvl: 15
   spawned1: 0
   spawned2: 0
   spawned3: 0
@@ -1252,6 +1252,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 70
   HealthBar: {fileID: 6678732614866659406}
+  cam: {fileID: 0}
+  canvas: {fileID: 5414928511566205742}
 --- !u!136 &8425743152157542732
 CapsuleCollider:
   m_ObjectHideFlags: 0

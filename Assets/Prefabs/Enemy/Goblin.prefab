@@ -1217,7 +1217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6388408760944688273}
-  m_LocalRotation: {x: -0.7064338, y: 0.030843573, z: 0.030843573, w: 0.7064338}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -140.42, y: 0.52, z: 228.37}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.09}
   m_ConstrainProportionsScale: 0
@@ -1228,7 +1228,7 @@ Transform:
   - {fileID: 5273493265275810253}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 5}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &6033465249833062696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1362,8 +1362,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   isRanged: 0
-  minLvl: 2
-  maxLvl: 3
+  minLvl: 8
+  maxLvl: 15
   spawned1: 0
   spawned2: 0
   spawned3: 0
@@ -1382,6 +1382,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 30
   HealthBar: {fileID: 9078738883904447294}
+  cam: {fileID: 0}
+  canvas: {fileID: 5273493265275810253}
 --- !u!136 &1022604108947771027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1401,10 +1403,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.8336763
-  m_Height: 5.486266
+  m_Radius: 1.9817047
+  m_Height: 3.9634092
   m_Direction: 1
-  m_Center: {x: 0.74023026, y: -1.2025458, z: 2.752943}
+  m_Center: {x: -0.123415135, y: -0.44111696, z: 2.752945}
 --- !u!1 &6470398755432052160
 GameObject:
   m_ObjectHideFlags: 0

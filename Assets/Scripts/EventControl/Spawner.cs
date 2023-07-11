@@ -170,7 +170,7 @@ public class Spawner : MonoBehaviour
         {
             _characterfire.currentClip = 30;
             _characterfire.UpdateAmmoText();
-
+            enemyCount += 5;
             Debug.Log(_characterfire.currentClip);
             if (Enemies.All(obj => obj == null))
             {

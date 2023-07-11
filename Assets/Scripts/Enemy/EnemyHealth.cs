@@ -8,16 +8,20 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Image HealthBar;
-    
+    public Camera cam;
+    public Transform canvas;
 
     void Start()
     {
-        
+        cam=Camera.main;
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
-
+    private void Update()
+    {
+        canvas.transform.LookAt(canvas.transform.position + cam.transform.forward);
+    }
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
