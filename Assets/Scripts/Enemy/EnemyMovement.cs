@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
-    [SerializeField] public Transform player;
+    public Transform player;
     public LayerMask ground, player0;
     public float attackCooldown;
     public float sightRange, attackRange;
@@ -25,12 +25,19 @@ public class EnemyMovement : MonoBehaviour
     public bool spawned1;
     public bool spawned2;
     public bool spawned3;
-    
+    CharacterHealth playerHealth;
+
+    GameObject soldier;
+
+
     private int currentWaypointIndex = 0;
     private bool isAttacked;
+
+    Animator _animator;
     
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
     }
@@ -38,29 +45,29 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         baseObject = GameObject.FindWithTag("Base");
+        soldier = GameObject.Find("Soldier_demo");
+        playerHealth = soldier.GetComponent<CharacterHealth>();
     }
 
     private void Update()
     {
-
         inSight = Physics.CheckSphere(transform.position, sightRange, player0);
         inRange = Physics.CheckSphere(transform.position, attackRange, player0);
 
         if (!inSight && !inRange)
         {
-
             Forward();
+            _animator.SetFloat("Speed", agent.speed);
         }
-        else if (inSight && !inRange)
+        else if (inSight && !inRange && playerHealth.currentHealth > 0)
         {
             ChasePlayer();
+            _animator.SetFloat("Speed", agent.speed);
         }
-        else if (inSight && inRange)
+        else if (inSight && inRange && playerHealth.currentHealth > 0)
         {
             Attack();
         }
-        
-
     }
     
     void Forward()
@@ -94,35 +101,24 @@ public class EnemyMovement : MonoBehaviour
 
     void ChasePlayer()
     {
-        
             agent.speed = moveSpeed;
             // Hedefi ayarla
             agent.SetDestination(player.position);
-        
-        
     }
 
     void Attack()
     {
-
         transform.LookAt(player);
-        var playerHealth = player.GetComponent<CharacterHealth>();
         agent.SetDestination(transform.position);
 
         if (!isAttacked && playerHealth != null)
         {
-            
-            
-            
             if (isRanged)
             {
-
                 GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-
-                Vector3 direction = player.transform.position - transform.position;
+                Vector3 direction = player.position - transform.position;
                 direction.Normalize();
-
 
 
                 Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
@@ -131,7 +127,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else if (!isRanged)
             {
-                
+                _animator.SetBool("Attack", true);
                 playerHealth.takeDamage(attackDamage);
             }
 
@@ -143,6 +139,7 @@ public class EnemyMovement : MonoBehaviour
     void AttackCooldown()
     {
         isAttacked = false;
+        _animator.SetBool("Attack", false);
     }
 
     

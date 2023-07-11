@@ -19,11 +19,7 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        if (!collided)
-        {
-            collided = true;
-            Destroy(gameObject);
-        }
+       
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
@@ -41,6 +37,12 @@ public class BulletScript : MonoBehaviour
         {
             GameObject bulletTrail = Instantiate(bulletTrailPrefab, transform.position, Quaternion.identity);
             Destroy(bulletTrail, 1f);
+        }
+
+         if (!collided)
+        {
+            collided = true;
+            Destroy(gameObject);
         }
     }
 }
