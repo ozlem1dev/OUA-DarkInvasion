@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class CharacterMana : MonoBehaviour
 {
-    public float maxMana = 100f;
+    public float maxMana;
     public float currentMana;
     public Image ManaBar;
     //public float manaRegenRate = 2f;
 
     void Start()
     {
-        currentMana = maxMana;
-        UpdateManaBar();
+        ResetMana();
     }
 
 
@@ -21,7 +20,7 @@ public class CharacterMana : MonoBehaviour
     {
         UpdateManaBar();
     }
-    
+
 
     public void UpdateManaBar()
     {
@@ -29,5 +28,9 @@ public class CharacterMana : MonoBehaviour
         ManaBar.fillAmount = fill;
     }
 
-
+    public void ResetMana()
+    {
+        currentMana = maxMana;
+        UpdateManaBar();
+    }
 }

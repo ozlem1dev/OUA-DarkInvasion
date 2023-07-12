@@ -10,9 +10,9 @@ public class CharacterSkill : MonoBehaviour
     public GameObject skillPrefab;
 
     public float skillSpeed = 20;
-
-    private bool canUseSkill = true;
-    private bool isManaRefilling = false; // Yeniden dolum iþlemi devam ediyor mu?
+    public float reloadMana;
+    public bool canUseSkill = true;
+    public bool isManaRefilling = false; // Yeniden dolum islemi devam ediyor mu?
 
 
     //public float skillCooldown = 3f;
@@ -28,14 +28,14 @@ public class CharacterSkill : MonoBehaviour
             Debug.Log(GetComponentInParent<CharacterMana>().currentMana);
             if (canUseSkill)
             {
-                Debug.Log("Q tuþuna basýldý");
+                Debug.Log("Q tusuna basildi");
 
-                StartCoroutine(ThrowBombWithDelay(2f)); // 2 saniye gecikmeyle bomba atma iþlemini baþlatýr
+                StartCoroutine(ThrowBombWithDelay(2f)); // 2 saniye gecikmeyle bomba atma islemini baslatir
                 canUseSkill = false;
 
-                // Mana sýfýrlanýr ve aþamalý olarak yenilenmeye baþlar
+                // Mana sifirlanir ve asamali olarak yenilenmeye baslar
                 GetComponentInParent<CharacterMana>().currentMana = 0f;
-                StartCoroutine(RefillManaOverTime(0.5f, 5f)); // 5 saniyede 20 birim mana yenilenmesi
+                StartCoroutine(RefillManaOverTime(0.5f, reloadMana)); // 5 saniyede 20 birim mana yenilenmesi
             }
             else
             {
@@ -68,12 +68,12 @@ public class CharacterSkill : MonoBehaviour
 
             GetComponentInParent<CharacterMana>().currentMana += refillAmount;
 
-            if (GetComponentInParent<CharacterMana>().currentMana >= 100f)
+            if (GetComponentInParent<CharacterMana>().currentMana >= GetComponentInParent<CharacterMana>().maxMana)
             {
-                GetComponentInParent<CharacterMana>().currentMana = 100f;
+                GetComponentInParent<CharacterMana>().currentMana = GetComponentInParent<CharacterMana>().maxMana;
                 isManaRefilling = false;
 
-                // Mana tamamen dolduðunda kontrol edilir ve kullanýma açýk hale gelir
+                // Mana tamamen doldugunda kontrol edilir ve kullanima acik hale gelir
                 canUseSkill = true;
             }
         }

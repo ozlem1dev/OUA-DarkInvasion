@@ -9,46 +9,45 @@ public class MenuButton : MonoBehaviour
     public GameObject eventSystem;
     Spawner spawner;
     public GameObject soldier;
-    CharacterHealth characterHealth;
-    CharacterMana characterMana;
     public GameObject base0;
-    BaseHealth baseHealth;
     public GameObject characterPanel;
     public GameObject menuPanel;
+    public GameObject characterSkill;
     void Start()
     {
         button = gameObject.GetComponent<Button>();
         spawner = eventSystem.GetComponent<Spawner>();
-        characterHealth = soldier.GetComponent<CharacterHealth>();
-        characterMana = soldier.GetComponent<CharacterMana>();
-        baseHealth = base0.GetComponent<BaseHealth>();
         button.onClick.AddListener(() =>
         {
-            foreach(GameObject enemy in spawner.Enemies) {
+            foreach (GameObject enemy in spawner.Enemies)
+            {
                 Destroy(enemy);
             }
-            
-            characterHealth.currentHealth = 100;
-            characterHealth.UpdateHealthBar();
-            characterMana.currentMana = 100;
-            characterMana.UpdateManaBar();
-
-            baseHealth.currentHealth = 100;
-            baseHealth.UpdateHealthBar();
-            spawner.control = true;
+            Resett();
+            spawner.isLose = true;
             menuPanel.SetActive(false);
             characterPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             spawner.isDead = true;
-            //soldier.SetActive(false);
-            //soldier.SetActive(true);
+
+            soldier.SetActive(false);
+            soldier.SetActive(true);
         });
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void Resett()
     {
-        
+        //soldier.SetActive(false);
+        //soldier.SetActive(true);
+        soldier.GetComponent<CharacterHealth>().ResetHealth();
+        soldier.GetComponent<CharacterFire>().ResetAmmo();
+        soldier.GetComponent<CharacterMana>().ResetMana();
+        characterSkill.GetComponent<CharacterSkill>().isManaRefilling = false;
+        characterSkill.GetComponent<CharacterSkill>().canUseSkill = true;
+
+        base0.GetComponent<BaseHealth>().ResetHealth();
+
     }
 }

@@ -6,34 +6,30 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    public float currentHealth;
     public Image HealthBar;
-    public Camera cam;
-    public Transform canvas;
+
 
     void Start()
     {
-        cam=Camera.main;
+
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
-    private void Update()
-    {
-        canvas.transform.LookAt(canvas.transform.position + cam.transform.forward);
-    }
-    public void takeDamage(int amount)
+
+    public void takeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Die();
-            Debug.Log("Düþman öldü");
+            Debug.Log("Düsman öldü");
         }
 
         UpdateHealthBar();
-        Debug.Log("Düþman güncel can : " + currentHealth);
+        Debug.Log("Düsman güncel can : " + currentHealth);
     }
 
     private void UpdateHealthBar()
@@ -47,4 +43,3 @@ public class EnemyHealth : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
-

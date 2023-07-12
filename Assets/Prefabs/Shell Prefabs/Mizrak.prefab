@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2983472367543146910}
   - component: {fileID: 1386552577236042464}
   - component: {fileID: 5138712674807381835}
-  - component: {fileID: 7835123828516031614}
+  - component: {fileID: 1828766175232368774}
   m_Layer: 0
-  m_Name: "M\u0131zrak"
+  m_Name: Mizrak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7835123828516031614
+--- !u!114 &1828766175232368774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8775312593556537292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64766a24439c8634fbd59c7ea35c0c9f, type: 3}
+  m_Script: {fileID: 11500000, guid: f1a82ebf676982f4db04edcd07480d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  damage: 10
+  speed: 85
+  damage: 25

@@ -15,7 +15,7 @@ public class TowerAttack : MonoBehaviour
     public bool isAttackStop = false;
     private float stopAttack = 7f;
     public Transform partRotate;
-    public float turnSpeed=5f;
+    public float turnSpeed = 5f;
 
     public bool canTurn;
 
@@ -24,7 +24,7 @@ public class TowerAttack : MonoBehaviour
 
 
     void Start()
-    {  
+    {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -35,14 +35,14 @@ public class TowerAttack : MonoBehaviour
             return;
         }
 
-        if(canTurn) 
+        if (canTurn)
         {
             Vector3 dir = transform.position - target.position;
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             Vector3 rotation = Quaternion.Lerp(partRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
             partRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
         }
-        
+
         if (fireCountdown <= 0f && isAttackStop == false)
         {
             Shoot();
@@ -56,12 +56,49 @@ public class TowerAttack : MonoBehaviour
         Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 120);
         GameObject bulletObject = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
         bulletObject.transform.rotation = Quaternion.Euler(_rotation);
-        TowerBullet bullet = bulletObject.GetComponent<TowerBullet>();
 
-        if (bullet != null)
+        if (bulletPre.name == "Buyu")
         {
-            bullet.Seek(target);
+            var bullet = bulletObject.GetComponent<BuyucuBullet>();
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
         }
+        else if (bulletPre.name == "Mizrak")
+        {
+            var bullet = bulletObject.GetComponent<ArbaletBullet>();
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
+
+        }
+        else if (bulletPre.name == "Ok")
+        {
+            var bullet = bulletObject.GetComponent<OkcuBullet>();
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
+        }
+        else if (bulletPre.name == "Poison")
+        {
+            var bullet = bulletObject.GetComponent<ZehirBullet>();
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
+        }
+        else if (bulletPre.name == "Top")
+        {
+            var bullet = bulletObject.GetComponent<TopcuBullet>();
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
+        }
+
     }
 
     void UpdateTarget()
@@ -98,7 +135,7 @@ public class TowerAttack : MonoBehaviour
 
     public void StopAttack()
     {
-       isAttackStop = true;
+        isAttackStop = true;
         StartCoroutine(PreventAttack());
 
 
@@ -111,5 +148,9 @@ public class TowerAttack : MonoBehaviour
         isAttackStop = false;
 
 
+    }
+    public void UpdateDamageBullet(float newDamage)
+    {
+        bulletPre.GetComponent<TowerBullet>().setDamage(newDamage);
     }
 }

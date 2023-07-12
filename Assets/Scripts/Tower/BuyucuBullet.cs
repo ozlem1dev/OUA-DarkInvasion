@@ -1,11 +1,12 @@
-using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBullet : MonoBehaviour
+public class BuyucuBullet : MonoBehaviour
 {
-    public float speed = 70f;
-    public float damage = 10;
-    public static float currentDamage = 10;
+    public float speed;
+    public float damage;
+    public static float currentDamage = 80;
     private Transform target;
 
 

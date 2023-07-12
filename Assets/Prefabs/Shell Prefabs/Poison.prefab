@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6202294362915573807}
   - component: {fileID: 2721446631968243466}
   - component: {fileID: 2774497419656501087}
-  - component: {fileID: 5828301102823773009}
+  - component: {fileID: -8773063904151652901}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5828301102823773009
+--- !u!114 &-8773063904151652901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 961833338483687186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64766a24439c8634fbd59c7ea35c0c9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c6a6e9cdb5f6b942af4f4b60d0bf3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  damage: 10
+  speed: 80
+  damage: 45
