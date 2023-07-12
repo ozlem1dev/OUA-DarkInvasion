@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 8439915721233874968}
   m_Layer: 0
   m_Name: ZehirKulesi
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   bulletPre: {fileID: 961833338483687186, guid: 3d29d20ca31c702458b1fac65ba1892c, type: 3}
   firePoint: {fileID: 3289751538633437929}
   isAttackStop: 0
+  stopAttack: 10
   partRotate: {fileID: 2728511216589889570}
   turnSpeed: 5
   canTurn: 1

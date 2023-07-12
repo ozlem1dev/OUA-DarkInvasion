@@ -620,6 +620,7 @@ public class KartMek : MonoBehaviour
     {
         towerPoints.isSelectCreatedTowerCard = true;
         menuButton.GetComponent<MenuButton>().Resett();
+        
     }
 
     void BackToCharacter()
@@ -630,6 +631,7 @@ public class KartMek : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         menuButton.GetComponent<MenuButton>().Resett();
+        eventSystem.GetComponent<Spawner>().control = false;
     }
 
     void SelectCreatedTowarCardAssignPrefab(string name)

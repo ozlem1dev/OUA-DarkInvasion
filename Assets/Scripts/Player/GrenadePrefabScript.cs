@@ -16,8 +16,11 @@ public class GrenadePrefabScript : MonoBehaviour
     }
     private void Start()
     {
-
-        StartCoroutine(ExplodeAfterTime(time));
+        
+            Debug.Log("DamageGrenade: " + startGrenadeDamage + "CurrentGrenadeDamage: " + currentGrenadeDamage);
+            StartCoroutine(ExplodeAfterTime(time));
+        
+       
     }
 
     private IEnumerator ExplodeAfterTime(float delay)

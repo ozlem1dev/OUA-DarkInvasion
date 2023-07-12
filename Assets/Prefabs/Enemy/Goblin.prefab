@@ -1382,8 +1382,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 30
   HealthBar: {fileID: 9078738883904447294}
+  canvas: {fileID: 1629563827558508145}
   cam: {fileID: 0}
-  canvas: {fileID: 5273493265275810253}
 --- !u!136 &1022604108947771027
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -9,7 +9,10 @@ public class BuyucuBullet : MonoBehaviour
     public static float currentDamage = 80;
     private Transform target;
 
-
+    private void Start()
+    {
+        Debug.Log("BuyucuDamage: " + damage + "CurrentDamage: " + currentDamage);
+    }
     public void Seek(Transform _target)
     {
         target = _target;

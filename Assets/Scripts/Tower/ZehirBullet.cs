@@ -9,7 +9,10 @@ public class ZehirBullet : MonoBehaviour
     public static float currentDamage = 45;
     private Transform target;
 
-
+    public void Start()
+    {
+        Debug.Log("zehirDamage: " + damage + "CurrentDamage: " + currentDamage);
+    }
     public void Seek(Transform _target)
     {
         target = _target;

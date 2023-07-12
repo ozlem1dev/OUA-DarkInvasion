@@ -13,7 +13,7 @@ public class TowerAttack : MonoBehaviour
     public Transform firePoint;
 
     public bool isAttackStop = false;
-    private float stopAttack = 7f;
+    public float stopAttack = 7f;
     public Transform partRotate;
     public float turnSpeed = 5f;
 
@@ -35,7 +35,7 @@ public class TowerAttack : MonoBehaviour
             return;
         }
 
-        if (canTurn)
+        if (canTurn && !isAttackStop)
         {
             Vector3 dir = transform.position - target.position;
             Quaternion lookRotation = Quaternion.LookRotation(dir);
@@ -149,8 +149,5 @@ public class TowerAttack : MonoBehaviour
 
 
     }
-    public void UpdateDamageBullet(float newDamage)
-    {
-        bulletPre.GetComponent<TowerBullet>().setDamage(newDamage);
-    }
+   
 }
