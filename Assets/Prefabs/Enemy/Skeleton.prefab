@@ -221,7 +221,7 @@ MonoBehaviour:
     m_Bits: 8
   attackCooldown: 1.5
   sightRange: 4
-  attackRange: 2
+  attackRange: 3
   inSight: 0
   inRange: 0
   moveSpeed: 4
