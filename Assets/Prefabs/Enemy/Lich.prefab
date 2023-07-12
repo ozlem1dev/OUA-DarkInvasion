@@ -1226,7 +1226,7 @@ MonoBehaviour:
   attackRange: 6
   inSight: 0
   inRange: 0
-  moveSpeed: 3
+  moveSpeed: 4
   attackDamage: 15
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 1920572924757187237, guid: 6ef7f292142b86646bca3653ced3ee4a, type: 3}
@@ -1252,6 +1252,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 70
   HealthBar: {fileID: 6678732614866659406}
+  canvas: {fileID: 6637227955515504712}
 --- !u!136 &8425743152157542732
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -224,14 +224,14 @@ MonoBehaviour:
   attackRange: 2
   inSight: 0
   inRange: 0
-  moveSpeed: 3
+  moveSpeed: 4
   attackDamage: 20
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   isRanged: 0
   minLvl: 1
-  maxLvl: 10
+  maxLvl: 20
   spawned1: 0
   spawned2: 0
   spawned3: 0
@@ -250,8 +250,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   HealthBar: {fileID: 9055679758947550986}
-  cam: {fileID: 0}
-  canvas: {fileID: 7516903350210471171}
+  canvas: {fileID: 6202719810923684103}
 --- !u!136 &5201005565852211032
 CapsuleCollider:
   m_ObjectHideFlags: 0

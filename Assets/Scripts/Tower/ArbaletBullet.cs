@@ -9,7 +9,10 @@ public class ArbaletBullet : MonoBehaviour
     public static float currentDamage = 25;
     private Transform target;
 
-
+    private void Start()
+    {
+        Debug.Log("ArbaletDamage: " + damage + "CurrentDamage: " + currentDamage);
+    }
     public void Seek(Transform _target)
     {
         target = _target;

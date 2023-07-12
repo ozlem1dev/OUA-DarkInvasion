@@ -29,6 +29,7 @@ public class TowerSpawnZone : MonoBehaviour
 
         towerPoints.isDone = false;
         towerPoints.isSelectCreatedTowerCard = false;
+        eventSystem.GetComponent<Spawner>().control = false;
     }
 
 

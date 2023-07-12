@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3272635006731657138}
   m_Layer: 0
   m_Name: OkcuKulesi
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   bulletPre: {fileID: 4880898062031402794, guid: 73d1121a0f444354288ad61e2edf1022, type: 3}
   firePoint: {fileID: 4567270053153966378}
   isAttackStop: 0
+  stopAttack: 10
   partRotate: {fileID: 6990839963265380241}
   turnSpeed: 5
   canTurn: 1

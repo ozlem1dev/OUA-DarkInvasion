@@ -16,7 +16,6 @@ public class BossMovement : MonoBehaviour
     public float  attackRange;
     public float moveSpeed = 3f;
     public GameObject baseObject;
-    public int minLvl, maxLvl;
     public float range = 10f;
     public GameObject[] towers;
     private Transform target;
@@ -144,7 +143,7 @@ public class BossMovement : MonoBehaviour
         {
             target = null;
         }
-        Debug.Log(target.name);
+        
     }
 
     private void GoToTower()

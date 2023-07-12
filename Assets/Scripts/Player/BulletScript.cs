@@ -14,6 +14,7 @@ public class BulletScript : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("AmmoDamage: " + ammoDamage + "CurrentAmmoDamage: " + currentAmmoDamage);
         Destroy(gameObject, time);
     }
 

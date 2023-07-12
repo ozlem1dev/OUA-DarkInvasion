@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 4220843063917157940}
   m_Layer: 0
   m_Name: BuyucuKulesi
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,6 +373,7 @@ MonoBehaviour:
   bulletPre: {fileID: 2098213982083273471, guid: fabd595535c7f8e4f831eeba3c845dd8, type: 3}
   firePoint: {fileID: 6082074837522107832}
   isAttackStop: 0
+  stopAttack: 10
   partRotate: {fileID: 8363853379879670153}
   turnSpeed: 5
   canTurn: 1

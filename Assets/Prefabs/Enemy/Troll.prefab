@@ -1292,7 +1292,7 @@ MonoBehaviour:
   attackRange: 2
   inSight: 0
   inRange: 0
-  moveSpeed: 3
+  moveSpeed: 4
   attackDamage: 30
   baseObject: {fileID: 0}
   projectilePrefab: {fileID: 0}
@@ -1318,6 +1318,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 200
   HealthBar: {fileID: 1776240008862385586}
+  canvas: {fileID: 5530956815869587346}
 --- !u!1 &586750075814914299
 GameObject:
   m_ObjectHideFlags: 0

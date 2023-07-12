@@ -9,7 +9,10 @@ public class TopcuBullet : MonoBehaviour
     public static float currentDamage = 45;
     private Transform target;
 
-
+    private void Start()
+    {
+        Debug.Log("TopcuDamage: " + damage + "CurrentDamage: " + currentDamage);
+    }
     public void Seek(Transform _target)
     {
         target = _target;

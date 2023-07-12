@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 2052958420367678733}
   m_Layer: 0
   m_Name: TopcuKulesi
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   bulletPre: {fileID: 6922447433419848135, guid: 698f5d2b89bb2c04281af5a2361cc818, type: 3}
   firePoint: {fileID: 1274949804387730306}
   isAttackStop: 0
+  stopAttack: 10
   partRotate: {fileID: 7189991220359999242}
   turnSpeed: 5
   canTurn: 1
