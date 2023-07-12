@@ -1158,7 +1158,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584723000573930069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 23a2328de36cbc64b8957629f08f7a0d, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
@@ -1318,8 +1318,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 200
   HealthBar: {fileID: 1776240008862385586}
-  cam: {fileID: 0}
-  canvas: {fileID: 6386836139853017493}
 --- !u!1 &586750075814914299
 GameObject:
   m_ObjectHideFlags: 0

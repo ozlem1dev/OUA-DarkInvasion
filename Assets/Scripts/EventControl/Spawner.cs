@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     public bool cantSpawn2 = true;
     public bool cantSpawn3 = true;
     public int enemyCount = 0;
-    public bool control=false;
+    public bool isLose = false;
     public GameObject characterPanel;
     public GameObject bookPanel;
 
@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
     }
     private void Update()
     {
-        
+
         WaypointGiver1();
         if (Time.time >= nextSpawnTime1 && !cantSpawn1)//spawn
         {
@@ -65,7 +65,7 @@ public class Spawner : MonoBehaviour
         }
         if (Time.time >= nextSpawnTime2 && !cantSpawn2)//spawn
         {
-           
+
             SpawnEnemy2();
             nextSpawnTime2 = Time.time + spawnCooldown;
             level.LevelCheck();
@@ -81,7 +81,7 @@ public class Spawner : MonoBehaviour
         }
         LevelStartApprove();
 
-        
+
     }
 
     private void SpawnEnemy1()
@@ -96,7 +96,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy2()
     {
-        
+
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint2.Length);
 
@@ -107,7 +107,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy3()
     {
-        
+
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint3.Length);
 
@@ -125,7 +125,7 @@ public class Spawner : MonoBehaviour
 
             if (x.minLvl <= level.currentLevel && x.maxLvl >= level.currentLevel)
             {
-                
+
 
                 ActiveEnemies.Add(enemy);
             }
@@ -135,11 +135,9 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
-        if (Enemies.All(x => x == null) && isCardSelection && !control)
+        if (Enemies.All(x => x == null) && isCardSelection && !isLose)
         {
-            Debug.Log(_characterfire.currentClip);
             isCardSelection = false;
-
             StartCoroutine(DelayedDisplayCards());
         }
 
@@ -150,13 +148,13 @@ public class Spawner : MonoBehaviour
         //    {
         //        _characterfire.clipSize = 30;
         //        _kartmek.DisplayCards();
-                
+
         //        characterPanel.SetActive(false);
         //        bookPanel.SetActive(true);
         //        Cursor.lockState = CursorLockMode.None;
         //        Cursor.visible = true;
         //    }
-            
+
         //}
         //else if (Input.GetKeyDown(KeyCode.B) && bookPanel.activeSelf)
         //{
@@ -168,17 +166,16 @@ public class Spawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed)
         {
-            _characterfire.currentClip = 30;
-            _characterfire.UpdateAmmoText();
-            enemyCount += 5;
-            Debug.Log(_characterfire.currentClip);
+            _characterfire.ResetAmmo();
+            stopNumber += 5;
+
             if (Enemies.All(obj => obj == null))
             {
                 isButtonPressed = true;
                 Enemies.RemoveAll(obj => obj == null || obj.Equals(null));
                 enemyCount = 0;
 
-                StartCoroutine(DelayedLevelStart()); 
+                StartCoroutine(DelayedLevelStart());
             }
         }
     }
@@ -254,5 +251,5 @@ public class Spawner : MonoBehaviour
             }
         }
     }
-    
+
 }

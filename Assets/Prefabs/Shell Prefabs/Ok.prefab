@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4231663237966832323}
   - component: {fileID: 1351159216845421203}
   - component: {fileID: 6631255626402234867}
-  - component: {fileID: 6574209513298832727}
+  - component: {fileID: 8067695583710473902}
   m_Layer: 0
   m_Name: Ok
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6574209513298832727
+--- !u!114 &8067695583710473902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4880898062031402794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64766a24439c8634fbd59c7ea35c0c9f, type: 3}
+  m_Script: {fileID: 11500000, guid: cff0a7c06c7f24e4f80e29729fbfc666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  damage: 10
+  speed: 100
+  damage: 15

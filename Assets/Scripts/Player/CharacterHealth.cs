@@ -6,19 +6,20 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
     public Image HealthBar;
     public GameObject menu;
     public GameObject characterPanel;
     Animator _animator;
-
+    public GameObject eventSystem;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
 
-        currentHealth = maxHealth;
+        ResetHealth();
+
         Debug.Log("Güncel can : " + currentHealth);
     }
 
@@ -57,10 +58,15 @@ public class CharacterHealth : MonoBehaviour
     }
     public void Die()
     {
+        eventSystem.GetComponent<Spawner>().isLose = true;
         characterPanel.SetActive(false);
         menu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
+    }
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
     }
 }

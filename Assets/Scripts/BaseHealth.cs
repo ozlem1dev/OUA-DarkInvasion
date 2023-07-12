@@ -11,7 +11,7 @@ public class BaseHealth : MonoBehaviour
     public Image HealthBar;
     public GameObject menu;
     public GameObject characterPanel;
-
+    public GameObject eventSystem;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class BaseHealth : MonoBehaviour
         {
             currentHealth = 0;
             Die();
-            
+
         }
 
         UpdateHealthBar();
@@ -48,6 +48,14 @@ public class BaseHealth : MonoBehaviour
         menu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
+        eventSystem.GetComponent<Spawner>().isLose = true;
     }
+
+    public void ResetHealth()
+    {
+        UpdateHealthBar();
+        currentHealth = maxHealth;
+    }
+
+
 }

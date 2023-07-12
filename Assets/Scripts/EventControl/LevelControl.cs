@@ -50,7 +50,7 @@ public class LevelControl : MonoBehaviour
                 spawner.cantSpawn3 = false;
             }
             Debug.Log(currentLevel + ". level baþladý");
-            spawner.control = false;
+            spawner.isLose = false;
         }
     }
 }

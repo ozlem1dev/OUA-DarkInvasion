@@ -14,6 +14,7 @@ public class Kart
     public int maxLevel { get; set; }
     public int lvl { get; set; }
     public int cost { get; set; }
+    public float value { get; set; }
     public GameObject prefabTower;
     public Sprite gorsel { get; set; }
 

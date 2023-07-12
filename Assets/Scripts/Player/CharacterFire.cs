@@ -10,7 +10,7 @@ public class CharacterFire : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
 
-    public int clipSize = 30;
+    public int clipSize;
     public int currentClip;
     public bool isReloading = false;
     public Text ammoText;
@@ -26,7 +26,7 @@ public class CharacterFire : MonoBehaviour
 
     private void Awake()
     {
-        _animator= GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
 
@@ -95,6 +95,13 @@ public class CharacterFire : MonoBehaviour
     public void UpdateAmmoText()
     {
         ammoText.text = string.Format("{0}/{1}", currentClip, "∞");
+    }
+
+    public void ResetAmmo()
+    {
+        isReloading = false;
+        currentClip = clipSize;
+        UpdateAmmoText();
     }
 
 }

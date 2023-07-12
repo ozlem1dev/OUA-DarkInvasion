@@ -5,12 +5,18 @@ using UnityEngine;
 public class GrenadePrefabScript : MonoBehaviour
 {
     public float time = 3f;
-    public int grenadeDamage = 20;
+    public int startGrenadeDamage;
+    public static int currentGrenadeDamage = 20;
     public AudioClip grenadeExplosionAudio;
-    public GameObject explosionPrefab; // Patlama efekti prefabý
+    public GameObject explosionPrefab; // Patlama efekti prefab
 
+    private void Awake()
+    {
+        //currentGrenadeDamage = startGrenadeDamage;
+    }
     private void Start()
     {
+
         StartCoroutine(ExplodeAfterTime(time));
     }
 
@@ -25,14 +31,18 @@ public class GrenadePrefabScript : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.GetComponent<EnemyHealth>().takeDamage(grenadeDamage);
+                collider.GetComponent<EnemyHealth>().takeDamage(currentGrenadeDamage);
             }
         }
 
-        // Patlama efekti prefabýný etkinleþtir
+        // Patlama efekti prefabini etkinlestir
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 3f); // Belirli bir süre sonra patlama efektini yok et
 
         Destroy(gameObject);
+    }
+    public void UpdateGrenadeDamage(int newDamage)
+    {
+        currentGrenadeDamage = (100 + newDamage) * currentGrenadeDamage / 100;
     }
 }
