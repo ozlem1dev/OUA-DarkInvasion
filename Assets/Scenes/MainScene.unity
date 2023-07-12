@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 970322580}
-  m_IndirectSpecularColor: {r: 0.44824785, g: 0.4982745, b: 0.5755849, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824737, g: 0.4982744, b: 0.57558453, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -30621,7 +30621,7 @@ MonoBehaviour:
   soldier: {fileID: 758985907}
   grenade: {fileID: 7421037314281459095, guid: 87e9231213ec44719864caab8127dd3b, type: 3}
   granedeGun: {fileID: 422756970}
-  bullet: {fileID: 1920572924757187237, guid: e0e4bca10db0e6649aa0e8b0f6977d3b, type: 3}
+  bullet: {fileID: 1767672167759116030, guid: 9801c342d4fdf0947924453b900228b1, type: 3}
 --- !u!1001 &703157148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33207,7 +33207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 56809885}
-  bulletPrefab: {fileID: 1920572924757187237, guid: e0e4bca10db0e6649aa0e8b0f6977d3b, type: 3}
+  bulletPrefab: {fileID: 1767672167759116030, guid: 9801c342d4fdf0947924453b900228b1, type: 3}
   bulletSpeed: 100
   clipSize: 30
   currentClip: 30
@@ -41951,7 +41951,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1010894381339578493, guid: aa2f6563f3624bf4da0e7f421217ae2f, type: 3}
   - {fileID: 9095506334257894707, guid: 512351132886b3a4d8c41ad7ab77a701, type: 3}
-  - {fileID: 6388408760944688273, guid: 53a5885faeb352242a031825058a2a31, type: 3}
+  - {fileID: 3093458605206433835, guid: 53a5885faeb352242a031825058a2a31, type: 3}
   - {fileID: 584723000573930069, guid: dbbe18e260ff4484b9f293dc6171d1d8, type: 3}
   spawnPoint1:
   - {fileID: 1073177816}
@@ -48986,7 +48986,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140625495}
-  m_LocalRotation: {x: 0.05299509, y: 9.868153e-10, z: -5.2369983e-11, w: 0.9985948}
+  m_LocalRotation: {x: 0.052995097, y: -0.0000000065184533, z: 3.4593217e-10, w: 0.9985948}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
