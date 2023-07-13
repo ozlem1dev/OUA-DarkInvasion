@@ -76,6 +76,6 @@ public class MainMenuScript : MonoBehaviour
     public void OnSensitivitySliderValueChanged()
     {
         float sliderValue = sensitivitySlider.value;
-        //thirdPersonCam.SetSensitivity(sliderValue);
+        thirdPersonCam.SetSensitivity(sliderValue);
     }
 }

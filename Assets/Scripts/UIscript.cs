@@ -22,10 +22,11 @@ public class UIscript : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         isPaused = false;
+
+        Cursor.visible = false;
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -42,30 +43,31 @@ public class UIscript : MonoBehaviour
 
         if (isPaused)
         {
-          
-            escMenuPanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            escMenuPanel.SetActive(true);
             Time.timeScale = 0f;
         }
         else
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; // Cursor kilidini kapat
+
             Time.timeScale = 1f;
             escMenuPanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
             ResumeGame();
         }
     }
+
 
     public void ResumeGame()
     {
         Debug.Log("selam");
         Time.timeScale = 1f;
         escMenuPanel.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
 
     public void ToggleHowToPlayPanel()
     {
@@ -82,11 +84,13 @@ public class UIscript : MonoBehaviour
     }
     public void ToggleSettingsPanel()
     {
+        Cursor.visible = true;
         escMenuPanel.SetActive(false);
         settingsPanel.SetActive(!settingsPanel.activeSelf);
     }
     public void SettingBackButton()
     {
+
         settingsPanel.SetActive(false);
         escMenuPanel.SetActive(true);
 
@@ -124,6 +128,17 @@ public class UIscript : MonoBehaviour
     public void OnSensitivitySliderValueChanged()
     {
         float sliderValue = sensitivitySlider.value;
-        //thirdPersonCam.SetSensitivity(sliderValue);
+        thirdPersonCam.SetSensitivity(sliderValue);
     }
+    //void NoMouseVisible()
+    //{
+    //    Cursor.visible = true;
+    //    //Cursor.lockState = CursorLockMode.None;
+    //}
+
+    //void MouseVisible()
+    //{
+    //    Cursor.visible = false;
+    //    //Cursor.lockState = CursorLockMode.Locked;
+    //}
 }
