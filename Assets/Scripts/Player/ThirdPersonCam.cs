@@ -13,8 +13,8 @@ public class ThirdPersonCam : MonoBehaviour
     {
         //cursor invisibility
         
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
 
         
