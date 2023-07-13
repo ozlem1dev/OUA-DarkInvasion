@@ -4060,7 +4060,6 @@ GameObject:
   - component: {fileID: 83285875}
   - component: {fileID: 83285874}
   - component: {fileID: 83285873}
-  - component: {fileID: 83285872}
   m_Layer: 5
   m_Name: Evet Buton
   m_TagString: Untagged
@@ -4090,26 +4089,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1145.6, y: -46}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &83285872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83285870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 1121772216}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &83285873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4154,7 +4133,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 83285872}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitMenuYesButton
         m_Mode: 1
@@ -9205,14 +9184,13 @@ GameObject:
   - component: {fileID: 199735516}
   - component: {fileID: 199735515}
   - component: {fileID: 199735514}
-  - component: {fileID: 199735513}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &199735512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9234,24 +9212,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &199735513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199735511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6321122ae5065a4796434d89df65bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSystem: {fileID: 996304187}
-  soldier: {fileID: 758985907}
-  base0: {fileID: 788901961}
-  characterPanel: {fileID: 946462442}
-  menuPanel: {fileID: 1416633957}
-  characterSkill: {fileID: 422756970}
 --- !u!114 &199735514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14151,6 +14111,7 @@ Transform:
   - {fileID: 1043807492}
   - {fileID: 872640287}
   - {fileID: 1252263413}
+  - {fileID: 1468159628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20188,7 +20149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1718b4b66351bc144ae389327553b651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: 1
+  x: 450
+  y: 3
 --- !u!114 &430961490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32070,7 +32032,6 @@ GameObject:
   - component: {fileID: 680155179}
   - component: {fileID: 680155178}
   - component: {fileID: 680155177}
-  - component: {fileID: 680155176}
   m_Layer: 5
   m_Name: "Ana Men\xFCye D\xF6n"
   m_TagString: Untagged
@@ -32100,26 +32061,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -138}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &680155176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680155174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 2055905196}
-  settingsPanel: {fileID: 966281201}
-  mainMenuPanel: {fileID: 1957078810}
-  quitPanel: {fileID: 2003807829}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &680155177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32164,7 +32105,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680155176}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ToggleMainMenuPanel
         m_Mode: 1
@@ -36344,7 +36285,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   HealthBar: {fileID: 405712841}
-  menu: {fileID: 1416633957}
+  menu: {fileID: 2003807829}
   characterPanel: {fileID: 946462442}
   eventSystem: {fileID: 996304187}
 --- !u!114 &758985913
@@ -36448,6 +36389,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &758985917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758985907}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escMenuPanel: {fileID: 1096323237}
+  howToPlayPanel: {fileID: 2055905196}
+  settingsPanel: {fileID: 501739581}
+  mainMenuPanel: {fileID: 1957078810}
+  quitPanel: {fileID: 1121772216}
+  sensitivitySlider: {fileID: 1952754685}
+  thirdPersonCam: {fileID: 430961489}
+  isPaused: 0
 --- !u!1001 &760216044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39776,7 +39737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 830, y: 0}
+  m_AnchoredPosition: {x: 860, y: 0}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826545771
@@ -39856,8 +39817,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ebc1a47baf054bf49b51851ae6b34cfb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -44155,6 +44116,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948776010}
   m_CullTransparentMesh: 1
+--- !u!1 &949552914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949552915}
+  - component: {fileID: 949552917}
+  - component: {fileID: 949552916}
+  m_Layer: 5
+  m_Name: . Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &949552915
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949552914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1767384891}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 79.4, y: 15.4}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &949552916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949552914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: .
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: b02505106d83ba148b28583c212aad02, type: 2}
+  m_sharedMaterial: {fileID: -6125998958145966792, guid: b02505106d83ba148b28583c212aad02, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 190.53235, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &949552917
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949552914}
+  m_CullTransparentMesh: 1
 --- !u!1001 &949891726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45319,7 +45415,6 @@ GameObject:
   - component: {fileID: 966281206}
   - component: {fileID: 966281205}
   - component: {fileID: 966281204}
-  - component: {fileID: 966281203}
   m_Layer: 5
   m_Name: Ayarlar
   m_TagString: Untagged
@@ -45349,26 +45444,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 31}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &966281203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966281201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 501739581}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &966281204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45413,7 +45488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 966281203}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ToggleSettingsPanel
         m_Mode: 1
@@ -54761,7 +54836,6 @@ GameObject:
   - component: {fileID: 1135174544}
   - component: {fileID: 1135174543}
   - component: {fileID: 1135174542}
-  - component: {fileID: 1135174541}
   m_Layer: 5
   m_Name: "Nas\u0131l Oynan\u0131l\u0131r"
   m_TagString: Untagged
@@ -54769,26 +54843,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1135174541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135174540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 2055905196}
-  settingsPanel: {fileID: 966281201}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1135174542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54833,7 +54887,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1135174541}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ToggleHowToPlayPanel
         m_Mode: 1
@@ -57727,7 +57781,6 @@ GameObject:
   - component: {fileID: 1182577303}
   - component: {fileID: 1182577302}
   - component: {fileID: 1182577301}
-  - component: {fileID: 1182577300}
   m_Layer: 5
   m_Name: "Hay\u0131r Buton"
   m_TagString: Untagged
@@ -57757,26 +57810,6 @@ RectTransform:
   m_AnchoredPosition: {x: -182.7, y: -46}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1182577300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182577298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  mainMenuPanel: {fileID: 1957078810}
-  quitPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1182577301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57821,7 +57854,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1182577300}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: mainMenuNoButton
         m_Mode: 1
@@ -65724,8 +65757,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Geri
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b02505106d83ba148b28583c212aad02, type: 2}
+  m_sharedMaterial: {fileID: -6125998958145966792, guid: b02505106d83ba148b28583c212aad02, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -71746,6 +71779,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4879555013656554, guid: f0894d3a3479c634485553b098c987cb, type: 3}
   m_PrefabInstance: {fileID: 1465628051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1468159627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468159628}
+  - component: {fileID: 1468159629}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468159628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468159627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 309667719}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468159629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468159627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ed8bae82ce0b547bf129bbca4fb60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escMenuPanel: {fileID: 1096323237}
+  howToPlayPanel: {fileID: 2055905196}
+  settingsPanel: {fileID: 501739581}
+  mainMenuPanel: {fileID: 1957078810}
+  quitPanel: {fileID: 1121772216}
+  diePanel: {fileID: 2003807829}
+  howToPlay: {fileID: 1135174542}
+  howToPlayBack: {fileID: 2124822306}
+  settings: {fileID: 966281204}
+  settingsBack: {fileID: 2062000091}
+  mainMenu: {fileID: 680155177}
+  mainMenuYes: {fileID: 1971925896}
+  mainMenuNo: {fileID: 1182577301}
+  quitYesButton: {fileID: 83285873}
+  quitNoButton: {fileID: 1870951984}
+  dieMainMenuButton: {fileID: 1138881150}
+  exitButton: {fileID: 1668237202}
+  resumeButton: {fileID: 1885496980}
+  sensitivitySlider: {fileID: 1952754685}
+  thirdPersonCam: {fileID: 430961489}
 --- !u!1001 &1473385668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78933,7 +79030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -881.1, y: 0}
+  m_AnchoredPosition: {x: -860.1, y: 0}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623439040
@@ -79013,8 +79110,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ebc1a47baf054bf49b51851ae6b34cfb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -81471,7 +81568,6 @@ GameObject:
   - component: {fileID: 1668237204}
   - component: {fileID: 1668237203}
   - component: {fileID: 1668237202}
-  - component: {fileID: 1668237201}
   m_Layer: 5
   m_Name: "Oyundan \xC7\u0131k"
   m_TagString: Untagged
@@ -81501,26 +81597,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -414}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1668237201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668237199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 1121772216}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1668237202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81565,7 +81641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1668237201}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ToggleQuitPanel
         m_Mode: 1
@@ -84395,6 +84471,7 @@ GameObject:
   - component: {fileID: 1724472192}
   - component: {fileID: 1724472191}
   - component: {fileID: 1724472190}
+  - component: {fileID: 1724472193}
   m_Layer: 5
   m_Name: Tekrar Dene
   m_TagString: Untagged
@@ -84506,6 +84583,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724472188}
   m_CullTransparentMesh: 1
+--- !u!114 &1724472193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724472188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6321122ae5065a4796434d89df65bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 996304187}
+  soldier: {fileID: 758985907}
+  base0: {fileID: 788901961}
+  characterPanel: {fileID: 946462442}
+  menuPanel: {fileID: 2003807829}
+  characterSkill: {fileID: 422756970}
 --- !u!1001 &1726016657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86142,7 +86237,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 949552915}
   m_Father: {fileID: 826545770}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86171,10 +86267,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0130leri\n"
+  m_text: 'Ileri
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b02505106d83ba148b28583c212aad02, type: 2}
+  m_sharedMaterial: {fileID: -6125998958145966792, guid: b02505106d83ba148b28583c212aad02, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91063,7 +91161,6 @@ GameObject:
   - component: {fileID: 1870951986}
   - component: {fileID: 1870951985}
   - component: {fileID: 1870951984}
-  - component: {fileID: 1870951983}
   m_Layer: 5
   m_Name: "Hay\u0131r Buton"
   m_TagString: Untagged
@@ -91093,26 +91190,6 @@ RectTransform:
   m_AnchoredPosition: {x: -184.2, y: -46}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1870951983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870951981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 1121772216}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1870951984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91157,7 +91234,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1870951983}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitMenuNoButton
         m_Mode: 1
@@ -91826,7 +91903,6 @@ GameObject:
   - component: {fileID: 1885496982}
   - component: {fileID: 1885496981}
   - component: {fileID: 1885496980}
-  - component: {fileID: 1885496979}
   m_Layer: 5
   m_Name: Oyuna Devam Et
   m_TagString: Untagged
@@ -91856,26 +91932,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 369}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1885496979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885496977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 1135174540}
-  settingsPanel: {fileID: 966281201}
-  mainMenuPanel: {fileID: 0}
-  quitPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1885496980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91920,7 +91976,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1885496979}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -95093,7 +95149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1952754683}
   - component: {fileID: 1952754685}
-  - component: {fileID: 1952754684}
   m_Layer: 5
   m_Name: Mouse Sensivity Slider
   m_TagString: Untagged
@@ -95124,24 +95179,6 @@ RectTransform:
   m_AnchoredPosition: {x: -241, y: 62}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1952754684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952754682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 0}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 1952754685}
-  thirdPersonCam: {fileID: 430961489}
 --- !u!114 &1952754685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95193,7 +95230,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1952754684}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: OnSensitivitySliderValueChanged
         m_Mode: 1
@@ -95888,7 +95925,6 @@ GameObject:
   - component: {fileID: 1971925898}
   - component: {fileID: 1971925897}
   - component: {fileID: 1971925896}
-  - component: {fileID: 1971925895}
   m_Layer: 5
   m_Name: Evet Buton
   m_TagString: Untagged
@@ -95918,26 +95954,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1142, y: -46}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1971925895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971925893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b1d6aae08796444b1940f2058bfac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escMenuPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  mainMenuPanel: {fileID: 1957078810}
-  quitPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
-  isPaused: 0
 --- !u!114 &1971925896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95982,7 +95998,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1971925895}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: mainMenuYesButton
         m_Mode: 1
@@ -99846,7 +99862,6 @@ GameObject:
   - component: {fileID: 2062000093}
   - component: {fileID: 2062000092}
   - component: {fileID: 2062000091}
-  - component: {fileID: 2062000090}
   m_Layer: 5
   m_Name: Geri Butonu
   m_TagString: Untagged
@@ -99876,24 +99891,6 @@ RectTransform:
   m_AnchoredPosition: {x: 271, y: -186}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2062000090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062000088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 501739581}
-  sensitivitySlider: {fileID: 1952754685}
-  thirdPersonCam: {fileID: 0}
 --- !u!114 &2062000091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99938,7 +99935,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2062000090}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: SettingsBackButton
         m_Mode: 1
@@ -102861,7 +102858,6 @@ GameObject:
   - component: {fileID: 2124822308}
   - component: {fileID: 2124822307}
   - component: {fileID: 2124822306}
-  - component: {fileID: 2124822305}
   m_Layer: 5
   m_Name: Geri Butonu
   m_TagString: Untagged
@@ -102891,24 +102887,6 @@ RectTransform:
   m_AnchoredPosition: {x: 337, y: -418}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2124822305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124822303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1096323237}
-  howToPlayPanel: {fileID: 2055905196}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!114 &2124822306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102953,7 +102931,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2124822305}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: HowToPlayBackButton
         m_Mode: 1
