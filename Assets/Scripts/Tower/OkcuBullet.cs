@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class OkcuBullet : MonoBehaviour
 {
+    
     public float speed;
     public float damage;
     public static float currentDamage = 15;
     private Transform target;
-
+    
     private void Start()
     {
         Debug.Log("OkDamage: " + damage + "CurrentDamage: " + currentDamage);
@@ -42,10 +43,14 @@ public class OkcuBullet : MonoBehaviour
     {
         var enemyHealth = target.GetComponent<EnemyHealth>();
         enemyHealth.takeDamage(currentDamage);
+        
+
         Destroy(gameObject);
     }
     public void setDamage(float newDamage)
     {
         currentDamage = (100 + newDamage) * currentDamage / 100;
     }
+
+    
 }
