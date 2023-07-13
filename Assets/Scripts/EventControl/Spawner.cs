@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
         cantSpawn1 = false;
         cantSpawn2 = true;
         cantSpawn3 = true;
-
+        //ehealth=new EnemyHealth();
         level = gameObject.GetComponent<LevelControl>();
         _kartmek = bookPanel.GetComponent<KartMek>();
         _characterfire = soldier.GetComponent<CharacterFire>();
@@ -221,6 +221,7 @@ public class Spawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control)
         {
+            ehealth.HealthIncrease(0.05f);
             _characterfire.ResetAmmo();
             stopNumber += 5;
             isBossSpawned = false;

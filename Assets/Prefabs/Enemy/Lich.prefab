@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b599937a7f6fab144af91689da3b4b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 70
   currentHealth: 70
   HealthBar: {fileID: 6678732614866659406}
   canvas: {fileID: 6637227955515504712}

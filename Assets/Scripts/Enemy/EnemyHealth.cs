@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 100;
+    public float maxHealth;
     public float currentHealth;
     public Image HealthBar;
     public GameObject canvas;
-    
+    public static float healthValue=1f;
     void Start()
     {
-       
+        maxHealth=maxHealth*healthValue;
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
@@ -46,5 +46,8 @@ public class EnemyHealth : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
+    public void HealthIncrease(float x)
+    {
+        healthValue = healthValue + x;
+    }
 }

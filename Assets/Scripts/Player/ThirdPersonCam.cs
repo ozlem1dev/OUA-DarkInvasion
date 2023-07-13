@@ -28,6 +28,6 @@ public class ThirdPersonCam : MonoBehaviour
         var cinemachine = GetComponent<Cinemachine.CinemachineFreeLook>();
         cinemachine.m_XAxis.m_MaxSpeed = x * sensitivity;
         cinemachine.m_YAxis.m_MaxSpeed = y * sensitivity;
-        Debug.Log("Slider deðeri: " + cinemachine.m_XAxis.m_MaxSpeed);
+        Debug.Log("Slider deï¿½eri: " + cinemachine.m_XAxis.m_MaxSpeed);
     }
 }
