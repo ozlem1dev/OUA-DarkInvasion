@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TowerAttack : MonoBehaviour
 {
     public float range = 15f;
-    public float fireRate = 1f;
+    public float fireRate;
 
     public GameObject bulletPre;
     public Transform firePoint;
@@ -16,7 +16,7 @@ public class TowerAttack : MonoBehaviour
     public float stopAttack = 7f;
     public Transform partRotate;
     public float turnSpeed = 5f;
-
+    public OkcuBullet okcuBullet;
     public bool canTurn;
 
     private Transform target;
@@ -55,6 +55,7 @@ public class TowerAttack : MonoBehaviour
     {
         Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 120);
         GameObject bulletObject = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
+        
         bulletObject.transform.rotation = Quaternion.Euler(_rotation);
 
         if (bulletPre.name == "Buyu")
@@ -62,6 +63,7 @@ public class TowerAttack : MonoBehaviour
             var bullet = bulletObject.GetComponent<BuyucuBullet>();
             if (bullet != null)
             {
+                fireRate = 0.9f;
                 bullet.Seek(target);
             }
         }
@@ -70,6 +72,7 @@ public class TowerAttack : MonoBehaviour
             var bullet = bulletObject.GetComponent<ArbaletBullet>();
             if (bullet != null)
             {
+                fireRate = 1.275f;
                 bullet.Seek(target);
             }
 
@@ -79,6 +82,8 @@ public class TowerAttack : MonoBehaviour
             var bullet = bulletObject.GetComponent<OkcuBullet>();
             if (bullet != null)
             {
+                fireRate = 1.5f;
+
                 bullet.Seek(target);
             }
         }
@@ -87,6 +92,7 @@ public class TowerAttack : MonoBehaviour
             var bullet = bulletObject.GetComponent<ZehirBullet>();
             if (bullet != null)
             {
+                fireRate = 1.200f;
                 bullet.Seek(target);
             }
         }
@@ -95,6 +101,7 @@ public class TowerAttack : MonoBehaviour
             var bullet = bulletObject.GetComponent<TopcuBullet>();
             if (bullet != null)
             {
+                fireRate = 0.9f;
                 bullet.Seek(target);
             }
         }
