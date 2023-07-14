@@ -12,6 +12,7 @@ public class MenuButton : MonoBehaviour
     public GameObject base0;
     public GameObject characterPanel;
     public GameObject menuPanel;
+    public GameObject gPanel;
     public GameObject characterSkill;
     void Start()
     {
@@ -19,6 +20,8 @@ public class MenuButton : MonoBehaviour
         spawner = eventSystem.GetComponent<Spawner>();
         button.onClick.AddListener(() =>
         {
+            Time.timeScale = 1f;
+            gPanel.SetActive(true);
             foreach (GameObject enemy in spawner.Enemies)
             {
                 Destroy(enemy);

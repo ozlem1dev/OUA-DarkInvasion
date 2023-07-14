@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
     CharacterFire _characterfire;
     KartMek _kartmek;
     public Button kitapCikis;
-
+    public GameObject gPanel;
     private void Start()
     {
         cantSpawn1 = false;
@@ -196,7 +196,6 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
-
         if (Enemies.All(x => x == null) && isCardSelection && !isLose)
         {
             isCardSelection = false;
@@ -208,37 +207,15 @@ public class Spawner : MonoBehaviour
             StartCoroutine(DelayedDisplayCards());
         }
 
-        // B tuþu ile kitabý açýp kapatabilmek için.
-        //    if (Input.GetKeyDown(KeyCode.B )&& !bookPanel.activeSelf) 
-        //{
-        //    if(Enemies.All(x => x == null))
-        //    {
-        //        _characterfire.clipSize = 30;
-        //        _kartmek.DisplayCards();
-
-        //        characterPanel.SetActive(false);
-        //        bookPanel.SetActive(true);
-        //        Cursor.lockState = CursorLockMode.None;
-        //        Cursor.visible = true;
-        //    }
-
-        //}
-        //else if (Input.GetKeyDown(KeyCode.B) && bookPanel.activeSelf)
-        //{
-        //    characterPanel.SetActive(true);
-        //    bookPanel.SetActive(false);
-        //    Cursor.lockState = CursorLockMode.Locked;
-        //    Cursor.visible = false;
-        //}
-
-        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control)
+        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control && Enemies.All(x => x == null))
         {
+            //gPanel.SetActive(false);
             enemyPrefabs[0].GetComponent<EnemyHealth>().HealthIncrease(0.05f);
             //ehealth.HealthIncrease(0.05f);
             _characterfire.ResetAmmo();
             stopNumber += 5;
             isBossSpawned = false;
-
+            gPanel.SetActive(false);
             if (Enemies.All(obj => obj == null))
             {
                 isButtonPressed = true;
@@ -343,8 +320,6 @@ public class Spawner : MonoBehaviour
     }
     private void KitapCýkýs()
     {
-
-
         _kartmek.BackToCharacter();
     }
 

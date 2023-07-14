@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    public Spawner spawner;
+    public GameObject gPanel;
     public GameObject escMenuPanel;
 
     public GameObject howToPlayPanel;
@@ -146,6 +149,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
+        if (spawner.Enemies.All(x => x == null))
+        {
+            gPanel.SetActive(true);
+        }
         escMenuPanel.SetActive(false);
         gamePaused = false;
 
@@ -155,7 +162,7 @@ public class GameManager : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f;
-
+        gPanel.SetActive(false);
         escMenuPanel.SetActive(true);
         gamePaused = true;
 
@@ -227,7 +234,7 @@ public class GameManager : MonoBehaviour
     public void ToggleTutorialPanel()
     {
         tutorialPanel.SetActive(true);
-        
+
     }
 
     public void TutorialBackButton()
@@ -256,7 +263,7 @@ public class GameManager : MonoBehaviour
     }
     public void ToggleCinematicPanel2()
     {
-        
+
     }
 
     public void CinematicPanelNextButton2()
@@ -267,7 +274,7 @@ public class GameManager : MonoBehaviour
 
     public void ToggleCinematicPanel3()
     {
-        
+
     }
 
     public void CinematicPanelNextButton3()
@@ -278,7 +285,7 @@ public class GameManager : MonoBehaviour
 
     public void ToggleCinematicPanel4()
     {
-        
+
     }
 
     public void CinematicPanelNextButton4()

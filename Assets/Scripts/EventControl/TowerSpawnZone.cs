@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class TowerSpawnZone : MonoBehaviour
 {
+    public GameObject gPanel;
     GameObject eventSystem;
     TowerPoints towerPoints;
     public Material glowMaterial;
@@ -16,7 +17,6 @@ public class TowerSpawnZone : MonoBehaviour
     {
         objectRenderer = GetComponent<Renderer>();
         originalMaterial = objectRenderer.material;
-        //kartMek = GetComponent<KartMek>();
         eventSystem = GameObject.Find("Event System");
         towerPoints = eventSystem.GetComponent<TowerPoints>();
     }
@@ -33,6 +33,8 @@ public class TowerSpawnZone : MonoBehaviour
         towerPoints.isDone = false;
         towerPoints.isSelectCreatedTowerCard = false;
         eventSystem.GetComponent<Spawner>().control = false;
+
+        gPanel.SetActive(true);
     }
 
 

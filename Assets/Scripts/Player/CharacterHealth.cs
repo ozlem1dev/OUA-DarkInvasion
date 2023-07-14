@@ -61,6 +61,7 @@ public class CharacterHealth : MonoBehaviour
         eventSystem.GetComponent<Spawner>().isLose = true;
         characterPanel.SetActive(false);
         menu.SetActive(true);
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
