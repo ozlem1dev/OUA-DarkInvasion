@@ -1765,7 +1765,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   isRanged: 0
-  minLvl: 1
+  minLvl: 5
   maxLvl: 15
   spawned1: 0
   spawned2: 0

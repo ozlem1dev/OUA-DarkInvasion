@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject quitPanel;
     public GameObject diePanel;
+    public GameObject tutorialPanel;
+    public GameObject cinematicPanel1;
+    public GameObject cinematicPanel2;
+    public GameObject cinematicPanel3;
+    public GameObject cinematicPanel4;
 
     public Button howToPlay;
     public Button howToPlayBack;
@@ -24,6 +29,11 @@ public class GameManager : MonoBehaviour
     public Button quitYesButton;
     public Button quitNoButton;
     public Button dieMainMenuButton;
+    public Button tutorialBackButton;
+    public Button cinematicNextButton1;
+    public Button cinematicNextButton2;
+    public Button cinematicNextButton3;
+    public Button cinematicNextButton4;
 
     public Button exitButton;
     public Button resumeButton;
@@ -37,10 +47,11 @@ public class GameManager : MonoBehaviour
     private bool gamePaused = false;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         LoadSensitivity();
         LoadSoundSensitivity();
+        ToggleCinematicPanel1();
         resumeButton.onClick.AddListener(() =>
         {
             ResumeGame();
@@ -91,6 +102,26 @@ public class GameManager : MonoBehaviour
         dieMainMenuButton.onClick.AddListener(() =>
         {
             mainMenuYesButton();
+        });
+        tutorialBackButton.onClick.AddListener(() =>
+        {
+            TutorialBackButton();
+        });
+        cinematicNextButton1.onClick.AddListener(() =>
+        {
+            CinematicPanelNextButton1();
+        });
+        cinematicNextButton2.onClick.AddListener(() =>
+        {
+            CinematicPanelNextButton2();
+        });
+        cinematicNextButton3.onClick.AddListener(() =>
+        {
+            CinematicPanelNextButton3();
+        });
+        cinematicNextButton4.onClick.AddListener(() =>
+        {
+            CinematicPanelNextButton4();
         });
 
         mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSliderValueChanged);
@@ -192,9 +223,68 @@ public class GameManager : MonoBehaviour
         quitPanel.SetActive(false);
         escMenuPanel.SetActive(true);
     }
+
+    public void ToggleTutorialPanel()
+    {
+        tutorialPanel.SetActive(true);
+        
+    }
+
+    public void TutorialBackButton()
+    {
+        tutorialPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
     public void QuitMenuYesButton()
     {
         Application.Quit();
+    }
+
+    public void ToggleCinematicPanel1()
+    {
+        Time.timeScale = 0f;
+        cinematicPanel1.SetActive(true);
+
+    }
+
+    public void CinematicPanelNextButton1()
+    {
+        cinematicPanel1.SetActive(false);
+        cinematicPanel2.SetActive(true);
+    }
+    public void ToggleCinematicPanel2()
+    {
+        
+    }
+
+    public void CinematicPanelNextButton2()
+    {
+        cinematicPanel2.SetActive(false);
+        cinematicPanel3.SetActive(true);
+    }
+
+    public void ToggleCinematicPanel3()
+    {
+        
+    }
+
+    public void CinematicPanelNextButton3()
+    {
+        cinematicPanel3.SetActive(false);
+        cinematicPanel4.SetActive(true);
+    }
+
+    public void ToggleCinematicPanel4()
+    {
+        
+    }
+
+    public void CinematicPanelNextButton4()
+    {
+        cinematicPanel4.SetActive(false);
+        tutorialPanel.SetActive(true);
     }
 
     //public void OnSensitivitySliderValueChanged()
