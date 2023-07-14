@@ -13,6 +13,7 @@ TagManager:
   - Base
   - Tower
   - TowerSpawn
+  - GPanel
   layers:
   - Default
   - TransparentFX

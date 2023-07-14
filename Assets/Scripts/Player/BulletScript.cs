@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float time = 3f;
+    public float time;
     private bool collided = false;
     public int ammoDamage;
     public static int currentAmmoDamage = 20;

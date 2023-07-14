@@ -15,6 +15,7 @@ using Random = UnityEngine.Random;
 
 public class KartMek : MonoBehaviour
 {
+    public GameObject gPanel;
     public GameObject characterPanel;
     public GameObject menuButton;
     public static GameObject towerPrefab;
@@ -651,12 +652,12 @@ public class KartMek : MonoBehaviour
     {
         towerPoints.isSelectCreatedTowerCard = true;
         menuButton.GetComponent<MenuButton>().Resett();
-
     }
 
     public void BackToCharacter()
     {
         gameObject.SetActive(false);
+        gPanel.SetActive(true);
         soldier.SetActive(true);
         characterPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;

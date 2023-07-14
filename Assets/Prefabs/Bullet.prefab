@@ -77,10 +77,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.069362886
-  m_Height: 0.62631977
+  m_Radius: 0.1384237
+  m_Height: 0.8206069
   m_Direction: 1
-  m_Center: {x: -0.00013937801, y: 0.28341997, z: 0.0009030998}
+  m_Center: {x: 0.0037587434, y: 0.332531, z: -0.021996677}
 --- !u!54 &-9199171430746938819
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ Rigidbody:
     m_Bits: 32768
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4a50991b46a2b48bcb3a0e3ee74f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  time: 4
   ammoDamage: 20
   bulletHitAudio: {fileID: 8300000, guid: 1277f86a39f14794eabd5df134e499df, type: 3}
   bulletTrailPrefab: {fileID: 100002, guid: cfcd690db7ce26548af4f6d7bb536b02, type: 3}
