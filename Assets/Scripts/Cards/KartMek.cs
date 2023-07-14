@@ -563,7 +563,14 @@ public class KartMek : MonoBehaviour
             // Event sistemini kullanarak tıklama işlemini dinle
             Button kartButton = cardObject.GetComponent<Button>();
             kartButton.onClick.AddListener(() => secilenKart.OnKartSecildiginde());
-
+            if (secilenKart.cost > eventSystem.GetComponent<Spawner>().coin)
+            {
+                kartButton.enabled = false;
+            }
+            else
+            {
+                kartButton.enabled = true;
+            }
             if (secilenKart == null)
             {
                 continue; // Diğer Kartlara geç
@@ -647,7 +654,7 @@ public class KartMek : MonoBehaviour
 
     }
 
-    void BackToCharacter()
+    public void BackToCharacter()
     {
         gameObject.SetActive(false);
         soldier.SetActive(true);
@@ -664,6 +671,7 @@ public class KartMek : MonoBehaviour
         Kart tower = kartListesi.FirstOrDefault(x => x.ad == name);
         if (tower != null)
         {
+            CoinUpdate(tower);
             tower.kalanAdet--; // Kartın adedini azalt
             if (tower.kalanAdet == 0)
             {
@@ -679,6 +687,7 @@ public class KartMek : MonoBehaviour
         Kart bullet = kartListesi.FirstOrDefault(x => x.ad == name);
         if (bullet != null)
         {
+            CoinUpdate(bullet);
             bullet.kalanAdet--; // Kartın adedini azalt
             if (bullet.kalanAdet == 0)
             {
@@ -717,6 +726,7 @@ public class KartMek : MonoBehaviour
         Kart kart = kartListesi.FirstOrDefault(x => x.ad == name && x.lvl == cardLvl);
         if (kart != null)
         {
+            CoinUpdate(kart);
             kart.kalanAdet--;
             if (kart.kalanAdet == 0)
             {
@@ -734,6 +744,7 @@ public class KartMek : MonoBehaviour
         Kart kart = kartListesi.FirstOrDefault(x => x.ad == name && x.lvl == cardLvl);
         if (kart != null)
         {
+            CoinUpdate(kart);
             kart.kalanAdet--;
             if (kart.kalanAdet == 0)
             {
@@ -751,6 +762,7 @@ public class KartMek : MonoBehaviour
         Kart kart = kartListesi.FirstOrDefault(x => x.ad == name && x.lvl == cardLvl);
         if (kart != null)
         {
+            CoinUpdate(kart);
             kart.kalanAdet--;
             if (kart.kalanAdet == 0)
             {
@@ -767,6 +779,7 @@ public class KartMek : MonoBehaviour
         Kart kart = kartListesi.FirstOrDefault(x => x.ad == name && x.lvl == cardLvl);
         if (kart != null)
         {
+            CoinUpdate(kart);
             kart.kalanAdet--;
             if (kart.kalanAdet == 0)
             {
@@ -785,6 +798,7 @@ public class KartMek : MonoBehaviour
         Kart kart = kartListesi.FirstOrDefault(x => x.ad == name && x.lvl == cardLvl);
         if (kart != null)
         {
+            CoinUpdate(kart);
             kart.kalanAdet--;
             if (kart.kalanAdet == 0)
             {
@@ -939,7 +953,11 @@ public class KartMek : MonoBehaviour
     {
         CanGelistir("Maksimum Can Arttırma Kartı", 5);
     }
-
+    private void CoinUpdate(Kart kart)
+    {
+        eventSystem.GetComponent<Spawner>().coin -= kart.cost;
+        eventSystem.GetComponent<Spawner>().coinText[0].text = eventSystem.GetComponent<Spawner>().coin.ToString();
+    }
 
 }
 

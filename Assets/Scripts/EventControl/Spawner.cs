@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -26,6 +28,9 @@ public class Spawner : MonoBehaviour
     public GameObject characterPanel;
     public GameObject bookPanel;
     public GameObject boss;
+    public int coin;
+    public int coinIncreaser;
+    public List<TextMeshProUGUI> coinText = new List<TextMeshProUGUI>();
     public bool isDead = false;
     public bool control;
     private bool isButtonPressed = false;
@@ -37,6 +42,7 @@ public class Spawner : MonoBehaviour
     private bool isBossSpawned = false;
     CharacterFire _characterfire;
     KartMek _kartmek;
+    public Button kitapCikis;
 
     private void Start()
     {
@@ -47,7 +53,10 @@ public class Spawner : MonoBehaviour
         level = gameObject.GetComponent<LevelControl>();
         _kartmek = bookPanel.GetComponent<KartMek>();
         _characterfire = soldier.GetComponent<CharacterFire>();
-
+        kitapCikis.onClick.AddListener(() =>
+        {
+            KitapCýkýs();
+        });
         InLevelCheck();
         level.currentLevel = level.levelNumber;
     }
@@ -187,10 +196,15 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
+
         if (Enemies.All(x => x == null) && isCardSelection && !isLose)
         {
             isCardSelection = false;
             control = true;
+            coinControl();
+            coin += coinIncreaser;
+            coinText[0].text = coin.ToString();
+            coinText[1].text = coin.ToString();
             StartCoroutine(DelayedDisplayCards());
         }
 
@@ -307,6 +321,31 @@ public class Spawner : MonoBehaviour
 
             }
         }
+    }
+    private void coinControl()
+    {
+        if (level.currentLevel > 0 && level.currentLevel <= 5)
+        {
+            coinIncreaser = 3;
+        }
+        else if (level.currentLevel > 5 && level.currentLevel <= 10)
+        {
+            coinIncreaser = 4;
+        }
+        else if (level.currentLevel > 10 && level.currentLevel <= 15)
+        {
+            coinIncreaser = 5;
+        }
+        else if (level.currentLevel > 15 && level.currentLevel <= 20)
+        {
+            coinIncreaser = 5;
+        }
+    }
+    private void KitapCýkýs()
+    {
+
+
+        _kartmek.BackToCharacter();
     }
 
 }
