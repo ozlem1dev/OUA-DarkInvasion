@@ -40,6 +40,8 @@ public class KartMek : MonoBehaviour
     public GameObject grenade;
     public GameObject granedeGun;
     public GameObject bullet;
+
+    public List<Sprite> kartImageList = new List<Sprite>();
     void Awake()
     {
 
@@ -55,12 +57,14 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir okçu kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.4f,
+            olasilik = 0.9f,
             minLevel = 1,
             maxLevel = 21,
             lvl = 1,
             cost = 2,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("OkcuKulesi"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("OkcuKulesi")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("OkcuKulesiOlusturma"))
+
         };
         okcuKulesiOlusturmaKarti.KartSecildiginde += OkcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(okcuKulesiOlusturmaKarti);
@@ -72,12 +76,13 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir arbalet kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.4f,
+            olasilik = 0.9f,
             minLevel = 3,
             maxLevel = 21,
             lvl = 2,
             cost = 4,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ArbaletKulesi"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ArbaletKulesi")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("ArbaletKulesiOlusturma"))
         };
         arbaletKulesiOlusturmaKarti.KartSecildiginde += ArbaletKulesiOlusturmaKartiSecildi;
         kartListesi.Add(arbaletKulesiOlusturmaKarti);
@@ -89,12 +94,13 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir topçu kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.4f,
+            olasilik = 0.9f,
             minLevel = 4,
             maxLevel = 21,
             lvl = 3,
             cost = 6,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("TopcuKulesi"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("TopcuKulesi")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("TopcuKulesiOlusturma"))
         };
         topcuKulesiOlusturmaKarti.KartSecildiginde += TopcuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(topcuKulesiOlusturmaKarti);
@@ -111,7 +117,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 4,
             cost = 8,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ZehirKulesi"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("ZehirKulesi")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("ZehirKulesiOlusturma"))
         };
         zehirKulesiOlusturmaKarti.KartSecildiginde += ZehirKulesiOlusturmaKartiSecildi;
         kartListesi.Add(zehirKulesiOlusturmaKarti);
@@ -128,7 +135,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 10,
-            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("BuyucuKulesi"))
+            prefabTower = towerPrefabList.FirstOrDefault(x => x.name == ("BuyucuKulesi")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BuyucuKulesiOlusturma"))
         };
         buyucuKulesiOlusturmaKarti.KartSecildiginde += BuyucuKulesiOlusturmaKartiSecildi;
         kartListesi.Add(buyucuKulesiOlusturmaKarti);
@@ -151,6 +159,7 @@ public class KartMek : MonoBehaviour
             lvl = 5,
             cost = 10,
             value = 10,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("TumKuleleriGelistirme"))
         };
         tumKuleleriGelistir.KartSecildiginde += TumKuleleriGelistirmeKartiSecildi;
         kartListesi.Add(tumKuleleriGelistir);
@@ -168,7 +177,9 @@ public class KartMek : MonoBehaviour
             lvl = 1,
             cost = 1,
             value = 10,
-            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Ok"))
+            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Ok")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("OkcuKulesiGelistirme"))
+
         };
         okcuKulesiGelistirmeKarti.KartSecildiginde += OkcuKulesiGelistirmeKartiSecildi;
         kartListesi.Add(okcuKulesiGelistirmeKarti);
@@ -186,7 +197,8 @@ public class KartMek : MonoBehaviour
             lvl = 2,
             cost = 2,
             value = 10,
-            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Mizrak"))
+            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Mizrak")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("ArbaletKulesiGelistirme"))
 
         };
         arbaletKulesiGelistirmeKarti.KartSecildiginde += ArbaletKulesiGelistirmeKartiSecildi;
@@ -205,7 +217,8 @@ public class KartMek : MonoBehaviour
             lvl = 3,
             cost = 3,
             value = 10,
-            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Top"))
+            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Top")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("TopcuKulesiGelistirme"))
         };
         topcuKulesiGelistirmeKarti.KartSecildiginde += TopcuKulesiGelistirmeKartiSecildi;
         kartListesi.Add(topcuKulesiGelistirmeKarti);
@@ -223,7 +236,8 @@ public class KartMek : MonoBehaviour
             lvl = 4,
             cost = 4,
             value = 10,
-            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Poison"))
+            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Poison")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("ZehirKulesiGelistirme"))
         };
         zehirKulesiGelistirmeKarti.KartSecildiginde += ZehirKulesiGelistirmeKartiSecildi;
         kartListesi.Add(zehirKulesiGelistirmeKarti);
@@ -240,7 +254,8 @@ public class KartMek : MonoBehaviour
             lvl = 5,
             cost = 5,
             value = 10,
-            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Buyu"))
+            prefabTower = bulletPrefabList.FirstOrDefault(x => x.name == ("Buyu")),
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BuyucuKulesiGelistirme"))
         };
         buyucuKulesiGelistirmeKarti.KartSecildiginde += BuyucuKulesiGelistirmeKartiSecildi;
         kartListesi.Add(buyucuKulesiGelistirmeKarti);
@@ -262,6 +277,7 @@ public class KartMek : MonoBehaviour
             lvl = 3,
             cost = 3,
             value = 12,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("Hasar"))
         };
         silahHasariGelistirmeKarti.KartSecildiginde += SilahHasariGelistirmeKartiSecildi;
         kartListesi.Add(silahHasariGelistirmeKarti);
@@ -279,6 +295,7 @@ public class KartMek : MonoBehaviour
             lvl = 3,
             cost = 3,
             value = 15,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("AtisHizi"))
         };
         silahHiziGelistirmeKarti.KartSecildiginde += SilahHiziGelistirmeKartiSecildi;
         kartListesi.Add(silahHiziGelistirmeKarti);
@@ -296,6 +313,7 @@ public class KartMek : MonoBehaviour
             lvl = 3,
             cost = 3,
             value = 12,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaHasari"))
         };
         bombaHasariGelistirmeKarti.KartSecildiginde += BombaHasariGelistirmeKartiSecildi;
         kartListesi.Add(bombaHasariGelistirmeKarti);
@@ -313,6 +331,7 @@ public class KartMek : MonoBehaviour
             lvl = 3,
             cost = 3,
             value = 15,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaTime"))
         };
         bombaDolmaHiziArttirmaGelistirmeKarti.KartSecildiginde += BombaDolmaHiziArttirmaGelistirmeKartiSecildi;
         kartListesi.Add(bombaDolmaHiziArttirmaGelistirmeKarti);
@@ -329,13 +348,11 @@ public class KartMek : MonoBehaviour
             maxLevel = 7,
             lvl = 3,
             cost = 3,
-            value = 20
+            value = 20,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("CanGelistirme"))
         };
         canGelistirmeKarti.KartSecildiginde += CanGelistirmeKartiSecildi;
         kartListesi.Add(canGelistirmeKarti);
-
-
-
 
 
         Kart lvl2silahHasariGelistirmeKarti = new()
@@ -349,7 +366,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 14,
             lvl = 4,
             cost = 6,
-            value = 18
+            value = 18,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("Hasar2"))
         };
         lvl2silahHasariGelistirmeKarti.KartSecildiginde += lvl2SilahHasariGelistirmeKartiSecildi;
         kartListesi.Add(lvl2silahHasariGelistirmeKarti);
@@ -366,7 +384,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 14,
             lvl = 4,
             cost = 6,
-            value = 20
+            value = 20,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("AtisHizi2"))
         };
         lvl2silahHiziGelistirmeKarti.KartSecildiginde += lvl2SilahHiziGelistirmeKartiSecildi;
         kartListesi.Add(lvl2silahHiziGelistirmeKarti);
@@ -383,7 +402,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 14,
             lvl = 4,
             cost = 6,
-            value = 18
+            value = 18,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaHasari2"))
         };
         lvl2bombaHasariGelistirmeKarti.KartSecildiginde += lvl2BombaHasariGelistirmeKartiSecildi;
         kartListesi.Add(lvl2bombaHasariGelistirmeKarti);
@@ -400,7 +420,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 14,
             lvl = 4,
             cost = 6,
-            value = 20
+            value = 20,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaTime2"))
         };
         lvl2bombaDolmaHiziArttirmaGelistirmeKarti.KartSecildiginde += lvl2BombaDolmaHiziArttirmaGelistirmeKartiSecildi;
         kartListesi.Add(lvl2bombaDolmaHiziArttirmaGelistirmeKarti);
@@ -417,7 +438,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 14,
             lvl = 4,
             cost = 6,
-            value = 30
+            value = 30,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("CanGelistirme2"))
         };
         lvl2canGelistirmeKarti.KartSecildiginde += lvl2CanGelistirmeKartiSecildi;
         kartListesi.Add(lvl2canGelistirmeKarti);
@@ -438,7 +460,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 9,
-            value = 25
+            value = 25,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("Hasar3"))
         };
         lvl3silahHasariGelistirmeKarti.KartSecildiginde += lvl3SilahHasariGelistirmeKartiSecildi;
         kartListesi.Add(lvl3silahHasariGelistirmeKarti);
@@ -455,7 +478,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 9,
-            value = 25
+            value = 25,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("AtisHizi3"))
         };
         lvl3silahHiziGelistirmeKarti.KartSecildiginde += lvl3SilahHiziGelistirmeKartiSecildi;
         kartListesi.Add(lvl3silahHiziGelistirmeKarti);
@@ -472,7 +496,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 9,
-            value = 25
+            value = 25,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaHasari3"))
         };
         lvl3bombaHasariGelistirmeKarti.KartSecildiginde += lvl3BombaHasariGelistirmeKartiSecildi;
         kartListesi.Add(lvl3bombaHasariGelistirmeKarti);
@@ -489,7 +514,8 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 9,
-            value = 25
+            value = 25,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("BombaTime3"))
         };
         lvl3bombaDolmaHiziArttirmaGelistirmeKarti.KartSecildiginde += lvl3BombaDolmaHiziArttirmaGelistirmeKartiSecildi;
         kartListesi.Add(lvl3bombaDolmaHiziArttirmaGelistirmeKarti);
@@ -506,14 +532,12 @@ public class KartMek : MonoBehaviour
             maxLevel = 21,
             lvl = 5,
             cost = 9,
-            value = 40
+            value = 40,
+            gorsel = kartImageList.FirstOrDefault(x => x.name == ("CanGelistirme3"))
         };
         lvl3canGelistirmeKarti.KartSecildiginde += lvl3CanGelistirmeKartiSecildi;
         kartListesi.Add(lvl3canGelistirmeKarti);
     }
-
-
-
 
 
     public void DisplayCards()
@@ -620,7 +644,7 @@ public class KartMek : MonoBehaviour
     {
         towerPoints.isSelectCreatedTowerCard = true;
         menuButton.GetComponent<MenuButton>().Resett();
-        
+
     }
 
     void BackToCharacter()

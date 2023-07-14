@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject escMenuPanel;
-    
+
     public GameObject howToPlayPanel;
     public GameObject settingsPanel;
     public GameObject mainMenuPanel;
@@ -28,14 +28,19 @@ public class GameManager : MonoBehaviour
     public Button exitButton;
     public Button resumeButton;
 
-    public Slider sensitivitySlider;
+    public Slider mouseSensitivitySlider;
+    public Slider soundSensitivitySlider;
+    public MouseSensivityData mouseSensivityData;
     public ThirdPersonCam thirdPersonCam;
-
+    float mouseSliderValue;
+    float soundSliderValue;
     private bool gamePaused = false;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        LoadSensitivity();
+        LoadSoundSensitivity();
         resumeButton.onClick.AddListener(() =>
         {
             ResumeGame();
@@ -88,12 +93,13 @@ public class GameManager : MonoBehaviour
             mainMenuYesButton();
         });
 
-        sensitivitySlider.onValueChanged.AddListener(OnSliderValueChanged);
+        mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSliderValueChanged);
+        soundSensitivitySlider.onValueChanged.AddListener(OnSoundSliderValueChanged);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && diePanel.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && !diePanel.activeSelf && !howToPlayPanel.activeSelf && !settingsPanel.activeSelf && !quitPanel.activeSelf && !mainMenuPanel.activeSelf)
         {
             if (gamePaused)
             {
@@ -196,12 +202,43 @@ public class GameManager : MonoBehaviour
     //    float sliderValue = sensitivitySlider.value;
     //    thirdPersonCam.SetSensitivity(sliderValue);
     //}
-
-    private void OnSliderValueChanged(float value)
+    private void OnSoundSliderValueChanged(float value)
+    {
+        soundSliderValue = value;
+        //ses seviyesi degistirme metodu buraya gelcek
+        SaveSoundSensitivity();
+    }
+    private void OnMouseSliderValueChanged(float value)
     {
         // Slider deðeri deðiþtiðinde çaðrýlacak metod
         //Debug.Log("Slider deðeri: " + value);
-        float sliderValue = value;
-        thirdPersonCam.SetSensitivity(sliderValue);
+        mouseSliderValue = value;
+        thirdPersonCam.SetSensitivity(mouseSliderValue);
+        SaveSensitivity();
+    }
+
+    void SaveSensitivity()
+    {
+        mouseSensivityData.sensitivityValue = mouseSliderValue;
+    }
+
+    void LoadSensitivity()
+    {
+        mouseSliderValue = mouseSensivityData.sensitivityValue;
+        mouseSensitivitySlider.value = mouseSliderValue;
+        thirdPersonCam.SetSensitivity(mouseSliderValue);
+    }
+
+
+    void SaveSoundSensitivity()
+    {
+        mouseSensivityData.soundSensitivityValue = soundSliderValue;
+    }
+
+    void LoadSoundSensitivity()
+    {
+        soundSliderValue = mouseSensivityData.soundSensitivityValue;
+        soundSensitivitySlider.value = soundSliderValue;
+        //ses seviyesi degistirme metodu buraya gelcek
     }
 }

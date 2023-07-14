@@ -9,15 +9,18 @@ public class TowerSpawnZone : MonoBehaviour
 {
     GameObject eventSystem;
     TowerPoints towerPoints;
-    /*public GameObject bookPanel;
-    private KartMek kartMek;*/
+    public Material glowMaterial;
+    private Material originalMaterial;
+    private Renderer objectRenderer;
     void Start()
     {
+        objectRenderer = GetComponent<Renderer>();
+        originalMaterial = objectRenderer.material;
         //kartMek = GetComponent<KartMek>();
         eventSystem = GameObject.Find("Event System");
         towerPoints = eventSystem.GetComponent<TowerPoints>();
     }
-    
+
     public void CreateTower()
     {
         var towerPrefab = KartMek.towerPrefab;
@@ -25,7 +28,7 @@ public class TowerSpawnZone : MonoBehaviour
 
         // Kule prefabýný spawn noktasýnýn transformuna eþitleyerek kuleyi spawn noktasýna taþý
         Instantiate(towerPrefab, gameObject.transform.position, gameObject.transform.rotation);
-        
+
 
         towerPoints.isDone = false;
         towerPoints.isSelectCreatedTowerCard = false;
@@ -54,7 +57,6 @@ public class TowerSpawnZone : MonoBehaviour
             {
                 CreateTower();
                 towerPoints.FollowCharacter();
-                //StartCoroutine(DelaySelectCreatedTowarCardSetTrue());
 
                 if (towerPoints.Points.Count != 0)
                     StartCoroutine(DelayRemovePointSpawn(pointSpawnTower));
@@ -62,18 +64,16 @@ public class TowerSpawnZone : MonoBehaviour
         }
     }
 
-    /*IEnumerator DelaySelectCreatedTowarCardSetTrue()
+    private void OnMouseEnter()
     {
-        yield return new WaitForSeconds(4f);
-        if (towerPoints.Points.Count != 0)
-        {
-            SelectCreatedTowarCardSetTrue();
-        }
-    }*/
-    /*void SelectCreatedTowarCardSetTrue()
+        Debug.Log("geldi");
+        objectRenderer.material = glowMaterial;
+    }
+    private void OnMouseExit()
     {
-        towerPoints.isSelectCreatedTowerCard = true;
-    }*/
+        Debug.Log("gitti");
+        objectRenderer.material = originalMaterial;
+    }
 
     IEnumerator DelayRemovePointSpawn(GameObject pointSpawnTower)
     {

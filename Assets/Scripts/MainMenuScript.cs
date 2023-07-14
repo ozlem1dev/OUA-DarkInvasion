@@ -17,7 +17,6 @@ public class MainMenuScript : MonoBehaviour
 
     void Start()
     {
-
     }
 
 
