@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
-    public float x = 450;
-    public float y = 3;
-
+    public float x = 450f;
+    public float y = 3f;
     private float sensitivity = 0.5f;
+    Cinemachine.CinemachineFreeLook cinemachine;
 
     private void Start()
     {
-        var cinemachine = GetComponent<Cinemachine.CinemachineFreeLook>();
+        cinemachine = gameObject.GetComponent<Cinemachine.CinemachineFreeLook>();
         cinemachine.m_XAxis.m_MaxSpeed = x * sensitivity;
         cinemachine.m_YAxis.m_MaxSpeed = y * sensitivity;
     }
@@ -25,9 +25,10 @@ public class ThirdPersonCam : MonoBehaviour
     public void SetSensitivity(float value)
     {
         sensitivity = value;
-        var cinemachine = GetComponent<Cinemachine.CinemachineFreeLook>();
+
         cinemachine.m_XAxis.m_MaxSpeed = x * sensitivity;
         cinemachine.m_YAxis.m_MaxSpeed = y * sensitivity;
-        Debug.Log("Slider de�eri: " + cinemachine.m_XAxis.m_MaxSpeed);
+        Debug.Log("Slider degeri: " + cinemachine.m_XAxis.m_MaxSpeed);
     }
 }
+

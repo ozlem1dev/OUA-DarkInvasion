@@ -33,8 +33,6 @@ public class Spawner : MonoBehaviour
     private float nextSpawnTime2;
     private float nextSpawnTime3;
     private LevelControl level;
-    private EnemyHealth ehealth;
-
     private bool isCardSelection = true;
     private bool isBossSpawned = false;
     CharacterFire _characterfire;
@@ -93,19 +91,19 @@ public class Spawner : MonoBehaviour
         if (level.currentLevel == 10 && !isBossSpawned)
         {
 
-            GameObject bossObject=Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            GameObject bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
 
-           
-            
-                for (int i = 0; i < waypoints1.Length; i++)
+
+
+            for (int i = 0; i < waypoints1.Length; i++)
+            {
+                if (bossMovement.waypoints != null && waypoints1 != null)
                 {
-                    if (bossMovement.waypoints != null && waypoints1 != null)
-                    {
-                        bossMovement.waypoints[i] = waypoints1[i];
-                    }
+                    bossMovement.waypoints[i] = waypoints1[i];
                 }
-                
+            }
+
             enemyCount++;
             isBossSpawned = true;
         }
@@ -221,11 +219,12 @@ public class Spawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control)
         {
-            ehealth.HealthIncrease(0.05f);
+            enemyPrefabs[0].GetComponent<EnemyHealth>().HealthIncrease(0.05f);
+            //ehealth.HealthIncrease(0.05f);
             _characterfire.ResetAmmo();
             stopNumber += 5;
             isBossSpawned = false;
-            
+
             if (Enemies.All(obj => obj == null))
             {
                 isButtonPressed = true;

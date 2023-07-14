@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38380527, g: 0.39578956, b: 0.38118786, a: 1}
+  m_IndirectSpecularColor: {r: 0.1344469, g: 0.14465809, b: 0.13631189, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -869,6 +869,66 @@ Transform:
   m_Father: {fileID: 1165392020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &96663209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96663211}
+  - component: {fileID: 96663212}
+  m_Layer: 0
+  m_Name: Ana Menu Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96663211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96663209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96663212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96663209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de758a424703c4c852b8e40574a1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivityData: {fileID: 11400000, guid: 5234ce12e082a9c41a815c8d871c0289, type: 2}
+  mainPanel: {fileID: 439834263}
+  howToPlayPanel: {fileID: 518141034}
+  creditsPanel: {fileID: 1204439706}
+  settingsPanel: {fileID: 239202584}
+  oynaButton: {fileID: 1075235348}
+  kapatButton: {fileID: 640915330}
+  ayarlarButton: {fileID: 2072260586}
+  infoButton: {fileID: 653715608}
+  yapimcilarButton: {fileID: 1889688406}
+  ayarlarGeriButton: {fileID: 1566232317}
+  infoGeriButton: {fileID: 141496178}
+  yapimcilarGeriButton: {fileID: 1065686653}
+  MouseSensitivitySlider: {fileID: 1785587999}
+  SoundSensitivitySlider: {fileID: 1655582282}
+  thirdPersonCam: {fileID: 501563990}
 --- !u!1001 &114250979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,7 +1184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &135264224
 GameObject:
@@ -1244,7 +1304,6 @@ GameObject:
   - component: {fileID: 141496180}
   - component: {fileID: 141496179}
   - component: {fileID: 141496178}
-  - component: {fileID: 141496181}
   m_Layer: 5
   m_Name: Geri Butonu
   m_TagString: Untagged
@@ -1317,19 +1376,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 141496179}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 141496181}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: HowToPlayBackButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &141496179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,24 +1415,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141496175}
   m_CullTransparentMesh: 1
---- !u!114 &141496181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141496175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 518141034}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1 &149348146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,7 +3523,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438733215
 GameObject:
@@ -4017,7 +4046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1718b4b66351bc144ae389327553b651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: 0.5
+  x: 450
+  y: 3
 --- !u!114 &501563991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4140,7 +4170,7 @@ Transform:
   - {fileID: 1721599784}
   - {fileID: 286386344}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508045437
 GameObject:
@@ -4722,7 +4752,7 @@ Transform:
   - {fileID: 1344399409}
   - {fileID: 1313260594}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -87.789, z: 0}
 --- !u!1 &598908990
 GameObject:
@@ -5147,7 +5177,6 @@ GameObject:
   - component: {fileID: 640915332}
   - component: {fileID: 640915331}
   - component: {fileID: 640915330}
-  - component: {fileID: 640915333}
   m_Layer: 0
   m_Name: Kapat Buton
   m_TagString: Untagged
@@ -5220,19 +5249,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 640915331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640915333}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: QuitButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &640915331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5271,24 +5288,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640915328}
   m_CullTransparentMesh: 1
---- !u!114 &640915333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640915328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 0}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1001 &642204061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5431,7 +5430,6 @@ GameObject:
   - component: {fileID: 653715610}
   - component: {fileID: 653715609}
   - component: {fileID: 653715608}
-  - component: {fileID: 653715611}
   m_Layer: 0
   m_Name: Info Button
   m_TagString: Untagged
@@ -5504,19 +5502,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653715609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 653715611}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: ToggleHowToPlayPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &653715609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5555,24 +5541,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653715606}
   m_CullTransparentMesh: 1
---- !u!114 &653715611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653715606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 518141034}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1 &657427194
 GameObject:
   m_ObjectHideFlags: 0
@@ -6868,6 +6836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal blue
       objectReference: {fileID: 0}
+    - target: {fileID: 5607819269926399345, guid: 45e0f06c750176947862c10346226439, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7173,98 +7145,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4318067902728824, guid: 47e2e704f483a9c4aad38842dcadc89f, type: 3}
   m_PrefabInstance: {fileID: 905255136}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &908621282
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 908621285}
-  - component: {fileID: 908621284}
-  - component: {fileID: 908621283}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &908621283
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908621282}
-  m_Enabled: 1
---- !u!20 &908621284
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908621282}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &908621285
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908621282}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918631253
 GameObject:
   m_ObjectHideFlags: 0
@@ -8562,7 +8442,6 @@ GameObject:
   - component: {fileID: 1065686655}
   - component: {fileID: 1065686654}
   - component: {fileID: 1065686653}
-  - component: {fileID: 1065686652}
   m_Layer: 5
   m_Name: Geri Butonu
   m_TagString: Untagged
@@ -8592,24 +8471,6 @@ RectTransform:
   m_AnchoredPosition: {x: 85.3, y: -188.74994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1065686652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065686650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 1204439706}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!114 &1065686653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8653,19 +8514,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1065686654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1065686652}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: CreditsBackButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1065686654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8827,7 +8676,6 @@ GameObject:
   - component: {fileID: 1075235350}
   - component: {fileID: 1075235349}
   - component: {fileID: 1075235348}
-  - component: {fileID: 1075235351}
   m_Layer: 0
   m_Name: Oyna Buton
   m_TagString: Untagged
@@ -8900,19 +8748,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1075235349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1075235351}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: PlayButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1075235349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8951,24 +8787,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075235346}
   m_CullTransparentMesh: 1
---- !u!114 &1075235351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075235346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1001 &1087815434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9514,7 +9332,7 @@ GameObject:
   - component: {fileID: 1173763517}
   - component: {fileID: 1173763516}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9527,7 +9345,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173763515}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1173763517
 Camera:
   m_ObjectHideFlags: 0
@@ -9592,7 +9410,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -9.816, y: 180, z: -0.034}
 --- !u!1 &1174879216
 GameObject:
@@ -13481,7 +13299,6 @@ GameObject:
   - component: {fileID: 1566232319}
   - component: {fileID: 1566232318}
   - component: {fileID: 1566232317}
-  - component: {fileID: 1566232316}
   m_Layer: 5
   m_Name: Geri Butonu
   m_TagString: Untagged
@@ -13511,24 +13328,6 @@ RectTransform:
   m_AnchoredPosition: {x: 271, y: -186}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1566232316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566232314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 239202584}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!114 &1566232317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13572,19 +13371,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1566232318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1566232316}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: SettingsBackButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1566232318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13941,7 +13728,7 @@ RectTransform:
   - {fileID: 1626211985}
   - {fileID: 1885853578}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14314,7 +14101,7 @@ RectTransform:
   - {fileID: 518141035}
   - {fileID: 239202585}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15839,7 +15626,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1785587998}
   - component: {fileID: 1785587999}
-  - component: {fileID: 1785588000}
   m_Layer: 5
   m_Name: Mouse Sensivity Slider
   m_TagString: Untagged
@@ -15920,37 +15706,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1785588000}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: OnSensitivitySliderValueChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1785588000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785587997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 0}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 1785587999}
-  thirdPersonCam: {fileID: 501563990}
+      m_Calls: []
 --- !u!1 &1801459051
 GameObject:
   m_ObjectHideFlags: 0
@@ -17135,7 +16891,6 @@ GameObject:
   - component: {fileID: 1889688408}
   - component: {fileID: 1889688407}
   - component: {fileID: 1889688406}
-  - component: {fileID: 1889688409}
   m_Layer: 0
   m_Name: "Yap\u0131mc\u0131lar Button"
   m_TagString: Untagged
@@ -17208,19 +16963,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889688407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1889688409}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: ToggleCreditsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1889688407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17259,24 +17002,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889688404}
   m_CullTransparentMesh: 1
---- !u!114 &1889688409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889688404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 1204439706}
-  settingsPanel: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1 &1894617252
 GameObject:
   m_ObjectHideFlags: 0
@@ -18600,7 +18325,6 @@ GameObject:
   - component: {fileID: 2072260588}
   - component: {fileID: 2072260587}
   - component: {fileID: 2072260586}
-  - component: {fileID: 2072260589}
   m_Layer: 0
   m_Name: Ayarlar Buton
   m_TagString: Untagged
@@ -18673,19 +18397,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2072260587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2072260589}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: ToggleSettingsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2072260587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18724,24 +18436,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072260584}
   m_CullTransparentMesh: 1
---- !u!114 &2072260589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072260584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d936940061be641bf512ab49aa1134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 439834263}
-  howToPlayPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
-  settingsPanel: {fileID: 239202584}
-  sensitivitySlider: {fileID: 0}
-  thirdPersonCam: {fileID: 0}
 --- !u!1 &2077951258
 GameObject:
   m_ObjectHideFlags: 0
