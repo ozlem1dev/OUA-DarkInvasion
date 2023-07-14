@@ -29,8 +29,8 @@ TagManager:
   - TankEnemy
   - RunnerEnemy
   - Boss
-  - 
-  - 
+  - Blocker
+  - Bullet
   - 
   - 
   - 
