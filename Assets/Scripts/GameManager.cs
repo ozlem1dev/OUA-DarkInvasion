@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject cinematicPanel2;
     public GameObject cinematicPanel3;
     public GameObject cinematicPanel4;
+    public GameObject winPanel;
 
     public Button howToPlay;
     public Button howToPlayBack;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public Button cinematicNextButton2;
     public Button cinematicNextButton3;
     public Button cinematicNextButton4;
+    public Button winPanelMainMenuButton;
 
     public Button exitButton;
     public Button resumeButton;
@@ -125,6 +127,10 @@ public class GameManager : MonoBehaviour
         cinematicNextButton4.onClick.AddListener(() =>
         {
             CinematicPanelNextButton4();
+        });
+        winPanelMainMenuButton.onClick.AddListener(() =>
+        {
+            WinPanelMainMenuButton();
         });
 
         mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSliderValueChanged);
@@ -292,6 +298,20 @@ public class GameManager : MonoBehaviour
     {
         cinematicPanel4.SetActive(false);
         tutorialPanel.SetActive(true);
+    }
+    public void ToggleWinPanel()
+    {
+        winPanel.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void WinPanelMainMenuButton()
+    {
+        winPanel.SetActive(false);
+        SceneManager.LoadScene(0);
+
     }
 
     //public void OnSensitivitySliderValueChanged()
