@@ -44,6 +44,7 @@ public class Spawner : MonoBehaviour
     KartMek _kartmek;
     public Button kitapCikis;
     public GameObject gPanel;
+    GameObject bossObject;
     private void Start()
     {
         cantSpawn1 = false;
@@ -97,12 +98,11 @@ public class Spawner : MonoBehaviour
     {
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint1.Length);
-        if (level.currentLevel == 10 && !isBossSpawned)
+        if (level.currentLevel == 1 && !isBossSpawned)
         {
 
-            GameObject bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
-
 
 
             for (int i = 0; i < waypoints1.Length; i++)
@@ -128,8 +128,7 @@ public class Spawner : MonoBehaviour
         int randomSpawn = Random.Range(0, spawnPoint2.Length);
         if (level.currentLevel == 15 && !isBossSpawned)
         {
-            Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
-            GameObject bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
 
 
@@ -141,7 +140,7 @@ public class Spawner : MonoBehaviour
                     bossMovement.waypoints[i] = waypoints2[i];
                 }
             }
-            Enemies.Add(bossObject);
+
             enemyCount++;
             isBossSpawned = true;
         }
@@ -157,8 +156,7 @@ public class Spawner : MonoBehaviour
         int randomSpawn = Random.Range(0, spawnPoint3.Length);
         if (level.currentLevel == 20 && !isBossSpawned)
         {
-            Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
-            GameObject bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
 
             for (int i = 0; i < waypoints1.Length; i++)
@@ -168,7 +166,7 @@ public class Spawner : MonoBehaviour
                     bossMovement.waypoints[i] = waypoints3[i];
                 }
             }
-            Enemies.Add(bossObject);
+
             enemyCount++;
             isBossSpawned = true;
         }
@@ -196,7 +194,7 @@ public class Spawner : MonoBehaviour
 
     public void LevelStartApprove()
     {
-        if (Enemies.All(x => x == null) && isCardSelection && !isLose)
+        if (Enemies.All(x => x == null) && isCardSelection && !isLose && bossObject == null)
         {
             isCardSelection = false;
             control = true;
@@ -207,7 +205,7 @@ public class Spawner : MonoBehaviour
             StartCoroutine(DelayedDisplayCards());
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control && Enemies.All(x => x == null))
+        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control && Enemies.All(x => x == null) && bossObject == null)
         {
             //gPanel.SetActive(false);
             enemyPrefabs[0].GetComponent<EnemyHealth>().HealthIncrease(0.05f);
