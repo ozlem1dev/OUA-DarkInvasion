@@ -115,6 +115,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (isRanged)
             {
+                _animator.SetBool("Attack", true);
                 GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
                 Vector3 direction = player.position - transform.position;

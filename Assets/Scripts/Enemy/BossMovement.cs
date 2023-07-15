@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class BossMovement : MonoBehaviour
 {
@@ -23,9 +23,13 @@ public class BossMovement : MonoBehaviour
     private bool isAttacked;
     private float distanceToTower;
     float temptower;
+
+    Animator _animator;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
 
     }
 
@@ -40,6 +44,7 @@ public class BossMovement : MonoBehaviour
         if (target == null)
         {
             Forward();
+            _animator.SetFloat("Speed", agent.speed);
         }
         if (target != null)
         {
@@ -47,6 +52,7 @@ public class BossMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) >= attackRange)
             {
                 GoToTower();
+                _animator.SetFloat("Speed", agent.speed);
             }
             else
                 Attack();
@@ -99,15 +105,23 @@ public class BossMovement : MonoBehaviour
         agent.SetDestination(transform.position);
 
         if (!isAttacked) {
+            _animator.SetBool("Attack", true);
             StartCoroutine(ChargeAndAttackTower());
+            StartCoroutine(AttackAnimation());
 
             isAttacked = true;
             Invoke("AttackCooldown", attackCooldown);
         }
     }
 
+    IEnumerator AttackAnimation() 
+    { 
+        yield return new WaitForSeconds(2f);
+        _animator.SetBool("Attack", false);
+    }
+
     void AttackCooldown()
-    {
+    {     
         isAttacked = false;
     }
 

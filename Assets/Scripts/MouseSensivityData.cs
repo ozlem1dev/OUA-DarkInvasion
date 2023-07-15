@@ -8,4 +8,5 @@ public class MouseSensivityData : ScriptableObject
 {
     public float sensitivityValue = 0.5f;
     public float soundSensitivityValue = 0.5f;
+    public bool firstOpen = true;
 }

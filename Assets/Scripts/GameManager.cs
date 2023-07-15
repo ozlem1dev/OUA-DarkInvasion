@@ -56,7 +56,14 @@ public class GameManager : MonoBehaviour
         //Cursor.visible = false;
         LoadSensitivity();
         LoadSoundSensitivity();
-        ToggleCinematicPanel1();
+        if (mouseSensivityData.firstOpen)
+        {
+            ToggleCinematicPanel1();
+            mouseSensivityData.firstOpen = false;
+        }
+        else
+            tutorialPanel.SetActive(true);
+
         resumeButton.onClick.AddListener(() =>
         {
             ResumeGame();
@@ -139,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !diePanel.activeSelf && !howToPlayPanel.activeSelf && !settingsPanel.activeSelf && !quitPanel.activeSelf && !mainMenuPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !diePanel.activeSelf && !howToPlayPanel.activeSelf && !settingsPanel.activeSelf && !quitPanel.activeSelf && !mainMenuPanel.activeSelf && !tutorialPanel.activeSelf)
         {
             if (gamePaused)
             {
