@@ -10,10 +10,6 @@ public class BuyucuBullet : MonoBehaviour
     private Transform target;
     public GameObject buyuEffect;
 
-    private void Start()
-    {
-        Debug.Log("BuyucuDamage: " + damage + "CurrentDamage: " + currentDamage);
-    }
     public void Seek(Transform _target)
     {
         target = _target;

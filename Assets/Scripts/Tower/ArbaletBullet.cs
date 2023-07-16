@@ -10,10 +10,6 @@ public class ArbaletBullet : MonoBehaviour
     private Transform target;
     public GameObject arbaletEffect;
 
-    private void Start()
-    {
-        Debug.Log("ArbaletDamage: " + damage + "CurrentDamage: " + currentDamage);
-    }
     public void Seek(Transform _target)
     {
         target = _target;

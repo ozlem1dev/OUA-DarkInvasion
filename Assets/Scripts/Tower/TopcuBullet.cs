@@ -11,10 +11,6 @@ public class TopcuBullet : MonoBehaviour
 
     public GameObject boomEffect;
 
-    private void Start()
-    {
-        Debug.Log("TopcuDamage: " + damage + "CurrentDamage: " + currentDamage);
-    }
     public void Seek(Transform _target)
     {
         target = _target;

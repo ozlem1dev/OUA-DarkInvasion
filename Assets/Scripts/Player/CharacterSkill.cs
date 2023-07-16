@@ -14,10 +14,6 @@ public class CharacterSkill : MonoBehaviour
     public bool canUseSkill = true;
     public bool isManaRefilling = false; // Yeniden dolum islemi devam ediyor mu?
 
-
-    //public float skillCooldown = 3f;
-    //private float skillTimer = 0f;
-
     public Animator _animator;
 
 
@@ -25,11 +21,8 @@ public class CharacterSkill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log(GetComponentInParent<CharacterMana>().currentMana);
             if (canUseSkill)
             {
-                Debug.Log("Q tusuna basildi");
-
                 StartCoroutine(ThrowBombWithDelay(2f)); // 2 saniye gecikmeyle bomba atma islemini baslatir
                 canUseSkill = false;
 
@@ -39,14 +32,12 @@ public class CharacterSkill : MonoBehaviour
             }
             else
             {
-                Debug.Log("Mana yetersiz.");
             }
         }
     }
 
     IEnumerator ThrowBombWithDelay(float delay)
     {
-        Debug.Log("Bomba atýlýyor.");
         _animator.SetBool("Grenade", true);
 
         yield return new WaitForSeconds(delay);

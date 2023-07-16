@@ -58,7 +58,7 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir okçu kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.9f,
+            olasilik = 0.5f,
             minLevel = 1,
             maxLevel = 21,
             lvl = 1,
@@ -77,7 +77,7 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir arbalet kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.9f,
+            olasilik = 0.5f,
             minLevel = 3,
             maxLevel = 21,
             lvl = 2,
@@ -95,7 +95,7 @@ public class KartMek : MonoBehaviour
             aciklama = "Yeni bir topçu kulesi inşa etmek için kullanılır.",
             aktiflik = true,
             kalanAdet = 3,
-            olasilik = 0.9f,
+            olasilik = 0.4f,
             minLevel = 4,
             maxLevel = 21,
             lvl = 3,
@@ -341,7 +341,7 @@ public class KartMek : MonoBehaviour
         Kart canGelistirmeKarti = new()
         {
             ad = "Maksimum Can Arttırma Kartı",
-            aciklama = "Karakterin taban canı 20% artar.",
+            aciklama = "Karakterin azami canı 20% artar.",
             aktiflik = true,
             kalanAdet = 1,
             olasilik = 0.3f,
@@ -431,7 +431,7 @@ public class KartMek : MonoBehaviour
         Kart lvl2canGelistirmeKarti = new()
         {
             ad = "Maksimum Can Arttırma Kartı",
-            aciklama = "Karakterin taban canı 30% artar.",
+            aciklama = "Karakterin azami canı 30% artar.",
             aktiflik = true,
             kalanAdet = 1,
             olasilik = 0.3f,
@@ -525,7 +525,7 @@ public class KartMek : MonoBehaviour
         Kart lvl3canGelistirmeKarti = new()
         {
             ad = "Maksimum Can Arttırma Kartı",
-            aciklama = "Karakterin taban canı 40% artar.",
+            aciklama = "Karakterin azami canı 40% artar.",
             aktiflik = true,
             kalanAdet = 1,
             olasilik = 0.3f,

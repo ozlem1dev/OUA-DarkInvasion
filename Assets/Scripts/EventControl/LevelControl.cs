@@ -51,7 +51,6 @@ public class LevelControl : MonoBehaviour
             {
                 spawner.cantSpawn3 = false;
             }
-            Debug.Log(currentLevel + ". level baþladý");
             currentLVLTXT.text = currentLevel.ToString();
             spawner.isLose = false;
         }

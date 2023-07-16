@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 4
   ammoDamage: 20
-  bulletHitAudio: {fileID: 8300000, guid: 1277f86a39f14794eabd5df134e499df, type: 3}
+  bulletHitAudioPrefab: {fileID: 8932271759071234891, guid: c45f46c66ad73414ebcfef96f76fea68, type: 3}
   bulletTrailPrefab: {fileID: 100002, guid: fc7f8379080d0a844ad699b91bfd56f0, type: 3}
   bloodEffectPrefab: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
 --- !u!1 &5481497386698793588

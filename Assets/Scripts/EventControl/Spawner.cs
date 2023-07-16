@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
     public Button kitapCikis;
     public GameObject gPanel;
     public GameObject bossObject;
-
+    public GameObject winPanel;
     public TextMeshProUGUI remainingEnemy;
     int nullOlmayanDusmanSayisi = 0;
     private void Start()
@@ -102,7 +102,7 @@ public class Spawner : MonoBehaviour
     {
         int randomIndex = Random.Range(0, ActiveEnemies.Count);
         int randomSpawn = Random.Range(0, spawnPoint1.Length);
-        if (level.currentLevel == 1 && !isBossSpawned)
+        if (level.currentLevel == 10 && !isBossSpawned)
         {
 
             bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
@@ -200,16 +200,23 @@ public class Spawner : MonoBehaviour
     {
         if (Enemies.All(x => x == null) && isCardSelection && !isLose && bossObject == null)
         {
-            isCardSelection = false;
-            control = true;
-            coinControl();
-            coin += coinIncreaser;
-            coinText[0].text = coin.ToString();
-            coinText[1].text = coin.ToString();
-            StartCoroutine(DelayedDisplayCards());
+            if (level.currentLevel != 20)
+            {
+                isCardSelection = false;
+                control = true;
+                coinControl();
+                coin += coinIncreaser;
+                coinText[0].text = coin.ToString();
+                coinText[1].text = coin.ToString();
+                StartCoroutine(DelayedDisplayCards());
+            }
+            else
+            {
+                winPanel.SetActive(true);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control && Enemies.All(x => x == null) && bossObject == null)
+        if (Input.GetKeyDown(KeyCode.G) && !isButtonPressed && !control && Enemies.All(x => x == null) && bossObject == null && level.currentLevel != 20)
         {
             //gPanel.SetActive(false);
             enemyPrefabs[0].GetComponent<EnemyHealth>().HealthIncrease(0.05f);
