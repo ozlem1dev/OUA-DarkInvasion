@@ -170,3 +170,46 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 [Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
 
 ---
+
+# Sprint 3
+* **Sprint içinde tamamlanması tahmin edilen puan:** 150 puan
+
+* ** Sprint içinde tamamlanan puan:** 150 puan
+
+* **Backlog düzeni:**  Ürün backlogu içerisine açıklama olarak eklenmiştir. Lütfen, Sprint 3 product backlog linkinden kontrol ediniz.
+
+* **Daily Scrum:** Günlük olarak gerçekleştirdiğimiz sesli toplantılara ek, günlük Scrum güncellemelerimizi Discord üzerinden yazılı olarak takip ettik.
+[Sprint 3 Daily Scrum Konuşmaları](https://docs.google.com/document/d/1BfrxzubV9GbWmTagoqoc9qtUe4r4qvIJG6tIQDB4wKA/edit?usp=sharing)
+
+
+* **Sprint board update:**
+
+![Sprint 3 board update 1](/Screenshots/Sprint2-Board-1.png)
+![Sprint 3 board update 2](/Screenshots/Sprint2-Board-3.png)
+![Sprint 3 burndown trend](/Screenshots/Sprint2-Burndown-Trend.png)
+
+* **Ürün ekran görüntüleri:**
+
+![Script test sahnesi](/Screenshots/Sprint2-TestScene.png)
+![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Sprint2-InGame.png)
+![Script test sahnesi oyun için bomba patlaması](/Screenshots/Sprint2-Game-Bomb.png)
+![Ana sahne genel bakış](/Screenshots/Sprint2-MainScene.png)
+![Kart mekaniklerine genel bakış](/Screenshots/Sprint2-Card-Mechanics.png)
+![Açılış sahnesi](/Screenshots/Sprint2-OpeningScene.png)
+![Açılış sinematiği görselleri](/Screenshots/Sprint2-Cinematic.png)
+
+## Sprint Review
+* **Katılımcılar:** Özlem Güngör, Efe Oran, Tuna Yavuz
+* Sprint 3 boyunca, jüriye sunmayı hedeflediğimiz 20 seviyelik Tower Defense oyunumuzu karar aşamasında belirlediğimiz tüm mekanikleri içerecek şekilde tasarlayıp uyguladık. Oyunumuz, entegre ettiğimiz mekaniklerin yanı sıra görsel ve ses tasarımıyla da zenginleştirildi. QA ve test süreçleri sayesinde performansı artırmak ve hataları düzeltmek konusunda önemli adımlar attık. Eldeki zaman ve kaynaklarla Sprint 3'te planladığımız tüm özellikleri tamamlayamadık. Diğer önemli mekaniksel ve tasarımsal özelliklere odaklanmak ve gerekli kalite kontrollerini sağlamak için çabalarımızı yoğunlaştırmak zorunda kaldık. Bu nedenle, kullanıcıların oyuna login olabilmesi için tasarladığımız adımları yetiştiremedik. Sonuç olarak, ilk günden bu yana hayalini kurduğumuz oyunu hayata başarıyla geçirebilmenin haklı gururunu yaşıyoruz.
+
+## Sprint Retrospective
+* Tasarımcı arkadaşımızın üstlendiği görevleri tamamlamaması ve mesajlara cevap vermemesi nedeniyle revize gerektiren işleri projede kullanamadık ve alternatif tasarımlar kullanmaya karar vermek zorunda kaldık. Aynı şekilde, bir developerımız, atanan görevi yerine getiremeyince ekiple olan iletişimini kaybetti. Oyunun tasarımı ilerledikçe, daha önce tamamladıkları işlerin gelişen oyuna uyumsuzluğu nedeniyle revizeler gerekti. Bu revizeler gelmeyince bu sprintte önceden tamamlanan işleri oyundan kaldırmak zorunda kaldık. Aktif üye sayısının 3 kişiye düşmesi sebebiyle ekip olarak iş yükünü en verimli şekilde paylaşmak ve iletişimi sürdürmek için yoğun çaba sarf ettik. Sürekli iletişim halinde kalarak iletişim eksikliği nedeniyle meydana gelebilecek çakışmaları engellemeye çalıştık ve bu sayede sprint planımızdaki işleri başarıyla uyguladık. Bu sprintte karşılaştığımız zorluklara rağmen, ekip olarak dayanışma içinde çalıştık ve sorunları birlikte çözme yolunda önemli adımlar attık. 
+* Elde ettiğimiz dersler sayesinde, gelecek projelerimizde iletişimi daha etkin yönetmeye, iş dağılımını daha dengeli yapmaya ve revizeleri zamanında alarak çözüm odaklı bir yaklaşım benimsemeye odaklanacağız. Ayrıca, esneklik ve uyum sağlama yeteneğimizi geliştirerek zorluklarla başa çıkacak ve projelerimizi daha verimli bir şekilde yöneteceğiz.
+
+## Sprint Notu
+Bu sprintte, belirlediğimiz ürün hedeflerine ulaşarak oyunun 20 seviyelik kısa bir versiyonunu tamamladık. Oyunun kısa versiyonu sayesinde, temel oynanış mekaniklerinin doğruluğunu ve oyunculara sunulabilirliğini test etme şansı elde ettik. Kullanıcı geri bildirimlerini dikkate alarak oyunun gelişimi için önemli ipuçları ve yol haritası belirleme imkanına sahibiz.
+
+## Product Backlog linki
+[Sprint 3 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
+
+---
