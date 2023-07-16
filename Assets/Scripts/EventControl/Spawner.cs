@@ -213,6 +213,8 @@ public class Spawner : MonoBehaviour
             else
             {
                 winPanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 
