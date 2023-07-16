@@ -12,6 +12,10 @@ public class BulletScript : MonoBehaviour
     public GameObject bulletTrailPrefab;
     public GameObject bloodEffectPrefab; // Kan efekti prefabi
 
+    private void Start()
+    {
+        Destroy(gameObject, time);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

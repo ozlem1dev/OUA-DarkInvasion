@@ -615,7 +615,7 @@ MonoBehaviour:
   firePoint: {fileID: 846510587053031616}
   isRanged: 1
   minLvl: 8
-  maxLvl: 15
+  maxLvl: 20
   spawned1: 0
   spawned2: 0
   spawned3: 0
