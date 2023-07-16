@@ -166,6 +166,9 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
     * Bazı görevlerin zamanında istenilen hale gelmemesi nedeniyle takvimde kaymalar yaşandı. Bu durum, takımın genel performansını ve sprint hedeflerine ulaşma sürecini etkiledi.
     * Bir sonraki sprintte herkesin aynı ve yüksek tempoda çalışması bekleniyor. Görevlerin eşit şekilde dağıtılması ve takım üyelerinin sorumluluklarını zamanında yerine getirmesi konusuna vurgu yaptık.
 
+## Sprint Notu
+Oyunumuzun ilk seviye tasarımını ve temel mekaniklerini tamamladık. Sprint 3'teki geliştirmeler için kararlar aldık.
+
 ## Product Backlog linki
 [Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
 
