@@ -132,7 +132,7 @@ public class Spawner : MonoBehaviour
         int randomSpawn = Random.Range(0, spawnPoint2.Length);
         if (level.currentLevel == 15 && !isBossSpawned)
         {
-            bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            bossObject = Instantiate(boss, spawnPoint2[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
 
 
@@ -160,7 +160,7 @@ public class Spawner : MonoBehaviour
         int randomSpawn = Random.Range(0, spawnPoint3.Length);
         if (level.currentLevel == 20 && !isBossSpawned)
         {
-            bossObject = Instantiate(boss, spawnPoint1[randomSpawn].position, Quaternion.identity);
+            bossObject = Instantiate(boss, spawnPoint3[randomSpawn].position, Quaternion.identity);
             BossMovement bossMovement = bossObject.GetComponent<BossMovement>();
 
             for (int i = 0; i < waypoints1.Length; i++)

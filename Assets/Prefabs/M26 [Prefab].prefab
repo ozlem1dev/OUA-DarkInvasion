@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
-  startGrenadeDamage: 20
+  startGrenadeDamage: 40
   grenadeExplosionAudioPrefab: {fileID: 370346170054390723, guid: 46691800c3515f143a308d6b0b05d858, type: 3}
   explosionPrefab: {fileID: 100006, guid: 4575df893a6e3f64a8283dee38413a34, type: 3}
 --- !u!1 &8763531286957064706

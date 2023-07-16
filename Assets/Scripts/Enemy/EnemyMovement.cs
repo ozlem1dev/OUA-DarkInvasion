@@ -115,7 +115,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (isRanged)
             {
-                _animator.SetBool("Attack", true);
+                
                 //Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 90);
                 GameObject arrow = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 //arrow.transform.rotation = Quaternion.Euler(_rotation);
@@ -125,8 +125,9 @@ public class EnemyMovement : MonoBehaviour
 
 
                 Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
-                arrowRigidbody.velocity = direction * 10f;
+                arrowRigidbody.velocity = direction * 20f;
                 //Debug.Log(sphereRigidbody.velocity);
+                _animator.SetBool("Attack", true);
             }
             else if (!isRanged)
             {

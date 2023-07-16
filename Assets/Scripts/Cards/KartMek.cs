@@ -684,12 +684,20 @@ public class KartMek : MonoBehaviour
         }
     }
 
-    void SelectUpgradeTowerCard(string name)
+    void SelectUpgradeTowerCard(string name, bool all)
     {
         Kart bullet = kartListesi.FirstOrDefault(x => x.ad == name);
         if (bullet != null)
         {
-            CoinUpdate(bullet);
+
+            if (all)
+            {
+
+            }
+            else
+            {
+                CoinUpdate(bullet);
+            }
             bullet.kalanAdet--; // Kartın adedini azalt
             if (bullet.kalanAdet == 0)
             {
@@ -848,37 +856,39 @@ public class KartMek : MonoBehaviour
 
     private void OkcuKulesiGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Okçu Kulesi Geliştirme Kartı");
+        SelectUpgradeTowerCard("Okçu Kulesi Geliştirme Kartı", false);
     }
 
     private void ArbaletKulesiGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Arbalet Kulesi Geliştirme Kartı");
+        SelectUpgradeTowerCard("Arbalet Kulesi Geliştirme Kartı", false);
     }
 
     private void TopcuKulesiGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Topçu Kulesi Geliştirme Kartı");
+        SelectUpgradeTowerCard("Topçu Kulesi Geliştirme Kartı", false);
     }
 
     private void ZehirKulesiGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Zehir Kulesi Geliştirme Kartı");
+        SelectUpgradeTowerCard("Zehir Kulesi Geliştirme Kartı", false);
     }
 
     private void BuyucuKulesiGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Büyücü Kulesi Geliştirme Kartı");
+        SelectUpgradeTowerCard("Büyücü Kulesi Geliştirme Kartı", false);
     }
 
 
     private void TumKuleleriGelistirmeKartiSecildi()
     {
-        SelectUpgradeTowerCard("Okçu Kulesi Geliştirme Kartı");
-        SelectUpgradeTowerCard("Arbalet Kulesi Geliştirme Kartı");
-        SelectUpgradeTowerCard("Topçu Kulesi Geliştirme Kartı");
-        SelectUpgradeTowerCard("Zehir Kulesi Geliştirme Kartı");
-        SelectUpgradeTowerCard("Büyücü Kulesi Geliştirme Kartı");
+        Kart kart = kartListesi.FirstOrDefault(x => x.ad == "Tüm Kuleleri Geliştir");
+        CoinUpdate(kart);
+        SelectUpgradeTowerCard("Okçu Kulesi Geliştirme Kartı", true);
+        SelectUpgradeTowerCard("Arbalet Kulesi Geliştirme Kartı", true);
+        SelectUpgradeTowerCard("Topçu Kulesi Geliştirme Kartı", true);
+        SelectUpgradeTowerCard("Zehir Kulesi Geliştirme Kartı", true);
+        SelectUpgradeTowerCard("Büyücü Kulesi Geliştirme Kartı", true);
     }
 
 
@@ -962,9 +972,3 @@ public class KartMek : MonoBehaviour
     }
 
 }
-
-
-
-
-
-
