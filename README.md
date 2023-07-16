@@ -121,6 +121,10 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 # Sprint 2
 * **Sprint içinde tamamlanması tahmin edilen puan:** 118 puan
 
+* **Sprint içinde tamamlanan puan:** 105 puan
+
+* **Puan tamamlama mantığı:** Backlog’da yer alan tüm issuelar, user storyler temelinde oluşturulmuştur. Taskler, user story'nin kabul kriterlerini temsil eder. Her bir task işin büyüklüğünü ifade etmek için story point’ler ile değerlendirilmiştir. Bu değerlendirmelerde story pointler Fibonacci dizisindeki sayılar kullanılarak atanmıştır. Fibonacci dizisi kullanılarak ölçeklendirme yapılması, artan sayılar arasındaki oransal değişikliğin bir süre sonra aynı kalması nedeniyle yaygın kullanılan bir yöntemdir. Her bir taske volume (büyüklük), risk & uncertainty (risk ve belirsizlik) ve complexity (karmaşıklık) faktörleri göz önünde bulundurularak belirlenen story pointler atanmıştır. Bu yaklaşım, projedeki tasklerin önemini ve zorluk seviyelerini göstermeyi amaçlar.
+  
 * **Backlog düzeni:**  Ürün backlogu içine açıklama olarak eklenmiştir. Lütfen, Sprint 2 product backlog linkinden kontrol ediniz.
 
 * **Daily Scrum:** Sesli toplantılara ek, günlük Scrum güncellemelerimizi Discord üzerinden yazılı olarak takip ettik.
@@ -178,6 +182,8 @@ Oyunumuzun ilk seviye tasarımını ve temel mekaniklerini tamamladık. Sprint 3
 * **Sprint içinde tamamlanması tahmin edilen puan:** 150 puan
 
 * **Sprint içinde tamamlanan puan:** 150 puan
+
+* **Puan tamamlama mantığı:** Backlog’da yer alan tüm issuelar, user storyler temelinde oluşturulmuştur. Taskler, user story'nin kabul kriterlerini temsil eder. Her bir task işin büyüklüğünü ifade etmek için story point’ler ile değerlendirilmiştir. Bu değerlendirmelerde story pointler Fibonacci dizisindeki sayılar kullanılarak atanmıştır. Fibonacci dizisi kullanılarak ölçeklendirme yapılması, artan sayılar arasındaki oransal değişikliğin bir süre sonra aynı kalması nedeniyle yaygın kullanılan bir yöntemdir. Her bir taske volume (büyüklük), risk & uncertainty (risk ve belirsizlik) ve complexity (karmaşıklık) faktörleri göz önünde bulundurularak belirlenen story pointler atanmıştır. Bu yaklaşım, projedeki tasklerin önemini ve zorluk seviyelerini göstermeyi amaçlar.
 
 * **Backlog düzeni:**  Ürün backlogu içerisine açıklama olarak eklenmiştir. Lütfen, Sprint 3 product backlog linkinden kontrol ediniz.
 
