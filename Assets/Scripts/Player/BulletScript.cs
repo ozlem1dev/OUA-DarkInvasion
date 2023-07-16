@@ -24,6 +24,10 @@ public class BulletScript : MonoBehaviour
             // Kan efekti olustur
             Quaternion rotation = Quaternion.LookRotation(gameObject.transform.forward);
             GameObject bloodEffect = Instantiate(bloodEffectPrefab, collision.contacts[0].point, Quaternion.Inverse(rotation), collision.gameObject.transform);
+            if (collision.gameObject.layer == 13)
+            {
+                bloodEffect.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            }
             GameObject bulletHitAudio = Instantiate(bulletHitAudioPrefab, collision.contacts[0].point, Quaternion.identity, collision.gameObject.transform);
             Destroy(bloodEffect, 5f); // Kan efektini bir süre sonra yok etmek için
             Destroy(bulletHitAudio, 3f);

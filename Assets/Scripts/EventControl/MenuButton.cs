@@ -26,6 +26,8 @@ public class MenuButton : MonoBehaviour
             {
                 Destroy(enemy);
             }
+            GameObject boss = GameObject.FindGameObjectWithTag("Enemy");
+            Destroy(boss);
             Resett();
             spawner.isLose = true;
             menuPanel.SetActive(false);
