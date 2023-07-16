@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject cinematicPanel3;
     public GameObject cinematicPanel4;
     public GameObject winPanel;
+    public GameObject bookPanel;
+    public GameObject towerPanel;
 
     public Button howToPlay;
     public Button howToPlayBack;
@@ -44,18 +46,18 @@ public class GameManager : MonoBehaviour
     public Button resumeButton;
 
     public Slider mouseSensitivitySlider;
-    public Slider soundSensitivitySlider;
+   
     public MouseSensivityData mouseSensivityData;
     public ThirdPersonCam thirdPersonCam;
     float mouseSliderValue;
-    float soundSliderValue;
+   
     private bool gamePaused = false;
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         LoadSensitivity();
-        LoadSoundSensitivity();
+        
         if (mouseSensivityData.firstOpen)
         {
             ToggleCinematicPanel1();
@@ -141,12 +143,12 @@ public class GameManager : MonoBehaviour
         });
 
         mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSliderValueChanged);
-        soundSensitivitySlider.onValueChanged.AddListener(OnSoundSliderValueChanged);
+       
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !diePanel.activeSelf && !howToPlayPanel.activeSelf && !settingsPanel.activeSelf && !quitPanel.activeSelf && !mainMenuPanel.activeSelf && !tutorialPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !diePanel.activeSelf && !howToPlayPanel.activeSelf && !settingsPanel.activeSelf && !quitPanel.activeSelf && !mainMenuPanel.activeSelf && !tutorialPanel.activeSelf && !bookPanel.activeSelf && !cinematicPanel1.activeSelf && !cinematicPanel2.activeSelf && !cinematicPanel3.activeSelf && !cinematicPanel4.activeSelf && !winPanel.activeSelf && !towerPanel.activeSelf)//xxx
         {
             if (gamePaused)
             {
@@ -162,7 +164,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        if (spawner.Enemies.All(x => x == null))
+        if (spawner.Enemies.All(x => x == null) && spawner.bossObject == null)
         {
             gPanel.SetActive(true);
         }
@@ -326,12 +328,7 @@ public class GameManager : MonoBehaviour
     //    float sliderValue = sensitivitySlider.value;
     //    thirdPersonCam.SetSensitivity(sliderValue);
     //}
-    private void OnSoundSliderValueChanged(float value)
-    {
-        soundSliderValue = value;
-        //ses seviyesi degistirme metodu buraya gelcek
-        SaveSoundSensitivity();
-    }
+   
     private void OnMouseSliderValueChanged(float value)
     {
         // Slider deðeri deðiþtiðinde çaðrýlacak metod
@@ -351,18 +348,5 @@ public class GameManager : MonoBehaviour
         mouseSliderValue = mouseSensivityData.sensitivityValue;
         mouseSensitivitySlider.value = mouseSliderValue;
         thirdPersonCam.SetSensitivity(mouseSliderValue);
-    }
-
-
-    void SaveSoundSensitivity()
-    {
-        mouseSensivityData.soundSensitivityValue = soundSliderValue;
-    }
-
-    void LoadSoundSensitivity()
-    {
-        soundSliderValue = mouseSensivityData.soundSensitivityValue;
-        soundSensitivitySlider.value = soundSliderValue;
-        //ses seviyesi degistirme metodu buraya gelcek
     }
 }

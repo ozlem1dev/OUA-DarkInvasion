@@ -9,6 +9,8 @@ public class TopcuBullet : MonoBehaviour
     public static float currentDamage = 45;
     private Transform target;
 
+    public GameObject boomEffect;
+
     private void Start()
     {
         Debug.Log("TopcuDamage: " + damage + "CurrentDamage: " + currentDamage);
@@ -47,5 +49,19 @@ public class TopcuBullet : MonoBehaviour
     public void setDamage(float newDamage)
     {
         currentDamage = (100 + newDamage) * currentDamage / 100;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //collision.gameObject.GetComponent<EnemyHealth>().takeDamage(currentAmmoDamage);
+            //AudioSource.PlayClipAtPoint(bulletHitAudio, transform.position);
+
+            // Kan efekti olustur
+            Quaternion rotation = Quaternion.LookRotation(gameObject.transform.forward);
+            GameObject boom = Instantiate(boomEffect, collision.contacts[0].point, Quaternion.Inverse(rotation), collision.gameObject.transform);
+            Destroy(boom, 5f); // Kan efektini bir süre sonra yok etmek için
+        }
     }
 }

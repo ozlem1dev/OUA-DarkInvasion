@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
 
@@ -8,12 +9,13 @@ public class LevelControl : MonoBehaviour
     public int levelNumber = 1;
     public int currentLevel = 1;
     private Spawner spawner;
-   
+    public TextMeshProUGUI currentLVLTXT;
 
     private void Start()
     {
         spawner = GetComponent<Spawner>();
         currentLevel = levelNumber;
+        currentLVLTXT.text = currentLevel.ToString();
     }
     public void LevelCheck()
     {
@@ -31,16 +33,16 @@ public class LevelControl : MonoBehaviour
     {
         if (spawner.Enemies.Count == 0)
         {
-            if(!spawner.isDead)
+            if (!spawner.isDead)
             {
                 currentLevel++;
-                
+
             }
             else
                 spawner.isDead = false;
 
             spawner.cantSpawn1 = false;
-            
+
             if (currentLevel >= 6)
             {
                 spawner.cantSpawn2 = false;
@@ -50,6 +52,7 @@ public class LevelControl : MonoBehaviour
                 spawner.cantSpawn3 = false;
             }
             Debug.Log(currentLevel + ". level baþladý");
+            currentLVLTXT.text = currentLevel.ToString();
             spawner.isLose = false;
         }
     }

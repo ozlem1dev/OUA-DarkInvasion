@@ -9,6 +9,8 @@ public class OkcuBullet : MonoBehaviour
     public float damage;
     public static float currentDamage = 15;
     private Transform target;
+
+    public GameObject okEffect;
     
     private void Start()
     {
@@ -52,5 +54,13 @@ public class OkcuBullet : MonoBehaviour
         currentDamage = (100 + newDamage) * currentDamage / 100;
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Quaternion rotation = Quaternion.LookRotation(gameObject.transform.forward);
+            GameObject ok = Instantiate(okEffect, collision.contacts[0].point, Quaternion.Inverse(rotation), collision.gameObject.transform);
+            Destroy(ok, 1f); // Kan efektini bir süre sonra yok etmek için
+        }
+    }
 }

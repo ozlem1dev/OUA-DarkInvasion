@@ -55,6 +55,7 @@ MonoBehaviour:
   stopAttack: 10
   partRotate: {fileID: 6990839963265380241}
   turnSpeed: 5
+  okcuBullet: {fileID: 0}
   canTurn: 1
 --- !u!1 &1500103902914249033
 GameObject:
@@ -232,14 +233,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8242903290232996962}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.6107534, z: 0.7918208, w: 0}
   m_LocalPosition: {x: -0.01, y: 9.86, z: 1.06}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1630183459228037781}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -75.288, y: 0, z: 180}
 --- !u!33 &6940277204350617252
 MeshFilter:
   m_ObjectHideFlags: 0

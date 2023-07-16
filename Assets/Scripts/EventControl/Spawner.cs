@@ -44,9 +44,13 @@ public class Spawner : MonoBehaviour
     KartMek _kartmek;
     public Button kitapCikis;
     public GameObject gPanel;
-    GameObject bossObject;
+    public GameObject bossObject;
+
+    public TextMeshProUGUI remainingEnemy;
+    int nullOlmayanDusmanSayisi = 0;
     private void Start()
     {
+
         cantSpawn1 = false;
         cantSpawn2 = true;
         cantSpawn3 = true;
@@ -91,7 +95,7 @@ public class Spawner : MonoBehaviour
         }
         LevelStartApprove();
 
-
+        EnemyCountCheck();
     }
 
     private void SpawnEnemy1()
@@ -321,4 +325,21 @@ public class Spawner : MonoBehaviour
         _kartmek.BackToCharacter();
     }
 
+
+    private void EnemyCountCheck()
+    {
+        foreach (var enemy in Enemies)
+        {
+            if (enemy != null)
+            {
+                nullOlmayanDusmanSayisi++;
+            }
+        }
+        if (bossObject != null)
+        {
+            nullOlmayanDusmanSayisi++;
+        }
+        remainingEnemy.text = nullOlmayanDusmanSayisi.ToString();
+        nullOlmayanDusmanSayisi = 0;
+    }
 }

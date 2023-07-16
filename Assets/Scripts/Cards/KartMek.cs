@@ -652,6 +652,7 @@ public class KartMek : MonoBehaviour
     {
         towerPoints.isSelectCreatedTowerCard = true;
         menuButton.GetComponent<MenuButton>().Resett();
+        gPanel.SetActive(false);//xxx
     }
 
     public void BackToCharacter()
