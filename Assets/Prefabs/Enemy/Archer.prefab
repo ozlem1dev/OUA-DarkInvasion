@@ -603,7 +603,7 @@ MonoBehaviour:
   player0:
     serializedVersion: 2
     m_Bits: 8
-  attackCooldown: 2
+  attackCooldown: 1.634
   sightRange: 8
   attackRange: 6
   inSight: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
   moveSpeed: 4
   attackDamage: 15
   baseObject: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  isRanged: 0
+  projectilePrefab: {fileID: 7239064381748766448, guid: dbf503f0022983545bfd2d3d3d727814, type: 3}
+  firePoint: {fileID: 846510587053031616}
+  isRanged: 1
   minLvl: 1
   maxLvl: 15
   spawned1: 0
@@ -3770,6 +3770,37 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.01628995, y: -3.4637108, z: -0.29061013}
     m_Extent: {x: 1.6476704, y: 10.931579, z: 2.084325}
   m_DirtyAABB: 0
+--- !u!1 &7031955657099315076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846510587053031616}
+  m_Layer: 10
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846510587053031616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031955657099315076}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 14.69, z: -26.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7328248408778378113}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1 &7032863108614528802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,6 +3950,7 @@ Transform:
   - {fileID: 3898096603255888358}
   - {fileID: 8754518104902102263}
   - {fileID: 1107791056772948641}
+  - {fileID: 846510587053031616}
   m_Father: {fileID: 8294701241423855016}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}

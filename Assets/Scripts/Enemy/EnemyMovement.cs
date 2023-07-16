@@ -116,14 +116,16 @@ public class EnemyMovement : MonoBehaviour
             if (isRanged)
             {
                 _animator.SetBool("Attack", true);
-                GameObject sphere = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                //Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 90);
+                GameObject arrow = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                //arrow.transform.rotation = Quaternion.Euler(_rotation);
 
                 Vector3 direction = player.position - transform.position;
                 direction.Normalize();
 
 
-                Rigidbody sphereRigidbody = sphere.GetComponent<Rigidbody>();
-                sphereRigidbody.velocity = direction * 10f;
+                Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
+                arrowRigidbody.velocity = direction * 10f;
                 //Debug.Log(sphereRigidbody.velocity);
             }
             else if (!isRanged)
@@ -139,8 +141,9 @@ public class EnemyMovement : MonoBehaviour
 
     void AttackCooldown()
     {
-        isAttacked = false;
         _animator.SetBool("Attack", false);
+        isAttacked = false;
+        
     }
 
     

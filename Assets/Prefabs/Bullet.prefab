@@ -123,8 +123,8 @@ MonoBehaviour:
   time: 4
   ammoDamage: 20
   bulletHitAudio: {fileID: 8300000, guid: 1277f86a39f14794eabd5df134e499df, type: 3}
-  bulletTrailPrefab: {fileID: 100002, guid: cfcd690db7ce26548af4f6d7bb536b02, type: 3}
-  bloodEffectPrefab: {fileID: 1000013355911406, guid: 532c8be46e6660e49a9e48ce60e82441, type: 3}
+  bulletTrailPrefab: {fileID: 100002, guid: fc7f8379080d0a844ad699b91bfd56f0, type: 3}
+  bloodEffectPrefab: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
 --- !u!1 &5481497386698793588
 GameObject:
   m_ObjectHideFlags: 0

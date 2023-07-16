@@ -53,10 +53,10 @@ public class TowerAttack : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 120);
+        //Vector3 _rotation = new Vector3(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z - 120);
         GameObject bulletObject = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
         
-        bulletObject.transform.rotation = Quaternion.Euler(_rotation);
+        //bulletObject.transform.rotation = Quaternion.Euler(_rotation);
 
         if (bulletPre.name == "Buyu")
         {
