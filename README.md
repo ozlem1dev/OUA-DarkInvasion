@@ -174,7 +174,7 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 # Sprint 3
 * **Sprint içinde tamamlanması tahmin edilen puan:** 150 puan
 
-* ** Sprint içinde tamamlanan puan:** 150 puan
+* **Sprint içinde tamamlanan puan:** 150 puan
 
 * **Backlog düzeni:**  Ürün backlogu içerisine açıklama olarak eklenmiştir. Lütfen, Sprint 3 product backlog linkinden kontrol ediniz.
 
@@ -184,19 +184,23 @@ Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkim
 
 * **Sprint board update:**
 
-![Sprint 3 board update 1](/Screenshots/Sprint2-Board-1.png)
-![Sprint 3 board update 2](/Screenshots/Sprint2-Board-3.png)
-![Sprint 3 burndown trend](/Screenshots/Sprint2-Burndown-Trend.png)
+![Sprint 3 board update 1](/Screenshots/Sprint3-Board1.png)
+![Sprint 3 board update 2](/Screenshots/Sprint3-Board2.png)
+![Sprint 3 board update 3](/Screenshots/Sprint3-Board3.png)
+![Sprint 3 board update 4](/Screenshots/Sprint3-Board4.png)
+![Sprint 3 board update 5](/Screenshots/Sprint3-Board5.png)
+![Sprint 3 board update 6](/Screenshots/Sprint3-Board6.png)
+![Sprint 3 burndown trend](/Screenshots/Sprint3-BurndownTrend.png)
 
 * **Ürün ekran görüntüleri:**
 
-![Script test sahnesi](/Screenshots/Sprint2-TestScene.png)
-![Script test sahnesi oyun için ana karakter görüşü](/Screenshots/Sprint2-InGame.png)
-![Script test sahnesi oyun için bomba patlaması](/Screenshots/Sprint2-Game-Bomb.png)
-![Ana sahne genel bakış](/Screenshots/Sprint2-MainScene.png)
-![Kart mekaniklerine genel bakış](/Screenshots/Sprint2-Card-Mechanics.png)
-![Açılış sahnesi](/Screenshots/Sprint2-OpeningScene.png)
-![Açılış sinematiği görselleri](/Screenshots/Sprint2-Cinematic.png)
+![Ana menü](/Screenshots/MainMenu.png)
+![Oyun içi düşman dalgaları](/Screenshots/Enemies.png)
+![Oyun içi Boss kule saldırısı](/Screenshots/BossTowerAttack.png)
+![Oyun için kule görünüşü](/Screenshots/Kule.png)
+![Kart seçim ekranına genel bakış](/Screenshots/Kart.png)
+![Oyun içi base görüntüsü](/Screenshots/Base.png)
+![Oyun içi ESC menü ekran görüntüsü](/Screenshots/ESCPanel.png)
 
 ## Sprint Review
 * **Katılımcılar:** Özlem Güngör, Efe Oran, Tuna Yavuz
