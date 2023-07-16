@@ -15,7 +15,6 @@ public class BaseHealth : MonoBehaviour
 
     void Start()
     {
-
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
@@ -30,10 +29,7 @@ public class BaseHealth : MonoBehaviour
             Die();
 
         }
-
         UpdateHealthBar();
-        Debug.Log("Base güncel can : " + currentHealth);
-
     }
 
     public void UpdateHealthBar()

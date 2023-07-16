@@ -43,7 +43,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public AudioClip walkingAudio;
     public AudioClip runningAudio;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     private int groundCounter = 0;
 
     private void Start()
@@ -52,7 +52,6 @@ public class PlayerMovementScript : MonoBehaviour
         rb.freezeRotation = true;
 
         _animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -140,7 +139,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
     //private void OnCollisionStay(Collision collision)
     //{
-        
+
 
     //}
     //private void LateUpdate()
@@ -161,8 +160,8 @@ public class PlayerMovementScript : MonoBehaviour
             currentMoveSpeed = moveSpeed;
         }
 
-        if(GetComponent<CharacterFire>().isReloading) 
-        { 
+        if (GetComponent<CharacterFire>().isReloading)
+        {
             currentMoveSpeed = moveSpeed;
         }
 
@@ -186,7 +185,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         //Debug.Log(orientation.forward.x);
         // Buna dönebiliriz
-        if(Math.Abs(orientation.forward.z) > Math.Abs(orientation.forward.x)) 
+        if (Math.Abs(orientation.forward.z) > Math.Abs(orientation.forward.x))
         {
             if (Math.Abs(orientation.forward.z) >= Math.Abs(orientation.right.x))
             {
@@ -243,7 +242,7 @@ public class PlayerMovementScript : MonoBehaviour
 
                 SpeedZ = orientation.forward.x * rb.velocity.x;
             }
-           
+
         }
 
         SpeedY = orientation.forward.y * rb.velocity.y;
@@ -253,7 +252,7 @@ public class PlayerMovementScript : MonoBehaviour
         _animator.SetFloat("SpeedZ", SpeedZ);
         _animator.SetFloat("SpeedX", SpeedX);
 
-        if(SpeedX <= 0.01 && SpeedY <= 0.01 && SpeedZ <= 0.01)
+        if (SpeedX <= 0.01 && SpeedY <= 0.01 && SpeedZ <= 0.01)
         {
             _animator.SetBool("Moving", false);
         }
@@ -287,9 +286,9 @@ public class PlayerMovementScript : MonoBehaviour
 
 
         float cameraRotation = mainCamera.transform.eulerAngles.y;
-        
+
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, cameraRotation, 0f), 5000f);
 
-        
+
     }
 }

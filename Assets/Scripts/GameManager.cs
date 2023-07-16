@@ -7,6 +7,8 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource buttonClickAudioSource;
+
     public Spawner spawner;
     public GameObject gPanel;
     public GameObject escMenuPanel;
@@ -46,18 +48,18 @@ public class GameManager : MonoBehaviour
     public Button resumeButton;
 
     public Slider mouseSensitivitySlider;
-   
+
     public MouseSensivityData mouseSensivityData;
     public ThirdPersonCam thirdPersonCam;
     float mouseSliderValue;
-   
+
     private bool gamePaused = false;
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         LoadSensitivity();
-        
+
         if (mouseSensivityData.firstOpen)
         {
             ToggleCinematicPanel1();
@@ -68,11 +70,13 @@ public class GameManager : MonoBehaviour
 
         resumeButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             ResumeGame();
         });
 
         exitButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             ToggleQuitPanel();
         });
 
@@ -83,67 +87,82 @@ public class GameManager : MonoBehaviour
 
         howToPlayBack.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             HowToPlayBackButton();
         });
         settings.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             ToggleSettingsPanel();
         });
         settingsBack.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             SettingBackButton();
         });
         mainMenu.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             ToggleMainMenuPanel();
         });
         mainMenuNo.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             mainMenuNoButton();
         });
         mainMenuYes.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             mainMenuYesButton();
         });
         quitYesButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             QuitMenuYesButton();
         });
         quitNoButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             QuitMenuNoButton();
         });
         dieMainMenuButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             mainMenuYesButton();
         });
         tutorialBackButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             TutorialBackButton();
         });
         cinematicNextButton1.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             CinematicPanelNextButton1();
         });
         cinematicNextButton2.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             CinematicPanelNextButton2();
         });
         cinematicNextButton3.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             CinematicPanelNextButton3();
         });
         cinematicNextButton4.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             CinematicPanelNextButton4();
         });
         winPanelMainMenuButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             WinPanelMainMenuButton();
         });
 
         mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSliderValueChanged);
-       
+
     }
 
     void Update()
@@ -328,7 +347,7 @@ public class GameManager : MonoBehaviour
     //    float sliderValue = sensitivitySlider.value;
     //    thirdPersonCam.SetSensitivity(sliderValue);
     //}
-   
+
     private void OnMouseSliderValueChanged(float value)
     {
         // Slider deðeri deðiþtiðinde çaðrýlacak metod

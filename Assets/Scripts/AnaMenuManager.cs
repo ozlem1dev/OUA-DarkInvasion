@@ -8,6 +8,8 @@ public class AnaMenuManager : MonoBehaviour
 {
     public MouseSensivityData sensitivityData;
 
+    [SerializeField] AudioSource buttonClickAudioSource;
+
     public GameObject mainPanel;
     public GameObject howToPlayPanel;
     public GameObject creditsPanel;
@@ -25,62 +27,59 @@ public class AnaMenuManager : MonoBehaviour
     public Button yapimcilarGeriButton;
 
     public Slider MouseSensitivitySlider;
-    public Slider SoundSensitivitySlider;
 
     public ThirdPersonCam thirdPersonCam;
 
-    //public SensitivityData sensitivityData;
     float mousesliderValue;
-    float soundSliderValue;
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         LoadSensitivity();
-        LoadSoundSensitivity();
         oynaButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             oyna();
         });
 
         kapatButton.onClick.AddListener(() =>
          {
+             buttonClickAudioSource.Play();
              kapat();
          });
 
         ayarlarButton.onClick.AddListener(() =>
          {
+             buttonClickAudioSource.Play();
              ayarlar();
          });
         infoButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             info();
         });
         yapimcilarButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             yapimcilar();
         });
         ayarlarGeriButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             geri();
         });
         infoGeriButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             geri();
         });
         yapimcilarGeriButton.onClick.AddListener(() =>
         {
+            buttonClickAudioSource.Play();
             geri();
         });
 
         MouseSensitivitySlider.onValueChanged.AddListener(OnSliderValueChanged);
-        SoundSensitivitySlider.onValueChanged.AddListener(OnSoundSliderValueChanged);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 
@@ -118,12 +117,7 @@ public class AnaMenuManager : MonoBehaviour
         creditsPanel.SetActive(false);
         settingsPanel.SetActive(false);
     }
-    private void OnSoundSliderValueChanged(float value)
-    {
-        soundSliderValue = value;
-        //ses seviyesi degistirme metodu buraya gelcek
-        SaveSoundSensitivity();
-    }
+
     private void OnSliderValueChanged(float value)
     {
         mousesliderValue = value;
@@ -138,21 +132,9 @@ public class AnaMenuManager : MonoBehaviour
     void LoadSensitivity()
     {
         mousesliderValue = sensitivityData.sensitivityValue;
-        Debug.Log(sensitivityData.sensitivityValue);
         MouseSensitivitySlider.value = mousesliderValue;
-        //thirdPersonCam.SetSensitivity(mousesliderValue);
     }
 
-    void SaveSoundSensitivity()
-    {
-        sensitivityData.soundSensitivityValue = soundSliderValue;
-    }
 
-    void LoadSoundSensitivity()
-    {
-        soundSliderValue = sensitivityData.soundSensitivityValue;
-        SoundSensitivitySlider.value = soundSliderValue;
-        //ses seviyesi degistirme metodu buraya gelcek
-    }
 }
 

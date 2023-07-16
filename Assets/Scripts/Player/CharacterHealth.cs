@@ -20,15 +20,7 @@ public class CharacterHealth : MonoBehaviour
 
         ResetHealth();
 
-        Debug.Log("Güncel can : " + currentHealth);
     }
-
-
-    //void Start()
-    //{
-    //    UpdateHealthBar();
-    //}
-
 
     private void Update()
     {
@@ -47,8 +39,6 @@ public class CharacterHealth : MonoBehaviour
         }
 
         UpdateHealthBar();
-        Debug.Log("Güncel can : " + currentHealth);
-
     }
 
     public void UpdateHealthBar()

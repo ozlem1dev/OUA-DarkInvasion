@@ -68,12 +68,10 @@ public class TowerSpawnZone : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("geldi");
         objectRenderer.material = glowMaterial;
     }
     private void OnMouseExit()
     {
-        Debug.Log("gitti");
         objectRenderer.material = originalMaterial;
     }
 

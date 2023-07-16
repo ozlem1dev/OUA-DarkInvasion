@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
 
     [SerializeField] AudioSource music;
+    [SerializeField] AudioSource buttonClick;
     //[SerializeField] AudioSource sound;
     //public AudioMixer soundMixer;
 
@@ -34,6 +35,7 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleGameMusic(bool isOn)
     {
+        buttonClick.Play();
         if (isOn)
         {
             //music.mute = false;
@@ -50,6 +52,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnMusicSliderValueChanged(float value)
     {
+        
         musicSliderValue = value;
         music.volume = musicSliderValue;
         SaveMusicSensitivity();
@@ -73,6 +76,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnSoundSliderValueChanged(float value)
     {
+        
         soundSliderValue = value;
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(soundSliderValue) * 20);
         //sound.volume = soundSliderValue;

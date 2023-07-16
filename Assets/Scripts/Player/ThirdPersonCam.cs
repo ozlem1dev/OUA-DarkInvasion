@@ -17,18 +17,12 @@ public class ThirdPersonCam : MonoBehaviour
         cinemachine.m_YAxis.m_MaxSpeed = y * sensitivity;
     }
 
-    private void Update()
-    {
-
-    }
-
     public void SetSensitivity(float value)
     {
         sensitivity = value;
 
         cinemachine.m_XAxis.m_MaxSpeed = x * sensitivity;
         cinemachine.m_YAxis.m_MaxSpeed = y * sensitivity;
-        Debug.Log("Slider degeri: " + cinemachine.m_XAxis.m_MaxSpeed);
     }
 }
 

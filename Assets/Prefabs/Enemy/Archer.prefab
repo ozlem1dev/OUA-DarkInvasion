@@ -614,7 +614,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7239064381748766448, guid: dbf503f0022983545bfd2d3d3d727814, type: 3}
   firePoint: {fileID: 846510587053031616}
   isRanged: 1
-  minLvl: 1
+  minLvl: 8
   maxLvl: 15
   spawned1: 0
   spawned2: 0

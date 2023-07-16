@@ -11,10 +11,6 @@ public class ZehirBullet : MonoBehaviour
 
     public GameObject zehirEffect;
 
-    public void Start()
-    {
-        Debug.Log("zehirDamage: " + damage + "CurrentDamage: " + currentDamage);
-    }
     public void Seek(Transform _target)
     {
         target = _target;

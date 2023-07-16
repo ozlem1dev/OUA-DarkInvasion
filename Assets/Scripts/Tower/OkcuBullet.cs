@@ -12,10 +12,6 @@ public class OkcuBullet : MonoBehaviour
 
     public GameObject okEffect;
     
-    private void Start()
-    {
-        Debug.Log("OkDamage: " + damage + "CurrentDamage: " + currentDamage);
-    }
     public void Seek(Transform _target)
     {
         target = _target;

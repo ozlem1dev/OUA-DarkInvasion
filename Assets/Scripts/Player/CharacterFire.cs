@@ -16,8 +16,8 @@ public class CharacterFire : MonoBehaviour
     public Text ammoText;
     public float fireCooldown = 0.2f;
     private float nextFireTime = 0f;
-    public AudioClip fireAudio;
-    public AudioClip reloadAudio;
+    public AudioSource fireAudioSource;
+    public AudioSource reloadAudioSource;
 
     public GameObject muzzleFlashPrefab;
     public Transform muzzleFlashSpawnPoint;
@@ -70,7 +70,7 @@ public class CharacterFire : MonoBehaviour
         // Muzzle flash efektini bir süre sonra yok et
         Destroy(muzzleFlash, 0.1f);
 
-        AudioSource.PlayClipAtPoint(fireAudio, transform.position);
+        fireAudioSource.Play();
     }
 
 
@@ -79,7 +79,7 @@ public class CharacterFire : MonoBehaviour
         isReloading = true;
         _animator.SetBool("Reloading", isReloading);
         // Şarjör değişme animasyonu oynatılabilir.
-        AudioSource.PlayClipAtPoint(reloadAudio, transform.position);
+        reloadAudioSource.Play();
 
         yield return new WaitForSeconds(2f); // Örnek olarak 1 saniye bekleme süresi.
 

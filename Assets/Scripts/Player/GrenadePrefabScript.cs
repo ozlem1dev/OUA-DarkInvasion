@@ -7,26 +7,17 @@ public class GrenadePrefabScript : MonoBehaviour
     public float time = 3f;
     public int startGrenadeDamage;
     public static int currentGrenadeDamage = 20;
-    public AudioClip grenadeExplosionAudio;
+    public GameObject grenadeExplosionAudioPrefab;
     public GameObject explosionPrefab; // Patlama efekti prefab
 
-    private void Awake()
-    {
-        //currentGrenadeDamage = startGrenadeDamage;
-    }
     private void Start()
     {
-        
-            Debug.Log("DamageGrenade: " + startGrenadeDamage + "CurrentGrenadeDamage: " + currentGrenadeDamage);
-            StartCoroutine(ExplodeAfterTime(time));
-        
-       
+        StartCoroutine(ExplodeAfterTime(time));
     }
 
     private IEnumerator ExplodeAfterTime(float delay)
     {
         yield return new WaitForSeconds(delay);
-        AudioSource.PlayClipAtPoint(grenadeExplosionAudio, transform.position);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, 100f);
 
@@ -40,8 +31,9 @@ public class GrenadePrefabScript : MonoBehaviour
 
         // Patlama efekti prefabini etkinlestir
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        GameObject audioExplosion = Instantiate(grenadeExplosionAudioPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 3f); // Belirli bir süre sonra patlama efektini yok et
-
+        Destroy(audioExplosion, 3f);
         Destroy(gameObject);
     }
     public void UpdateGrenadeDamage(int newDamage)
