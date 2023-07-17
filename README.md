@@ -19,7 +19,7 @@ Dark Invasion: The Last Hope of Shahyar Village, oyuncunun kontrol edeceği bir 
 Ürün özellikleri user storyler göz önünde bulundurularak kararlaştırılmıştır.
 * Oyun Türü: Tower Defense
 * Platformlar: Bilgisayar (Windows)
-* Grafik Stili: 3D
+* Grafik Stili: 3D (1920 x 1080 çözünürlüğünde oynanması önerilmektedir.)
 * Kontrol: Fare ve klavye tuşları
 * Hikaye Modu: Ana karakterin Şahyar köyünü canavarlardan koruma görevini yerine getirdiği temel oyun modu.
 * Kule Çeşitliliği:
