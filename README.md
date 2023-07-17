@@ -22,23 +22,22 @@ Dark Invasion: The Last Hope of Shahyar Village, oyuncunun kontrol edeceği bir 
 * Grafik Stili: 3D
 * Kontrol: Fare ve klavye tuşları
 * Hikaye Modu: Ana karakterin Şahyar köyünü canavarlardan koruma görevini yerine getirdiği temel oyun modu.
-* Kule ve Tuzak Çeşitliliği:
-    * Farklı türde kuleler ve tuzaklar: Her biri benzersiz yeteneklere, saldırı menzillerine ve hasar türlerine sahiptir.
-    * Kule yükseltmeleri: Her seviye sonunda kazanılan deneyim puanlarıyla kuleleri güçlendirmek ve yeni özellikler eklemek için kullanılabilen yükseltme seçenekleri.
+* Kule Çeşitliliği:
+    * Farklı türde kuleler: Her biri benzersiz yeteneklere, saldırı menzillerine ve hasar türlerine sahiptir.
+    * Kule yükseltmeleri: Her seviye sonunda kazanılan altınlarla kuleleri güçlendirmek için kullanılabilen yükseltme seçenekleri.
 * Karakter Özellikleri:
     * Ana karakterin yetenekleri: Oyunda kullanılan karakterin özel yetenekleri ve saldırı gücü.
-    * Karakter gelişimi: Her seviye sonunda kazanılan deneyim puanlarıyla karakterin yeteneklerini geliştirme.
+    * Karakter gelişimi: Her seviye sonunda kazanılan altınlarla karakterin yeteneklerini geliştirme.
 * Düşman Çeşitliliği:
     * Farklı türde düşmanlar: Farklı saldırı özelliklerine, hızlara, dayanıklılıklara ve zayıflıklara sahip düşmanlar.
     * Boss düşmanlar: Zorlu boss düşmanlar, oyuncunun stratejisini ve becerilerini test eden özel düşmanlar.
 * Seviye Tasarımları:
     * Çeşitli ortamlar: Farklı zorluk seviyelerine sahip seviyeler.
-    * Oyuncunun kuleleri ve tuzakları yerleştirebileceği önceden belirlenmiş alanlar.
+    * Oyuncunun kuleleri yerleştirebileceği önceden belirlenmiş alanlar.
 * Geliştirme Kartları:
-    * Seviye sonunda rastgele gelen kartlar: Kule yükseltmeleri, yeni tuzaklar, karakter özellikleri veya diğer güçlendirmeler.
+    * Seviye sonunda rastgele gelen kartlar: Kule yükseltmeleri, karakter can, saldırı/yetenek gücü ve saldırı hızı güçlendirmeleri.
     * Şans faktörü: Kart mekaniğiyle rastgele gelen kartların oyuncunun stratejisini etkilediği şans faktörü.
 * İlerleme Sistemi: Her seviye tamamlandığında, yeni seviyelerin kilidi açılır ve zorluk artar.
-* İlerleme Kaydetme: Her seviye sonunda otomatik kaydetme sistemiyle ilerlemenin otomatik olarak kaydedilmesi.
 * Ses Efektleri ve Müzik: Oyun atmosferini güçlendiren ses efektleri ve müzikler.
 
 ## Hedef Kitle
@@ -59,6 +58,9 @@ Tek başına savaşa girişen Eren, cesaretinin meşalesini yaktı ve köyü can
 [Sprint 1 - Product Backlog](https://jeweled-ceres-178.notion.site/d386423a2a3f43e3a5d534b685b7a135?v=a53f842a74b9403680c1670fe573dd16&pvs=4)
 
 [Sprint 2 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
+
+[Sprint 3 - Product Backlog](https://jeweled-ceres-178.notion.site/abc358dad56e4654a5c44c56dd0bd6f1?v=c418e764144f4c94af046219f4557b6a&pvs=4) 
+
 
 ## Ürün Repo Detayları
 Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkimizden dosyaları görüntüleyebilir, kodu inceleyebilir ve değişiklik geçmişini (branch, commit ve pull requestler) takip edebilirsiniz. 
@@ -179,9 +181,9 @@ Oyunumuzun ilk seviye tasarımını ve temel mekaniklerini tamamladık. Sprint 3
 ---
 
 # Sprint 3
-* **Sprint içinde tamamlanması tahmin edilen puan:** 150 puan
+* **Sprint içinde tamamlanması tahmin edilen puan:** 172 puan
 
-* **Sprint içinde tamamlanan puan:** 150 puan
+* **Sprint içinde tamamlanan puan:** 172 puan
 
 * **Puan tamamlama mantığı:** Backlog’da yer alan tüm issuelar, user storyler temelinde oluşturulmuştur. Taskler, user story'nin kabul kriterlerini temsil eder. Her bir task işin büyüklüğünü ifade etmek için story point’ler ile değerlendirilmiştir. Bu değerlendirmelerde story pointler Fibonacci dizisindeki sayılar kullanılarak atanmıştır. Fibonacci dizisi kullanılarak ölçeklendirme yapılması, artan sayılar arasındaki oransal değişikliğin bir süre sonra aynı kalması nedeniyle yaygın kullanılan bir yöntemdir. Her bir taske volume (büyüklük), risk & uncertainty (risk ve belirsizlik) ve complexity (karmaşıklık) faktörleri göz önünde bulundurularak belirlenen story pointler atanmıştır. Bu yaklaşım, projedeki tasklerin önemini ve zorluk seviyelerini göstermeyi amaçlar.
 
@@ -223,6 +225,6 @@ Oyunumuzun ilk seviye tasarımını ve temel mekaniklerini tamamladık. Sprint 3
 Bu sprintte, belirlediğimiz ürün hedeflerine ulaşarak oyunun 20 seviyelik kısa bir versiyonunu tamamladık. Oyunun kısa versiyonu sayesinde, temel oynanış mekaniklerinin doğruluğunu ve oyunculara sunulabilirliğini test etme şansı elde ettik. Kullanıcı geri bildirimlerini dikkate alarak oyunun gelişimi için önemli ipuçları ve yol haritası belirleme imkanına sahibiz.
 
 ## Product Backlog linki
-[Sprint 3 - Product Backlog](https://jeweled-ceres-178.notion.site/5e0b08d75a3b41c1a741394ded1a76ee?v=3ab33d3b513a4457b0d8c779d1156a74&pvs=4) 
+[Sprint 3 - Product Backlog](https://jeweled-ceres-178.notion.site/abc358dad56e4654a5c44c56dd0bd6f1?v=c418e764144f4c94af046219f4557b6a&pvs=4) 
 
 ---
