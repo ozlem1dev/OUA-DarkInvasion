@@ -66,6 +66,9 @@ Tek başına savaşa girişen Eren, cesaretinin meşalesini yaktı ve köyü can
 Ekip olarak repo’muzun aslını Azure DevOps'ta tutuyoruz. Azure DevOps linkimizden dosyaları görüntüleyebilir, kodu inceleyebilir ve değişiklik geçmişini (branch, commit ve pull requestler) takip edebilirsiniz. 
 [Azure DevOps repo linki](https://dev.azure.com/Unity26/_git/3DTowerDefense)
 
+## Jüriye Not
+Oyunumuzu Windows aygıtlar için geliştirdik, bu nedenle reklamları dahil edemedik. Oyunumuzun daha uzun versiyonunu Steam'de paylaşmayı planlıyoruz.
+
 ---
 
 # Sprint 1
@@ -228,3 +231,6 @@ Bu sprintte, belirlediğimiz ürün hedeflerine ulaşarak oyunun 20 seviyelik k�
 [Sprint 3 - Product Backlog](https://jeweled-ceres-178.notion.site/abc358dad56e4654a5c44c56dd0bd6f1?v=c418e764144f4c94af046219f4557b6a&pvs=4) 
 
 ---
+
+# Credits
+Oyun içinde kullandığımız assetlere [bu linkten](https://docs.google.com/document/d/1D4_3OM2zFqCzwoZPS_fTA832wJv_H1L_qpoHl9qkG8I/edit?usp=sharing) ulaşabilirsiniz.
